@@ -64,7 +64,11 @@ for (let attempt = 1; attempt <= attempts; attempt += 1) {
         result.stderr.trim() || 'GitHub API returned no response.',
       );
     }
-    if (message !== 'The certificate does not exist yet') {
+    const certificatePending = [
+      'The certificate does not exist yet',
+      'Unavailable for your site because a certificate has not yet been issued for your domain',
+    ].includes(message);
+    if (!certificatePending) {
       throw new Error(message || result.stderr.trim());
     }
     console.log(`Certificate pending: attempt ${attempt}/${attempts}.`);

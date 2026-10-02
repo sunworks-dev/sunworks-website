@@ -31,6 +31,6 @@ GitHub Pages에 커스텀 도메인을 설정하고 첫 배포를 마친 후 아
 - 독립 디자인 검수의 제품 제목 위 상태 문구 위치 지적 수정 후 재검수 통과.
 - 최초 `main` 배포 성공. 저장소의 조직 이전 확인 후 로컬 원격 주소를 조직 주소로 갱신.
 - www CNAME 및 루트 A 레코드 4개를 적용하고 권한 네임서버 응답으로 확인. www HTTP 200 확인.
-- HTTPS 인증서 발급 대기. HTTPS 강제는 아직 활성화하지 않음.
-- 인증서 발급 요청을 재시작했으나 GitHub가 아직 `The certificate does not exist yet`를 반환함. GitHub Actions 기본 토큰은 HTTPS 설정 변경 시 403을 반환하여 해당 워크플로를 제거함. 관리자 `gh` 로그인으로 실행하는 `npm run launch:https`가 최대 40회, 1분 간격으로 활성화를 재시도하고 TLS 및 HTTP 리디렉션을 검증함. 정기 실행이나 별도 토큰 저장은 없음.
+- 2026-10-02 18:42 KST: `www.sunworks.kr`, `sunworks.kr` 인증서 승인 및 HTTPS 강제 활성화 확인. www HTTPS 200, 루트 HTTPS → www HTTPS 리디렉션 확인.
+- `npm run launch:https`의 TLS·HTTP → HTTPS 검사 통과. GitHub Actions 기본 토큰은 HTTPS 설정 변경 시 403을 반환하므로 관리자 `gh` 로그인으로 이 도구를 실행함. 최대 40회, 1분 간격으로 인증서 준비를 기다리며 정기 실행이나 별도 토큰 저장은 없음.
 - 자동 TypeScript 7 업데이트는 현재 `@astrojs/check`의 지원 범위와 충돌하여 PR을 닫고, TypeScript 메이저 자동 업데이트 제안을 보류함.
