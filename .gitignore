@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+.impeccable/
+docs/review/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.agents/
+.codex/
+.aws/
+coverage/

@@ -1,0 +1,306 @@
+---
+import Base from '../layouts/Base.astro';
+import SunMark from '../components/SunMark.astro';
+
+const appUrl = 'https://bryannamd.github.io/hanja-web/';
+---
+
+<Base>
+  <header class="site-header wrap">
+    <a class="wordmark" href="#" aria-label="sunworks 처음으로">
+      <SunMark />
+      sunworks<span class="wordmark-dot">.</span>
+    </a>
+    <nav aria-label="주요 메뉴">
+      <a href="#products">만드는 것</a>
+      <a href="#approach">만드는 방식</a>
+    </nav>
+    <a
+      class="header-link"
+      href={appUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      첫 제품 만나기
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 18 18 6M6 6h12v12" />
+      </svg>
+      <span class="sr-only">(새 창)</span>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          아이디어를
+          <br />
+          일상으로<span class="title-dot">.</span>
+        </h1>
+        <p class="hero-description">
+          있으면 좋겠다는 생각을,
+          <br />
+          없으면 아쉬운 제품으로.
+        </p>
+        <p class="hero-intro">
+          sunworks는 AI와 함께
+          <br class="mobile-break" /> 앱과 웹서비스를 만듭니다.
+        </p>
+        <a class="button button-primary" href="#products">
+          우리가 만드는 것
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+      <div class="hero-experiment">
+        <div class="sun-stage">
+          <div class="orbit-label orbit-label-top" aria-hidden="true">
+            a little idea
+          </div>
+          <SunMark class="hero-sun" animated />
+          <div class="orbit-label orbit-label-bottom" aria-hidden="true">
+            a new possibility
+          </div>
+        </div>
+        <div class="sun-controls" id="sun-controls" hidden>
+          <label for="possibility">작은 움직임, 새로운 가능성</label>
+          <div class="range-row">
+            <span aria-hidden="true">생각</span>
+            <input
+              id="possibility"
+              type="range"
+              min="0"
+              max="100"
+              value="35"
+              aria-label="sunworks 심벌의 모양과 색 바꾸기"
+            />
+            <span aria-hidden="true">가능성</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a class="product-preview wrap" href="#products">
+      <span class="preview-app">
+        <img src="/assets/hanja-icon.webp" width="48" height="48" alt="" />
+        <span>
+          <strong>어흥!한자</strong>
+          <span class="preview-caption">우리의 첫 번째 제품</span>
+        </span>
+      </span>
+      <span class="preview-status">
+        <span class="status-dot" aria-hidden="true"></span>정식 출시 준비 중
+      </span>
+      <span class="preview-go">
+        미리 만나보세요{' '}
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6" />
+        </svg>
+      </span>
+    </a>
+
+    <section
+      id="about"
+      class="intro-section wrap"
+      aria-labelledby="intro-title"
+    >
+      <h2 id="intro-title">
+        좋은 기술은,
+        <br />
+        생활에 스며듭니다.
+      </h2>
+      <div class="intro-body">
+        <p>
+          배우는 시간을 조금 더 즐겁게.
+          <br />
+          반복되는 일을 조금 더 가볍게.
+        </p>
+        <p>
+          우리는 일상의 작은 불편에서 출발합니다. 사람에게 필요한 것을 찾고, AI
+          바이브 코딩으로 직접 만들고, 쓸수록 좋아지는 제품으로 다듬습니다.
+        </p>
+      </div>
+    </section>
+
+    <section
+      id="products"
+      class="products-section"
+      aria-labelledby="product-title"
+    >
+      <div class="product-layout wrap">
+        <div class="product-copy">
+          <h2 id="product-title">
+            어흥!한자
+            <span class="product-punctuation" aria-hidden="true">
+              虎
+            </span>
+          </h2>
+          <div class="product-state">
+            <span class="status-dot" aria-hidden="true"></span>정식 출시 준비 중
+          </div>
+          <p class="product-lead">
+            한자 공부에,
+            <br />
+            친구가 생겼다.
+          </p>
+          <p class="product-description">
+            호랑이 친구와 한 글자씩 익히고, 배운 내용을 다시 만나며 차곡차곡
+            쌓아가는 한자 학습 앱.
+          </p>
+          <ul class="product-features" aria-label="어흥!한자 특징">
+            <li>캐릭터와 함께 배우는 한자</li>
+            <li>기억을 돕는 반복 학습</li>
+            <li>나만의 속도로 이어가는 학습</li>
+          </ul>
+          <a
+            class="button button-dark"
+            href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            웹에서 미리 체험하기
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 18 18 6M6 6h12v12" />
+            </svg>
+            <span class="sr-only">(새 창)</span>
+          </a>
+          <p class="beta-note">
+            출시 전 테스트 버전입니다. 기능과 화면은 달라질 수 있어요.
+          </p>
+        </div>
+        <div class="product-art">
+          <span class="hanja-backdrop" aria-hidden="true">
+            學
+          </span>
+          <img
+            class="horang"
+            src="/assets/horang.webp"
+            width="500"
+            height="500"
+            alt="붓과 두루마리를 든 어흥!한자의 호랑이 친구"
+            loading="lazy"
+          />
+          <span class="character-note">배움이 반가워지는 순간.</span>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="approach"
+      class="approach-section wrap"
+      aria-labelledby="approach-title"
+    >
+      <div class="approach-heading">
+        <h2 id="approach-title">
+          사람의 관점.
+          <br />
+          AI의 속도.
+        </h2>
+        <p>
+          만드는 도구는 새롭게.
+          <br />
+          만드는 이유는 언제나 사람에게.
+        </p>
+      </div>
+      <ol class="process-list">
+        <li>
+          <span class="step-number" aria-hidden="true">
+            01
+          </span>
+          <h3>작은 불편을 발견합니다.</h3>
+          <p>
+            무엇을 만들 수 있는지보다, 무엇이 있으면 하루가 더 나아질지
+            묻습니다.
+          </p>
+        </li>
+        <li>
+          <span class="step-number" aria-hidden="true">
+            02
+          </span>
+          <h3>직접 쓰는 형태로 만듭니다.</h3>
+          <p>
+            AI 바이브 코딩으로 아이디어를 빠르게 구현하고, 실제로 써보며 답을
+            찾습니다.
+          </p>
+        </li>
+        <li>
+          <span class="step-number" aria-hidden="true">
+            03
+          </span>
+          <h3>쓰는 사람 곁에서 다듬습니다.</h3>
+          <p>
+            출시는 시작입니다. 사용자의 경험을 듣고, 더 쉽고 유용한 제품으로
+            발전시킵니다.
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="closing-section" aria-labelledby="closing-title">
+      <div class="wrap closing-inner">
+        <SunMark class="closing-mark" />
+        <h2 id="closing-title">
+          다음 일상의 시작,
+          <br />
+          <span class="closing-wordmark">sunworks.</span>
+        </h2>
+        <a
+          class="button button-light"
+          href={appUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          어흥!한자 먼저 만나기
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 18 18 6M6 6h12v12" />
+          </svg>
+          <span class="sr-only">(새 창)</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="wordmark footer-wordmark" href="#">
+      sunworks.
+    </a>
+    <p>작은 생각을, 쓸모 있는 일상으로.</p>
+    <span>© {new Date().getFullYear()} sunworks</span>
+  </footer>
+
+  <script>
+    const slider = document.querySelector<HTMLInputElement>('#possibility');
+    const controls = document.querySelector<HTMLElement>('#sun-controls');
+    const mark = document.querySelector<SVGSVGElement>('[data-generative]');
+    const rays = mark?.querySelectorAll<SVGEllipseElement>('.sun-ray');
+    if (slider && controls && mark && rays) {
+      controls.hidden = false;
+      const update = () => {
+        const amount = Number(slider.value) / 100;
+        const hue = Math.round(14 + amount * 33);
+        document.documentElement.style.setProperty(
+          '--sun-color',
+          `hsl(${hue} 89% 59%)`,
+        );
+        document.documentElement.style.setProperty(
+          '--accent',
+          `hsl(${225 + amount * 24} 49% 34%)`,
+        );
+        document.documentElement.style.setProperty(
+          '--surface',
+          `hsl(${221 + amount * 22} 53% 96%)`,
+        );
+        mark.style.transform = `rotate(${amount * 100 - 35}deg)`;
+        rays.forEach((ray) => {
+          ray.setAttribute('rx', String(10 + amount * 24));
+          ray.setAttribute('ry', String(91 + amount * 22));
+          ray.setAttribute('cy', String(-105 + amount * 10));
+          ray.setAttribute('transform', `rotate(${amount * 58})`);
+        });
+      };
+      slider.addEventListener('input', update);
+      update();
+    }
+  </script>
+</Base>

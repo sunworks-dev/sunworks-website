@@ -1,0 +1,31 @@
+---
+interface Props {
+  class?: string;
+  animated?: boolean;
+}
+const { class: className, animated = false } = Astro.props;
+---
+
+<svg
+  class:list={['sun-mark', className]}
+  viewBox="0 0 480 480"
+  fill="none"
+  aria-hidden="true"
+  data-generative={animated || undefined}
+>
+  <g transform="translate(240 240)">
+    {Array.from({ length: 24 }, (_, i) => (
+      <g transform={`rotate(${i * 15})`}>
+        <ellipse
+          class="sun-ray"
+          cx="0"
+          cy="-110"
+          rx="18"
+          ry="108"
+          transform="rotate(28)"
+          fill="currentColor"
+        />
+      </g>
+    ))}
+  </g>
+</svg>
