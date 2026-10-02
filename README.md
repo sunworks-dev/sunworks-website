@@ -3,7 +3,7 @@
 AI 바이브 코딩으로 자체 앱과 웹서비스를 만드는 sunworks의 회사 소개 사이트.
 
 - 사이트: https://www.sunworks.kr
-- 소스: https://github.com/bryannamd/sunworks-website
+- 소스: https://github.com/sunworks-dev/sunworks-website
 - 기반: Astro, TypeScript, CSS
 - 배포: GitHub Pages, GitHub Actions
 
@@ -31,6 +31,7 @@ npm run preview
 ## 프로젝트 문서
 
 - [제품과 콘텐츠 기준](docs/PRODUCT.md)
+- [디자인 시스템](docs/DESIGN.md)
 - [백엔드 확장](docs/architecture.md)
 - [배포와 도메인](docs/launch.md)
 
