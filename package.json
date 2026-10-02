@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "sunworks — AI 바이브 코딩으로 앱과 웹서비스를 만드는 제품 회사",
+  "description": "sunworks — AI, 엔지니어링, 제품 디자인으로 앱과 웹서비스를 만드는 제품 회사",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=22.12.0"
@@ -19,12 +19,14 @@
     "launch:https": "node scripts/finalize-https.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.3.0",
     "@fontsource-variable/noto-sans-kr": "^5.3.0",
-    "@fontsource-variable/outfit": "^5.3.0",
-    "astro": "^7.3.5"
+    "astro": "^7.3.5",
+    "three": "^0.186.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@types/three": "^0.186.0",
     "prettier": "^3.9.9",
     "prettier-plugin-astro": "^1.1.0",
     "typescript": "^6.0.3"

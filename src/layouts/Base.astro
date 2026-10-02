@@ -1,5 +1,5 @@
 ---
-import '@fontsource-variable/outfit';
+import '@fontsource-variable/bricolage-grotesque';
 import '@fontsource-variable/noto-sans-kr';
 import '../styles/global.css';
 
@@ -8,8 +8,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = 'sunworks — 아이디어를 일상으로',
-  description = 'sunworks는 AI 바이브 코딩으로 자체 앱과 웹서비스를 만드는 제품 회사입니다. 첫 제품 어흥!한자를 만나보세요.',
+  title = 'sunworks — 상상을, 작동하는 현실로',
+  description = 'AI의 가능성에 엔지니어링과 디자인을 더해, 새로운 앱과 웹서비스를 만드는 제품 회사 sunworks. 우리의 기술, 관점, 그리고 직접 만든 제품을 만나보세요.',
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -20,7 +20,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#eef1fa" />
+    <meta name="theme-color" content="#2546ec" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
@@ -35,7 +35,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="sunworks — 아이디어를 일상으로" />
+    <meta
+      property="og:image:alt"
+      content="sunworks — 상상을, 작동하는 현실로"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
   </head>

@@ -1,159 +1,217 @@
 ---
 name: sunworks
-description: Korean-first daylight palette with a parametric sun identity.
+description: Creative technology expressed through cobalt stages, monumental type, and finite geometric interaction.
 colors:
-  surface: '#eef1fa'
-  paper: '#fafbfe'
-  ink: '#22324e'
-  muted: '#536078'
-  accent: '#343f81'
-  sun-color: '#f58d43'
-  product-ground: '#f8e7c5'
-  product-ink: '#493624'
-  product-muted: '#72583e'
-  line: '#d4dae7'
-  white: '#fff'
+  blue: '#2546ec'
+  paper: '#f4f5f0'
+  ink: '#242622'
+  orange: '#ff794f'
+  citron: '#e8efaf'
+  muted: '#62665e'
+  blue-copy: '#e1e6ff'
+  rule: '#bdc3b6'
 typography:
   display:
-    fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: 'clamp(3.25rem, 6.7vw, 6rem)'
-    fontWeight: 760
-    lineHeight: 1.17
+    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
+    fontSize: 'clamp(58px, 6.8vw, 98px)'
+    fontWeight: 550
+    lineHeight: 1.04
     letterSpacing: '-0.04em'
   headline:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: 'clamp(2rem, 3.4vw, 3rem)'
+    fontSize: 'clamp(35px, 3.9vw, 58px)'
     fontWeight: 650
-    lineHeight: 1.4
-    letterSpacing: '-0.035em'
+    lineHeight: 1.42
+    letterSpacing: '-0.04em'
   title:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: '21px'
+    fontSize: '18px'
     fontWeight: 600
-    lineHeight: 1.7
-    letterSpacing: '-0.025em'
   body:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
     fontSize: '15px'
     fontWeight: 400
-    lineHeight: 1.95
+    lineHeight: 1.9
   action:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
     fontSize: '14px'
-    fontWeight: 600
-    lineHeight: 1.5
+    fontWeight: 550
+  label:
+    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
+    fontSize: '12px'
+    fontWeight: 400
   wordmark:
-    fontFamily: 'Outfit Variable, sans-serif'
-    fontSize: '35px'
-    fontWeight: 650
-    lineHeight: 1
-    letterSpacing: '-0.04em'
+    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
+    fontSize: '32px'
+    fontWeight: 750
+    letterSpacing: '-0.035em'
 rounded:
-  button: '8px'
-  app-icon: '12px'
-  range-track: '2px'
+  tag: '4px'
+  control: '6px'
+  panel: '12px'
+  pill: '99px'
   circle: '50%'
 components:
   button-primary:
-    backgroundColor: '{colors.accent}'
-    textColor: '{colors.white}'
+    backgroundColor: '{colors.blue}'
+    textColor: '{colors.paper}'
     typography: '{typography.action}'
-    rounded: '{rounded.button}'
-    padding: '17px 24px'
+    rounded: '{rounded.control}'
+    padding: '15px 21px'
+  button-primary-hover:
+    backgroundColor: '{colors.ink}'
   button-dark:
-    backgroundColor: '{colors.product-ink}'
-    textColor: '{colors.white}'
+    backgroundColor: '{colors.ink}'
+    textColor: '{colors.paper}'
     typography: '{typography.action}'
-    rounded: '{rounded.button}'
-    padding: '17px 24px'
+    rounded: '{rounded.control}'
+    padding: '15px 21px'
   button-dark-hover:
-    backgroundColor: '#33251a'
-  button-light:
+    backgroundColor: '{colors.blue}'
+  engine-state:
+    backgroundColor: 'transparent'
+    textColor: '{colors.blue-copy}'
+    rounded: '{rounded.pill}'
+    padding: '0 18px'
+  engine-state-selected:
     backgroundColor: '{colors.paper}'
-    textColor: '{colors.accent}'
-    typography: '{typography.action}'
-    rounded: '{rounded.button}'
-    padding: '17px 24px'
+    textColor: '{colors.ink}'
+  capability-tag:
+    textColor: '{colors.ink}'
+    typography: '{typography.label}'
+    rounded: '{rounded.tag}'
+    padding: '6px 10px'
+  workbench:
+    backgroundColor: '{colors.ink}'
+    textColor: '{colors.paper}'
+    rounded: '{rounded.panel}'
+    padding: '23px 26px 21px'
 ---
 
 # Design System: sunworks
 
 ## Overview
 
-**Creative North Star: "Soft blue daylight"**
+**Creative North Star: "Ideas made real"**
 
-Open, Korean-first layouts pair indigo text and cool daylight surfaces with an orange geometric sun. The identity is expressive through its responsive geometry; navigation, text, and product actions remain quiet and direct.
+sunworks expresses technology and creativity through a cobalt stage, sculptural geometry, and confident opening-title typography. Open paper sections make room for Korean explanations; precise controls reveal the making process. The company creates its own digital products, with education represented by one current product rather than the whole identity.
+
+The system is expressive in its artwork and restrained in navigation, body copy, and controls. Product illustrations retain their own character inside the company palette. Interactive diagrams are authored illustrations, never evidence of a live AI service or invented business results.
 
 **Key Characteristics:**
 
-- Large Korean headings with restrained Latin wordmarks.
-- Open sections, fine horizontal rules, and limited control shadows.
-- One reusable sun silhouette with a coordinated, adjustable palette.
+- Cobalt and paper stages, with solar orange and citron accents.
+- Monumental Latin display type paired with readable Korean explanations.
+- Open sections, native controls, and finite geometric state changes.
+- Original sun geometry and attributable company-owned product artwork.
 
-This records the implemented system in [global.css](../src/styles/global.css), [index.astro](../src/pages/index.astro), and [SunMark.astro](../src/components/SunMark.astro). Product context lives in [PRODUCT.md](PRODUCT.md); homepage composition lives in [surfaces/home.md](surfaces/home.md). Local review captures are kept in the gitignored `docs/review/` directory: `desktop.png`, `desktop-hero.png`, and `mobile.png`.
+Extracted from the final code-led build (seed `dfadb90b`; no approved comp): [styles](../src/styles/global.css), [homepage](../src/pages/index.astro), [SolarEngine](../src/components/SolarEngine.astro), [engine behavior](../src/scripts/solar-engine.ts), [SunMark](../src/components/SunMark.astro), [Arrow](../src/components/Arrow.astro), and [Base](../src/layouts/Base.astro). Product truth: [PRODUCT.md](PRODUCT.md). Surface composition: [surfaces/home.md](surfaces/home.md). Final reference captures: `.impeccable/review/{desktop,mobile,compact,tablet,user-1428}.png`, with engine and workbench state captures alongside them.
 
 ## Colors
 
-The frontmatter records CSS declaration defaults. Runtime color changes remain governed by the root custom properties; these are not fixed screenshot colors.
+The frontmatter records the stable UI palette. Sculpture materials and product illustration tints remain local to their artwork.
 
-- **Primary:** `accent` supplies actions, the wordmark dot, controls, focus rings, and the closing section. `sun-color` supplies every sun mark and text selection.
-- **Neutral:** `surface` is the page ground; `paper` is the light closing-section foreground and button fill. `ink` carries main text, `muted` supporting text, and `line` thin separators and the range track.
-- **Product:** `product-ground`, `product-ink`, and `product-muted` form the warm cream-and-brown product section. This local palette stays stable during sun interaction.
-- **Action text:** `white` is used on the primary and dark buttons.
+### Primary
 
-**The Coordinated Color Rule.** Bind affected elements to `--accent`, `--sun-color`, and `--surface`; the slider updates all three together.
+- **Cobalt (`blue`):** opening stage, emphasized display words, open disclosure text, and primary actions.
 
-With JavaScript active, slider value `v` runs from 0 to 100 and `a = v / 100`:
+### Secondary
 
-| Root property | Runtime value                  |
-| ------------- | ------------------------------ |
-| `--sun-color` | `hsl(round(14 + 33a) 89% 59%)` |
-| `--accent`    | `hsl((225 + 24a) 49% 34%)`     |
-| `--surface`   | `hsl((221 + 22a) 53% 96%)`     |
+- **Solar orange (`orange`):** closing stage, opening punctuation, selection highlight, and diagram accents.
+- **Citron (`citron`):** discipline strip, product ground, and luminous workbench nodes.
 
-Initialization applies the default slider value (35). Without JavaScript, declaration defaults and the static mark remain visible; the inactive slider stays hidden.
+### Neutral
+
+- **Paper (`paper`):** main ground, text over cobalt/ink, selected engine controls, and illustration tiles.
+- **Ink (`ink`):** main text, dark actions, and workbench ground.
+- **Muted (`muted`):** supporting copy on light grounds.
+- **Blue copy (`blue-copy`):** supporting text and inactive controls on cobalt.
+- **Rule (`rule`):** capability dividers and quiet workbench labels.
+
+**The Stage Contrast Rule.** Keep paper text on cobalt and ink stages, and ink text on paper, citron, and orange stages. Engine state changes affect the sculpture, not the page palette.
 
 ## Typography
 
-Noto Sans KR Variable carries Korean headings, prose, and actions. Outfit Variable carries the wordmark, decorative orbit text, step numbers, and Latin footer text. Both are bundled through Fontsource; the fallback is `sans-serif`.
+**Display Font:** Bricolage Grotesque Variable, with Noto Sans KR Variable and sans-serif fallbacks. **Body Font:** Noto Sans KR Variable, with sans-serif fallback. Both are self-hosted through Fontsource; OFL licenses are in `public/assets/font-licenses/`.
 
-The frontmatter captures the desktop hierarchy. Supporting copy uses relaxed leading; introductory body columns stop at (440px), product descriptions at (380px), and process descriptions at (385px). Headings use balanced wrapping, paragraphs use pretty wrapping, and Korean words use `keep-all`.
+The frontmatter captures recurring desktop roles. English displays use tight tracking and compact leading; Korean explanations use generous leading. Capability names use Bricolage at `clamp(28px, 3.1vw, 44px)` and weight (550). Body copy commonly uses (14–16px); small supporting labels use (11–13px). Capability copy stops at (42ch), and the mobile hero introduction at (41ch). Headings balance their wrapping; paragraphs use pretty wrapping.
 
-At widths up to (720px), the hero heading becomes `clamp(3.4rem, 13.5vw, 5rem)` with (1.2) leading, section headings become (31px/1.45), process titles become (18px), actions become (13px), and the header wordmark becomes (28px). Product titles retain their stronger (760) weight and become (43px). The larger closing wordmark uses Outfit at (550).
+The opening title is an artwork exception: `clamp(94px, 10.6vw, 163px)`, weight (600), leading (0.96), tracking (-0.04em). It becomes (11vw) at the compact breakpoint, `clamp(70px, 14vw, 106px)` with (0.95) leading on mobile, and (18vw) at the smallest breakpoint. The decorative closing wordmark is similarly oversized.
+
+Mobile section headings become `clamp(49px, 10vw, 74px)`, Korean manifesto text `clamp(28px, 5.2vw, 39px)` with (1.5) leading, and capability names (31px). At the smallest breakpoint, section headings become (45px) and manifesto text (26px).
+
+**The Opening Title Rule.** Reserve monumental type for expressive opening titles and brand artwork. Keep the readable hierarchy beneath it, and start sections with their actual headline rather than a decorative eyebrow.
 
 ## Layout
 
-The desktop content wrapper is `min(1280px, calc(100% - 112px))`. Hero, introduction, and product layouts share a slightly asymmetric two-column grid (`1.06fr 1fr`). Section spacing is deliberately generous: introduction (128px/136px), product (96px), and approach (120px/140px) vertical padding. There is no declared global spacing scale.
+The desktop wrapper is `min(100% - 96px, 1440px)`: (48px) side gutters until the cap applies. Gutters become (32px) up to (1100px), (20px) up to (760px), and (16px) up to (380px). No global spacing scale is declared.
 
-- Up to (1050px): wrapper gutters shrink to (36px) per side; navigation, art, and process columns tighten.
-- Up to (720px): gutters become (20px); hero, introduction, and product stack into one column. Process descriptions move below their titles, preserving the number column. Section padding contracts, the footer wraps, and the closing mark shifts below the text.
-- From (1600px): hero minimum height increases from (665px) to (740px). The intermediate desktop rule uses (610px).
-- Page minimum width is (320px). The mobile header retains both text navigation links; the separate product shortcut and preview-strip trailing prompt are hidden. There is no hamburger menu.
+Desktop composition alternates a layered opening, offset manifesto, open two-column capabilities, and a two-column product feature. The engine occupies the opening's right side; explanation and action sit at lower left. Section padding generally spans (100–150px) on desktop and (65–83px) on mobile.
+
+- **Up to (1100px):** header height contracts from (108px) to (90px), columns tighten, manifesto paragraphs stack, and forced desktop copy breaks disappear.
+- **Up to (760px):** header becomes (80px); engine enters normal flow below the title; major columns stack. Capabilities precede their diagram, product copy precedes artwork, and prominent actions fill available width. Both navigation links remain visible; the extra header shortcut is hidden.
+- **Up to (380px):** type, navigation gaps, diagram padding, and artwork tighten together.
+- **From (1650px):** opening minimum height becomes (835px), from desktop (766px). Compact desktop uses (690px); mobile uses content height.
 
 ## Elevation & Depth
 
-Sections stay flat. Tonal changes, fine rules, and overlapping artwork create depth. Shadow use is limited to the range thumb (`0 3px 6px rgb(34 50 78 / 14%)`) and primary-button hover (`0 8px 20px rgb(34 50 78 / 14%)`). Neither becomes a general card-shadow system.
+Sections and controls are flat. Color fields, fine rules, overlapping illustration, and the physically lit 3D sculpture provide depth. Only floating Hanja illustration tiles use a CSS shadow: `0 7px 15px rgb(36 38 34 / 8%), 0 25px 48px rgb(36 38 34 / 6%)`.
+
+**The Artwork Depth Rule.** Put depth in the sculpture and product artwork; keep navigation, disclosure rows, and ordinary action surfaces flat.
 
 ## Shapes
 
-Buttons use softly rounded corners; product app icons use a slightly larger radius, reduced to (10px) on mobile. Circular slider thumbs and status dots echo the sun's radial structure. Product preview and process rows use straight horizontal borders. The sun comprises (24) elliptical rays placed at (15-degree) intervals; the closing section crops the enlarged silhouette at its boundary.
+SunMark uses eight rectangular rays at (45-degree) intervals around a central circle. Arrow icons share an inline SVG source, rounded stroke ends/joins, and (1.6) stroke width. Ordinary action arrows are (22px), diagram arrows (18px), footer arrows (15px).
+
+Outlined circles and status dots echo the sun; engine controls use pills. Tags, actions, and panels use the extracted radius roles. The product feature has a local (14px) radius. Straight rules organize disclosures; diagram nodes use modest rounded corners.
 
 ## Components
 
-- **Buttons:** Three filled link variants: accent primary, brown product action, and paper closing action. Desktop minimum height is (56px), mobile (54px); mobile padding is (16px 20px). Arrow icons shift (3px) on hover and the whole action scales to (0.96) while pressed. The dark variant darkens on hover; the primary adds its documented shadow.
-- **Navigation:** Inline text links have a minimum (44px) height and underline on hover. The desktop product shortcut uses a diagonal SVG arrow that shifts (2px, -2px). All interactive links, buttons, and inputs receive a (3px) focus outline with (6px) offset; the closing section uses the sun color for visibility.
-- **Product preview:** A full-width linked strip uses top and bottom rules, a rounded app icon, title, subtitle, and launch status. Hover adds translucent white (`rgb(255 255 255 / 35%)`). The featured product's launch status sits below its title; it is content, not a decorative heading label.
-- **Process rows:** Number, title, and description share a ruled grid. Tabular Outfit numerals align the sequence without enclosing cards.
-- **Sun control:** A native range input uses a (44px) interaction height, (3px) track, and (18px) circular thumb. At mobile widths the control remains visible, capped at (255px), beneath a sun stage capped at (350px). Slider input changes ray width, length, offset, rotation, and the shared page palette directly.
-- **Sun motion:** The hero has a single (1100ms) clip-path arrival reveal using `cubic-bezier(0.16, 1, 0.3, 1)`. Button and arrow transitions use (220ms); preview hover uses (200ms). There is no continuous idle animation.
+### Actions and navigation
 
-**The Direct Interaction Rule.** Under `prefers-reduced-motion: reduce`, disable smooth scrolling, the sun arrival animation, and the documented transitions. Keep the native slider and its immediate geometry/color updates functional. Hover and pressed states remain immediate.
+Filled links have a (54px) minimum height and the frontmatter padding/radius. Primary actions use cobalt; product actions use ink. Fine-pointer hover swaps these fills; press scales to (0.96). Circular-arrow links use outlined (52px) circles, becoming (45px) on mobile; hover reverses circle fill/text. The opening arrow rotates the shared horizontal SVG downward.
+
+Navigation links have a (44px) minimum height and underline on hover. Interactive elements receive a (3px) `currentColor` focus outline with (5px) offset. Filled buttons override the outline to ink so focus stays visible on paper and citron. Engine buttons explicitly use paper outlines with (4px) offset, preserving visibility in both selection states. A keyboard-visible skip link reaches main content; external product links announce the new window.
+
+### Engine experiment
+
+The visible, accessible caption is “제품 제작 과정을 담은 인터랙티브 실험”. Native Imagine, Build, and Launch buttons form a labelled group; `aria-pressed` exposes selection and a polite live description explains it. Canvas and fallback art are decorative. Controls appear only after successful WebGL initialization.
+
+The engine contains (120) rounded ribs: an orange torus knot, pale structured lattice, and citron radial ring. Selection interpolates position, rotation, scale, and material color over (850ms), using quartic ease-out. Interruptions begin from the current pose. Opening perspective settles over (1800ms); fine-pointer tilt eases to rest. There is no continuous idle loop.
+
+Rendering pauses offscreen or while the document is hidden; pixel ratio caps at (1.6) for fine pointers and (1.25) otherwise. Reduced motion makes state selection immediate, removes opening motion and pointer tilt, disables CSS transitions/smooth scrolling, and preserves controls. No JavaScript, failed WebGL, or context loss retains static artwork and its experiment caption; inactive controls stay hidden.
+
+**The Finite Motion Rule.** Animate a user-requested change, settle, and stop. Preserve immediate state selection under reduced motion and pause rendering when the experience is not visible.
+
+### Capability disclosures and workbench
+
+Native `details`/`summary` elements share a named group, with the first initially open. Fine rules, generous row spacing, and CSS-drawn plus/minus controls organize the list. Open and hovered summaries use cobalt. Outlined discipline tags are descriptive, not interactive.
+
+An opened disclosure selects the AI, engineering, or design diagram and caption. The ink workbench is an illustrative, `aria-hidden` companion to readable text. Its “What if...” motif is not a real input or AI prompt. Without JavaScript, native disclosures work and the initial diagram remains visible.
+
+### Product feature and assets
+
+The citron product container combines real product copy, an ink action, explicit beta/pre-launch status, and company-owned artwork. The app icon beside its name is decorative; the tiger has descriptive alternative text. Floating Hanja tiles remain decorative.
+
+- `public/assets/hanja-icon.webp` and `public/assets/horang.webp`: owner-supplied app assets, resized/converted without generative editing.
+- `public/assets/solar-engine.webp`: original Three.js framebuffer render of the same mathematical sculpture; static fallback.
+- `public/social-card.png`: original browser-rendered typography, geometric logo, and sculpture composition.
+
+Every shipping raster has adjacent `.json` provenance. Source paths and font licenses are recorded in [public/assets/README.md](../public/assets/README.md). Logo and directional icons remain authored SVG geometry.
 
 ## Do's and Don'ts
 
-- **Do** reuse the root palette variables so the identity stays coordinated during interaction.
-- **Do** preserve Korean word grouping, visible keyboard focus, and the existing mobile navigation access.
-- **Do** keep the sun as reusable SVG geometry and preserve reduced-motion behavior.
-- **Don't** treat the slider's current colors as permanent replacements for the root token definitions.
-- **Don't** extend the local product palette or small control shadows into unrelated page surfaces by default.
-- **Don't** infer a card, text-input, modal, or dark-mode system from this landing page; none is implemented here.
+### Do:
+
+- **Do** reuse the stable root palette and self-hosted font pairing.
+- **Do** preserve visible keyboard focus, native disclosures, and mobile access to both navigation links.
+- **Do** keep the 3D experiment explicitly illustrative, with finite motion, reduced-motion parity, and a static fallback.
+- **Do** reuse SunMark and Arrow SVGs and retain provenance for every raster.
+- **Do** present 어흥!한자 as one company-owned product with its actual beta/pre-launch status.
+
+### Don't:
+
+- **Don't** turn education artwork into the company identity or add invented customers, metrics, testimonials, or live-AI claims.
+- **Don't** add decorative heading eyebrows or substitute Unicode glyphs for shared SVG icons.
+- **Don't** extend opening-title sizes to ordinary interface type or artwork shadows to general cards.
+- **Don't** infer forms, a real AI prompt, dark mode, or further product states from the illustrative workbench.

@@ -8,11 +8,11 @@ web
 
 ## Stack
 
-Astro + TypeScript and GitHub Pages are the implementation recommendation. The owner asked how Astro works and confirmed code-first design. A separate API can support future mailing, community, and social sign-in features; these are not part of the initial launch.
+Astro + TypeScript and GitHub Pages are the deployed stack. The owner asked how Astro works and confirmed code-first design. A separate API can support future mailing, community, and social sign-in features; these are not part of the initial launch.
 
 ## Product Purpose
 
-sunworks is a company that creates and launches its own apps and web services using AI-assisted vibe coding. The first website introduces the company clearly and memorably, and launches at https://www.sunworks.kr.
+sunworks is a company that creates and launches its own apps and web services using AI-assisted vibe coding. The live company website is https://www.sunworks.kr. Its redesign emphasizes creative technology, AI-assisted engineering, and original digital products. The owner explicitly clarified that education is not the primary business; educational apps are one application of the company’s work.
 
 ## Users
 
@@ -20,7 +20,7 @@ Assumption: Korean-speaking people discovering the company and its products, inc
 
 ## Capabilities and Constraints
 
-- Public repository under GitHub account bryannamd.
+- Public repository: https://github.com/sunworks-dev/sunworks-website, owned by the sunworks-dev organization.
 - Company-owned products, not a client development agency (explicitly confirmed).
 - Korean-first, responsive company introduction site.
 - Interactive demonstrations may be authored, but must be clearly identified as demonstrations.
@@ -38,7 +38,7 @@ Assumption: Korean-speaking people discovering the company and its products, inc
 
 ## Evidence on Hand
 
-The owner supplied the business description, company name, registered domain, and the 어흥!한자 app at `../../apps/hanja-study-app`. Product art comes from that app; source locations are recorded in `public/assets/README.md`. The user requested moving the repository to the newly created `sunworks-dev` organization; its GitHub URL is awaiting confirmation because the API currently returns 404.
+The owner supplied the business description, company name, registered domain, and the 어흥!한자 app at `../../apps/hanja-study-app`. Product art comes from that app; source locations are recorded in `public/assets/README.md`. The repository has moved to `sunworks-dev/sunworks-website`, and GitHub Pages serves the verified custom domain with enforced HTTPS. The owner confirmed the live site and requested a much more creative responsive redesign, led by technical capability. Future education products may span all ages, but the company itself is not positioned as education-only.
 
 ## Product Principles
 
