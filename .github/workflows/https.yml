@@ -1,0 +1,50 @@
+name: Finalize HTTPS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  pages: write
+
+concurrency:
+  group: https-finalization
+  cancel-in-progress: false
+
+jobs:
+  enable-https:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - name: Enable HTTPS when the certificate is available
+        shell: bash
+        run: |
+          for attempt in $(seq 1 40); do
+            if response=$(gh api --method PUT "repos/$GH_REPO/pages" -F https_enforced=true 2>"$RUNNER_TEMP/https-error"); then
+              echo "HTTPS enforcement enabled."
+              exit 0
+            fi
+            message=$(jq -r '.message // ""' <<< "$response")
+            if [[ "$message" != "The certificate does not exist yet" ]]; then
+              cat "$RUNNER_TEMP/https-error"
+              echo "::error::$message"
+              exit 1
+            fi
+            echo "Certificate pending: attempt $attempt of 40."
+            if [[ "$attempt" -lt 40 ]]; then sleep 60; fi
+          done
+          echo "::error::Certificate is still pending. Check Pages DNS health and rerun this workflow after propagation."
+          exit 1
+      - name: Verify TLS and HTTP redirect
+        shell: bash
+        run: |
+          url=$(gh api "repos/$GH_REPO/pages" --jq .html_url)
+          curl --fail --silent --show-error --location --retry 5 --retry-all-errors --retry-delay 15 --max-time 20 "${url/http:/https:}" -o /dev/null
+          location=$(curl --fail --silent --show-error --head "${url/https:/http:}" | tr -d '\r' | sed -n 's/^[Ll]ocation: //p')
+          if [[ "$location" != https://* ]]; then
+            echo "::error::HTTP did not redirect to HTTPS."
+            exit 1
+          fi
+          echo "TLS and HTTP redirect verified."
