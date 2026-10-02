@@ -32,5 +32,5 @@ GitHub Pages에 커스텀 도메인을 설정하고 첫 배포를 마친 후 아
 - 최초 `main` 배포 성공. 저장소의 조직 이전 확인 후 로컬 원격 주소를 조직 주소로 갱신.
 - www CNAME 및 루트 A 레코드 4개를 적용하고 권한 네임서버 응답으로 확인. www HTTP 200 확인.
 - HTTPS 인증서 발급 대기. HTTPS 강제는 아직 활성화하지 않음.
-- 인증서 발급 요청을 재시작했으나 GitHub가 아직 `The certificate does not exist yet`를 반환함. 수동 실행 전용 `Finalize HTTPS` 워크플로가 최대 40회, 1분 간격으로 활성화를 재시도하고 TLS 및 HTTP 리디렉션을 검증함. 정기 실행은 없음. DNS 전파가 더 오래 걸려 실패하면 Pages DNS 상태를 확인한 뒤 다시 실행할 수 있음.
+- 인증서 발급 요청을 재시작했으나 GitHub가 아직 `The certificate does not exist yet`를 반환함. GitHub Actions 기본 토큰은 HTTPS 설정 변경 시 403을 반환하여 해당 워크플로를 제거함. 관리자 `gh` 로그인으로 실행하는 `npm run launch:https`가 최대 40회, 1분 간격으로 활성화를 재시도하고 TLS 및 HTTP 리디렉션을 검증함. 정기 실행이나 별도 토큰 저장은 없음.
 - 자동 TypeScript 7 업데이트는 현재 `@astrojs/check`의 지원 범위와 충돌하여 PR을 닫고, TypeScript 메이저 자동 업데이트 제안을 보류함.

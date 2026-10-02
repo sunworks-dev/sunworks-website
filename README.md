@@ -28,6 +28,8 @@ npm run preview
 `main`에 푸시하면 검사 통과 후 `dist/`를 GitHub Pages로 배포합니다. PR에서는 검사만 실행합니다.
 커스텀 도메인은 `astro.config.mjs`, `public/CNAME`, GitHub Pages 설정에서 관리합니다.
 
+인증서 발급 후 HTTPS를 마무리하려면 저장소 관리자 계정으로 `gh auth login`한 환경에서 `npm run launch:https`를 실행합니다. 최대 40회, 1분 간격으로 활성화를 재시도하고 TLS 및 HTTP 리디렉션을 확인합니다. 비밀키를 저장소에 추가하지 않습니다.
+
 ## 프로젝트 문서
 
 - [제품과 콘텐츠 기준](docs/PRODUCT.md)
