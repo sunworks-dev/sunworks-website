@@ -1,22 +1,33 @@
 ---
-import '@fontsource/gasoek-one';
-import '@fontsource-variable/archivo';
+import '@fontsource/do-hyeon';
+import '@fontsource-variable/archivo/wdth.css';
 import '@fontsource-variable/noto-sans-kr';
 import '../styles/global.css';
+import { copy, type Lang } from '../i18n';
 
 interface Props {
+  lang?: Lang;
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
+  ogLocale?: string;
+  alternates?: { hreflang: string; href: string }[];
 }
+const { lang = 'ko', alternates = [] } = Astro.props;
+const meta = copy[lang].meta;
 const {
-  title = '썬웍스 sunworks — 쓸모 있는 딴생각.',
-  description = '그냥 지나치기엔, 꽤 괜찮은 생각이니까. 썬웍스는 일상의 작은 발견을 직접 쓰고 싶은 앱과 웹서비스로 만듭니다. 우리의 생각과 첫 제품 어흥!한자를 만나보세요.',
+  title = meta.title,
+  description = meta.description,
+  ogImage = meta.ogImage,
+  ogImageAlt = meta.ogImageAlt,
+  ogLocale = meta.ogLocale,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="ko">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,28 +35,29 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="theme-color" content="#24211d" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonical} />
+    {alternates.map(({ hreflang, href }) => (
+      <link
+        rel="alternate"
+        hreflang={hreflang}
+        href={new URL(href, Astro.site)}
+      />
+    ))}
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:site_name" content="sunworks" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta
-      property="og:image"
-      content={new URL('/social-card.png', Astro.site)}
-    />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="썬웍스 sunworks — 쓸모 있는 딴생각."
-    />
+    <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <title>{title}</title>
   </head>
   <body>
     <a class="skip-link" href="#main">
-      본문으로 바로가기
+      {copy[lang].skip}
     </a>
     <slot />
   </body>

@@ -5,6 +5,6 @@
 - `horang.webp`: existing sunworks-owned artwork, converted from `apps/hanja-study-app/flutter_app/assets/characters/welcome.png` without visual editing.
 - `hanja-icon.webp`: existing sunworks-owned app icon, resized from `apps/hanja-study-app/flutter_app/assets/icon/app_icon.png`.
 - The owner supplied the app directory and beta URL for this product. Both rasters retain adjacent provenance.
-- `../social-card.png`: original browser-rendered 1200×630 composition of the current typography, illustration, and owner-supplied logo. Its origin is embedded and recorded in adjacent JSON.
-- Fonts: self-hosted Gasoek One, Archivo Variable, and Noto Sans KR Variable. OFL licenses reside in `font-licenses/`.
+- `../social-card.png` (Korean) and `../social-card-en.png` (English): original browser-rendered 1200×630 compositions of the current typography, illustration, and owner-supplied logo. Re-rendered 2026-10-07 after the title-type change. Origin is embedded and recorded in adjacent JSON.
+- Fonts: self-hosted Do Hyeon, Archivo Variable (weight and width axes), and Noto Sans KR Variable. OFL licenses reside in `font-licenses/`.
 - The old mathematical sculpture and its Three.js runtime were removed in this redesign.

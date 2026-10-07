@@ -1,0 +1,20 @@
+---
+// 배열 원소 사이에 공백을 명시한다. HTML 압축이 <br> 앞 공백을 지워서다.
+interface Props {
+  lines: readonly string[];
+  breakClass?: string;
+}
+const { lines, breakClass } = Astro.props;
+---
+
+{lines.map((line, i) => (
+  <>
+    {i > 0 && (
+      <>
+        {' '}
+        <br class={breakClass} />
+      </>
+    )}
+    {line}
+  </>
+))}

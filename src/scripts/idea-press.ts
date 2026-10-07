@@ -1,11 +1,12 @@
 const press = document.querySelector<HTMLElement>('[data-idea-press]');
 if (press) {
-  const ideas = [
-    ['매일 하는 일이', '조금 더', '재밌어진다면?'],
-    ['어려운 배움이', '작은 모험이', '된다면?'],
-    ['귀찮은 일은', '짧게, 좋아하는', '일은 길게.'],
-    ['나만의 취향이', '다음 무언가의', '시작이라면?'],
-  ];
+  const { lang, saving, saved, failed, cardTop, cardBottom } = press.dataset;
+  const ideas: string[][] = JSON.parse(press.dataset.ideas!);
+  // canvas font 단축 표기는 폭을 키워드로만 받는다.
+  const questionFont =
+    lang === 'en'
+      ? 'semi-condensed 750 96px "Archivo Variable"'
+      : '96px "Do Hyeon"';
   const sheet = press.querySelector<HTMLElement>('[data-print-sheet]')!;
   const question = press.querySelector<HTMLElement>('[data-print-question]')!;
   const count = press.querySelector<HTMLElement>('[data-print-count]')!;
@@ -21,7 +22,7 @@ if (press) {
     current = (current + 1) % ideas.length;
     question.replaceChildren();
     ideas[current].forEach((line, index) => {
-      if (index) question.append(document.createElement('br'));
+      if (index) question.append(' ', document.createElement('br'));
       question.append(document.createTextNode(line));
     });
     count.textContent = `${current + 1} / ${ideas.length}`;
@@ -40,13 +41,13 @@ if (press) {
     const selected = current;
     save.disabled = true;
     save.setAttribute('aria-busy', 'true');
-    status.textContent = '카드에 잉크를 올리는 중…';
+    status.textContent = saving!;
     try {
       const words = ideas[selected].join('');
-      await document.fonts.load('96px "Gasoek One"', words);
+      await document.fonts.load(questionFont, words);
       await document.fonts.load(
         '24px "Noto Sans KR Variable"',
-        '오늘의 딴생각작은 질문이 무언가의 시작',
+        `${cardTop}${cardBottom}`,
       );
       await document.fonts.load('700 30px "Archivo Variable"', 'sunworks.kr');
       const canvas = document.createElement('canvas');
@@ -58,14 +59,17 @@ if (press) {
       ctx.fillRect(0, 0, 1080, 1350);
       ctx.fillStyle = '#24211d';
       ctx.font = '500 27px "Noto Sans KR Variable"';
-      ctx.fillText('오늘의 딴생각', 80, 106);
+      ctx.fillText(cardTop!, 80, 106);
       ctx.textAlign = 'right';
       ctx.fillText(`${selected + 1} / ${ideas.length}`, 1000, 106);
       ctx.textAlign = 'left';
-      ctx.font = '96px "Gasoek One"';
+      ctx.font = questionFont;
+      // Chrome은 font 문자열의 폭 키워드를 무시해서 따로 지정한다.
+      if (lang === 'en') ctx.fontStretch = 'semi-condensed';
       ideas[selected].forEach((line, index) =>
-        ctx.fillText(line, 78, 350 + index * 145),
+        ctx.fillText(line, 78, 350 + index * 145, 924),
       );
+      ctx.fontStretch = 'normal';
       ['#d94324', '#f47a32', '#ffd84b'].forEach((color, i) => {
         ctx.fillStyle = color;
         ctx.beginPath();
@@ -74,7 +78,7 @@ if (press) {
       });
       ctx.fillStyle = '#24211d';
       ctx.font = '500 24px "Noto Sans KR Variable"';
-      ctx.fillText('작은 질문이, 무언가의 시작.', 80, 1200);
+      ctx.fillText(cardBottom!, 80, 1200);
       ctx.font = '700 30px "Archivo Variable", sans-serif';
       ctx.fillText('sunworks.kr', 80, 1260);
       const blob = await new Promise<Blob>((resolve, reject) =>
@@ -92,10 +96,9 @@ if (press) {
       link.click();
       link.remove();
       window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-      status.textContent =
-        '카드를 준비했어요. 다운로드 목록에서 확인해 주세요.';
+      status.textContent = saved!;
     } catch {
-      status.textContent = '카드를 저장하지 못했어요. 잠시 후 다시 눌러주세요.';
+      status.textContent = failed!;
     } finally {
       save.disabled = false;
       save.removeAttribute('aria-busy');

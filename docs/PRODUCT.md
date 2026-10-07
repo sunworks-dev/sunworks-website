@@ -16,15 +16,16 @@ sunworks is a company that creates and launches its own apps and web services us
 
 ## Users
 
-Assumption: Korean-speaking people discovering the company and its products, including potential users and collaborators.
+Assumption: Korean-speaking people discovering the company and its products, including potential users and collaborators. English readers get a parallel English home at `/en/` (owner request, 2026-10-07).
 
 ## Capabilities and Constraints
 
 - Public repository: https://github.com/sunworks-dev/sunworks-website, owned by the sunworks-dev organization.
 - Company-owned products, not a client development agency (explicitly confirmed).
-- Korean-first, responsive company introduction site.
+- Korean-first, responsive company introduction site with an English version at `/en/`. Both languages share one layout; copy lives in `src/i18n.ts`.
 - Interactive demonstrations may be authored, but must be clearly identified as demonstrations.
 - First product: 어흥!한자, currently preparing for launch. User explicitly supplied the app directory and beta URL https://bryannamd.github.io/hanja-web/.
+- 어흥!한자 has its own introduction site at https://hanja-app.sunw.kr/ (repo `sunworks-dev/hanja-study-site`). On 2026-10-07 the owner asked the product section to link there; the web beta stays as a secondary link. The app has no official English name; English copy keeps 어흥!한자 and adds the reading “Eoheung! Hanja”.
 - The app source describes a Korean Hanja learning app with characters and spaced review. Existing artwork may be reused for its product introduction.
 - No confirmed company contact email, customers, metrics, testimonials, or pricing for this company website. Do not fabricate them.
 - Mailing, a board, and social sign-in must remain possible through a separately hosted API.

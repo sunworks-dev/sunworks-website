@@ -6,6 +6,7 @@
 - 소스: https://github.com/sunworks-dev/sunworks-website
 - 기반: Astro, TypeScript, CSS, Canvas PNG 내보내기
 - 브랜드: 사용자 제공 한글 로고, 노랑–주황 그라데이션, 빈티지 인쇄풍 일러스트
+- 언어: 한국어 `/`, 영어 `/en/`. 두 언어 문구는 `src/i18n.ts`에서 관리
 - 체험: 딴생각 카드 넘기기와 1080×1350 PNG 저장 (별도 API 없음)
 - 배포: GitHub Pages, GitHub Actions
 

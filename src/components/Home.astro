@@ -1,0 +1,248 @@
+---
+import Base from '../layouts/Base.astro';
+import BrandLogo from './BrandLogo.astro';
+import Arrow from './Arrow.astro';
+import IdeaPress from './IdeaPress.astro';
+import Lines from './Lines.astro';
+import { appUrl, copy, productUrl, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = copy[lang];
+const alternates = [
+  ...(['ko', 'en'] as const).map((l) => ({ hreflang: l, href: copy[l].path })),
+  { hreflang: 'x-default', href: copy.ko.path },
+];
+---
+
+<Base lang={lang} {...t.meta} alternates={alternates}>
+  <header class="masthead" id="top">
+    <div class="wrap masthead-inner">
+      <a class="brand-link" href="#top" aria-label={t.homeLabel}>
+        <BrandLogo alt={t.logoAlt} />
+      </a>
+      <nav aria-label={t.nav.label}>
+        <a href="#about">{t.nav.about}</a>
+        <a href="#work">{t.nav.work}</a>
+        <a class="nav-press" href="#play">
+          {t.nav.press} <Arrow diagonal />
+        </a>
+        <a
+          class="nav-lang"
+          href={t.nav.switchHref}
+          hreflang={t.nav.switchLang}
+          lang={t.nav.switchLang}
+          aria-label={`${t.nav.switchText} (${t.nav.switchLabel})`}
+        >
+          {t.nav.switchText}
+        </a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          <span>{t.hero.title[0]}</span>
+          <span class="hero-punch">{t.hero.title[1]}</span>
+        </h1>
+        <div class="hero-intro">
+          <p class="hero-hook">
+            <Lines lines={t.hero.hook} />
+          </p>
+          <p>
+            <Lines lines={t.hero.intro} />
+          </p>
+          <a class="button button-ink" href="#work">
+            {t.hero.cta} <Arrow diagonal />
+          </a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img
+          src="/assets/making-sun.webp"
+          width="1254"
+          height="1254"
+          alt={t.hero.artAlt}
+          fetchpriority="high"
+          decoding="async"
+        />
+        <figcaption>
+          <Lines lines={t.hero.caption} />
+        </figcaption>
+      </figure>
+      <div class="hero-colophon" aria-hidden="true">
+        <span>{t.hero.colophon[0]}</span>
+        <span>{t.hero.colophon[1]}</span>
+      </div>
+    </section>
+    <div class="sun-strip" aria-hidden="true">
+      <div class="sun-strip-inner">
+        <span>{t.strip[0]}</span>
+        <Arrow diagonal />
+        <span>{t.strip[1]}</span>
+      </div>
+    </div>
+    <section id="about" class="about wrap" aria-labelledby="about-title">
+      <h2 id="about-title">
+        <Lines lines={t.about.title} />
+      </h2>
+      <div class="about-copy">
+        <p class="about-lead">
+          <Lines lines={t.about.lead} />
+        </p>
+        {t.about.body.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
+      </div>
+    </section>
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="work-heading">
+          <h2 id="work-title">
+            <Lines lines={t.work.title} />
+          </h2>
+          <p>
+            <Lines lines={t.work.intro} />
+          </p>
+        </div>
+        <article class="product" aria-labelledby="product-title">
+          <div class="product-scene">
+            <div class="product-sun" aria-hidden="true"></div>
+            <span class="product-character" aria-hidden="true">
+              好
+            </span>
+            <img
+              class="horang"
+              src="/assets/horang.webp"
+              width="500"
+              height="500"
+              alt={t.work.tigerAlt}
+              loading="lazy"
+            />
+            <p class="product-scene-note">{t.work.sceneNote}</p>
+          </div>
+          <div class="product-copy">
+            <h3 id="product-title">
+              <img
+                src="/assets/hanja-icon.webp"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              <span lang="ko">{t.work.name}</span>
+              {t.work.nameReading && (
+                <>
+                  {' '}
+                  <span class="product-reading">{t.work.nameReading}</span>
+                </>
+              )}
+            </h3>
+            <p class="product-tagline">
+              <Lines lines={t.work.tagline} />
+            </p>
+            <p class="product-description">
+              <Lines lines={t.work.description} breakClass="wide-break" />
+            </p>
+            <ul class="product-features" aria-label={t.work.featuresLabel}>
+              {t.work.features.map((feature) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+            <div class="product-actions">
+              <a
+                class="button button-ink"
+                href={productUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.work.homeCta} <Arrow diagonal />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
+              <a
+                class="text-link"
+                href={appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t.work.betaCta} <Arrow diagonal />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
+            </div>
+            <p class="product-status">{t.work.status}</p>
+          </div>
+        </article>
+        <p class="work-note">{t.work.note}</p>
+      </div>
+    </section>
+    <section class="making wrap" aria-labelledby="making-title">
+      <div class="making-heading">
+        <h2 id="making-title">
+          <Lines lines={t.making.title} />
+        </h2>
+        <p>{t.making.intro}</p>
+      </div>
+      <div class="making-body">
+        <p class="making-type" lang="en" aria-hidden="true">
+          A LITTLE
+          <br />
+          <span>HUNCH.</span>
+          <br />A LOT OF
+          <br />
+          <span>CRAFT.</span>
+        </p>
+        <div class="practices">
+          {t.making.practices.map((practice, i) => (
+            <details class="practice" name="making" open={i === 0}>
+              <summary>
+                <span>{practice.title}</span>
+                <span class="detail-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="practice-content">
+                <p>{practice.body}</p>
+                <p class="practice-note">{practice.note}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+    <IdeaPress copy={t.press} lang={lang} />
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="wrap closing-inner">
+        <h2 id="closing-title">
+          <Lines lines={t.closing.title} />
+        </h2>
+        <div class="closing-copy">
+          <p>{t.closing.body}</p>
+          <a
+            class="text-link"
+            href={productUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.closing.cta} <Arrow diagonal />
+            <span class="sr-only">{t.newWindow}</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <a class="footer-brand" href="#top" aria-label={t.topLabel}>
+        <BrandLogo alt={t.logoAlt} />
+      </a>
+      <div class="footer-bottom">
+        <p>{t.footer.line}</p>
+        <span>© {new Date().getFullYear()} sunworks</span>
+        <a href="#top">
+          {t.footer.top} <Arrow diagonal />
+        </a>
+      </div>
+    </div>
+  </footer>
+</Base>

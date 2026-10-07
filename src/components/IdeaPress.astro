@@ -1,5 +1,13 @@
 ---
 import Arrow from './Arrow.astro';
+import Lines from './Lines.astro';
+import type { Copy, Lang } from '../i18n';
+
+interface Props {
+  copy: Copy['press'];
+  lang: Lang;
+}
+const { copy, lang } = Astro.props;
 ---
 
 <section
@@ -7,35 +15,36 @@ import Arrow from './Arrow.astro';
   class="idea-press"
   aria-labelledby="press-title"
   data-idea-press
+  data-lang={lang}
+  data-ideas={JSON.stringify(copy.ideas)}
+  data-saving={copy.saving}
+  data-saved={copy.saved}
+  data-failed={copy.failed}
+  data-card-top={copy.cardTop}
+  data-card-bottom={copy.cardBottom}
 >
   <div class="wrap press-layout">
     <div class="press-copy">
       <h2 id="press-title">
-        딴생각도
-        <br />한 장 뽑고
-        <br />
-        <span>가세요.</span>
+        <Lines lines={copy.title.slice(0, -1)} /> <br />
+        <span>{copy.title.at(-1)}</span>
       </h2>
       <p>
-        아직 제품은 아닌, 언젠가의 시작들.
-        <br />
-        쓸모를 찾기 전의 생각도 좋아합니다.
+        <Lines lines={copy.intro} />
       </p>
       <p class="press-invitation">
-        마음에 드는 질문이 있다면
-        <br />
-        저장해 두었다가, 당신의 답을 더해보세요.
+        <Lines lines={copy.invitation} />
       </p>
     </div>
     <div class="press-workspace">
       <div class="press-trim" aria-hidden="true">
-        <span>SUNWORKS / DAYDREAM PRESS</span>
-        <span>생각은 계속됩니다</span>
+        <span>{copy.trim[0]}</span>
+        <span>{copy.trim[1]}</span>
       </div>
       <div class="print-sheet" data-print-sheet>
         <div class="print-top">
-          <span>오늘의 딴생각</span>
-          <span data-print-count>1 / 4</span>
+          <span>{copy.cardTop}</span>
+          <span data-print-count>1 / {copy.ideas.length}</span>
         </div>
         <p
           class="print-question"
@@ -43,10 +52,7 @@ import Arrow from './Arrow.astro';
           aria-live="polite"
           aria-atomic="true"
         >
-          매일 하는 일이
-          <br />
-          조금 더<br />
-          재밌어진다면?
+          <Lines lines={copy.ideas[0]} />
         </p>
         <div class="print-sun" aria-hidden="true">
           <span></span>
@@ -54,16 +60,16 @@ import Arrow from './Arrow.astro';
           <span></span>
         </div>
         <div class="print-bottom">
-          <span>작은 질문이, 무언가의 시작.</span>
+          <span>{copy.cardBottom}</span>
           <span>sunworks.kr</span>
         </div>
       </div>
       <div class="press-controls" data-print-controls hidden>
         <button class="button button-paper" type="button" data-print-next>
-          다음 딴생각 <Arrow />
+          {copy.next} <Arrow />
         </button>
         <button class="save-button" type="button" data-print-save>
-          카드 저장{' '}
+          {copy.save}{' '}
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
           </svg>
