@@ -12,7 +12,7 @@ Astro + TypeScript and GitHub Pages are the deployed stack. The owner asked how 
 
 ## Product Purpose
 
-sunworks is a company that creates and launches its own apps and web services using AI-assisted vibe coding. The live company website is https://www.sunworks.kr. Its redesign emphasizes creative technology, AI-assisted engineering, and original digital products. The owner explicitly clarified that education is not the primary business; educational apps are one application of the company’s work.
+sunworks is a company that creates and launches its own apps and web services using AI-assisted vibe coding. The live company website is https://www.sunworks.kr. Its website emphasizes original digital products, curiosity, human judgment, and practical engineering. AI assists the work; it is not the lead personality of the company. The owner explicitly clarified that education is not the primary business; educational apps are one application of the company’s work.
 
 ## Users
 
@@ -34,7 +34,9 @@ Assumption: Korean-speaking people discovering the company and its products, inc
 - Company name: sunworks. AI is part of its working method, not part of the company name.
 - The owner asks for an innovative, immediately understandable website.
 - Domain: www.sunworks.kr.
-- Apply Impeccable, frontend-design, and make-interfaces-feel-better principles.
+- October 7 brand reference: the owner-supplied Korean 썬웍스 logo, yellow-to-orange gradient, slight vintage print character. English logo remains in development.
+- Favor creative, recognizably human writing over generic AI-company language.
+- Apply Impeccable, UI UX Pro Max, and make-interfaces-feel-better principles.
 
 ## Evidence on Hand
 

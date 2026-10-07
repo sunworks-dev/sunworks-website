@@ -1,5 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
+import BrandLogo from '../components/BrandLogo.astro';
+import Arrow from '../components/Arrow.astro';
 ---
 
 <Base
@@ -7,17 +9,21 @@ import Base from '../layouts/Base.astro';
   description="sunworks 첫 화면으로 돌아가세요."
 >
   <main id="main" class="not-found wrap">
-    <a class="wordmark" href="/">
-      sunworks.
+    <a class="brand-link" href="/" aria-label="썬웍스, 처음으로">
+      <BrandLogo />
     </a>
     <h1>
       길을 조금
       <br />
       벗어났네요.
     </h1>
-    <p>주소가 바뀌었거나 없는 페이지입니다.</p>
-    <a class="button button-primary" href="/">
-      첫 화면으로 돌아가기
+    <p>
+      없는 페이지에 도착했어요.
+      <br />
+      우리의 딴생각은 첫 화면에서 계속됩니다.
+    </p>
+    <a class="button button-ink" href="/">
+      첫 화면으로 돌아가기 <Arrow diagonal />
     </a>
   </main>
 </Base>

@@ -1,10 +1,12 @@
 # sunworks
 
-AI, 엔지니어링, 제품 디자인으로 자체 앱과 웹서비스를 만드는 sunworks의 회사 소개 사이트.
+일상의 작은 발견을 직접 쓰고 싶은 앱과 웹서비스로 만드는 sunworks의 회사 소개 사이트.
 
 - 사이트: https://www.sunworks.kr
 - 소스: https://github.com/sunworks-dev/sunworks-website
-- 기반: Astro, TypeScript, CSS, Three.js (상호작용이 있을 때만 렌더링하는 3D)
+- 기반: Astro, TypeScript, CSS, Canvas PNG 내보내기
+- 브랜드: 사용자 제공 한글 로고, 노랑–주황 그라데이션, 빈티지 인쇄풍 일러스트
+- 체험: 딴생각 카드 넘기기와 1080×1350 PNG 저장 (별도 API 없음)
 - 배포: GitHub Pages, GitHub Actions
 
 ## 개발

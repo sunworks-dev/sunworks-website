@@ -1,217 +1,319 @@
 ---
 name: sunworks
-description: Creative technology expressed through cobalt stages, monumental type, and finite geometric interaction.
+description: 일상의 작은 발견을 쓸모 있는 앱과 웹서비스로 만드는, 따뜻한 인쇄소의 감각.
 colors:
-  blue: '#2546ec'
-  paper: '#f4f5f0'
-  ink: '#242622'
-  orange: '#ff794f'
-  citron: '#e8efaf'
-  muted: '#62665e'
-  blue-copy: '#e1e6ff'
-  rule: '#bdc3b6'
+  paper: '#f4eddf'
+  ink: '#24211d'
+  black: '#000'
+  orange: '#f47a32'
+  red: '#d94324'
+  yellow: '#ffd84b'
+  muted: '#685e50'
+  rule: '#b9ae9a'
 typography:
   display:
-    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
-    fontSize: 'clamp(58px, 6.8vw, 98px)'
-    fontWeight: 550
-    lineHeight: 1.04
+    fontFamily: 'Gasoek One, Noto Sans KR Variable, sans-serif'
+    fontWeight: 400
     letterSpacing: '-0.04em'
   headline:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: 'clamp(35px, 3.9vw, 58px)'
-    fontWeight: 650
-    lineHeight: 1.42
+    fontSize: 'clamp(32px, 3.05vw, 45px)'
+    fontWeight: 800
+    lineHeight: 1.5
     letterSpacing: '-0.04em'
-  title:
-    fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: '18px'
-    fontWeight: 600
   body:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: '15px'
+    fontSize: '16px'
     fontWeight: 400
-    lineHeight: 1.9
+    lineHeight: 1.95
   action:
     fontFamily: 'Noto Sans KR Variable, sans-serif'
-    fontSize: '14px'
-    fontWeight: 550
-  label:
-    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
-    fontSize: '12px'
-    fontWeight: 400
-  wordmark:
-    fontFamily: 'Bricolage Grotesque Variable, Noto Sans KR Variable, sans-serif'
-    fontSize: '32px'
-    fontWeight: 750
-    letterSpacing: '-0.035em'
+    fontSize: '15px'
+    fontWeight: 650
+  latin-display:
+    fontFamily: 'Archivo Variable, sans-serif'
+    fontWeight: 900
 rounded:
-  tag: '4px'
-  control: '6px'
-  panel: '12px'
-  pill: '99px'
+  control: '4px'
   circle: '50%'
 components:
-  button-primary:
-    backgroundColor: '{colors.blue}'
-    textColor: '{colors.paper}'
-    typography: '{typography.action}'
-    rounded: '{rounded.control}'
-    padding: '15px 21px'
-  button-primary-hover:
-    backgroundColor: '{colors.ink}'
-  button-dark:
+  button-ink:
     backgroundColor: '{colors.ink}'
     textColor: '{colors.paper}'
     typography: '{typography.action}'
     rounded: '{rounded.control}'
-    padding: '15px 21px'
-  button-dark-hover:
-    backgroundColor: '{colors.blue}'
-  engine-state:
-    backgroundColor: 'transparent'
-    textColor: '{colors.blue-copy}'
-    rounded: '{rounded.pill}'
-    padding: '0 18px'
-  engine-state-selected:
+    padding: '15px 23px'
+  button-ink-hover:
+    backgroundColor: '{colors.yellow}'
+    textColor: '{colors.ink}'
+  button-paper:
     backgroundColor: '{colors.paper}'
     textColor: '{colors.ink}'
-  capability-tag:
-    textColor: '{colors.ink}'
-    typography: '{typography.label}'
-    rounded: '{rounded.tag}'
-    padding: '6px 10px'
-  workbench:
-    backgroundColor: '{colors.ink}'
+    typography: '{typography.action}'
+    rounded: '{rounded.control}'
+    padding: '15px 23px'
+  button-paper-hover:
+    backgroundColor: '{colors.yellow}'
+  button-save:
+    backgroundColor: 'transparent'
     textColor: '{colors.paper}'
-    rounded: '{rounded.panel}'
-    padding: '23px 26px 21px'
+    padding: '8px 0 8px 12px'
+  navigation:
+    backgroundColor: '{colors.black}'
+    textColor: '{colors.paper}'
+  disclosure:
+    textColor: '{colors.ink}'
+  print-sheet:
+    backgroundColor: '{colors.paper}'
+    textColor: '{colors.ink}'
+    padding: '30px 34px 20px'
 ---
 
 # Design System: sunworks
 
 ## Overview
 
-**Creative North Star: "Ideas made real"**
+**Creative North Star: "쓸모 있는 딴생각을 찍는 작은 인쇄소"**
 
-sunworks expresses technology and creativity through a cobalt stage, sculptural geometry, and confident opening-title typography. Open paper sections make room for Korean explanations; precise controls reveal the making process. The company creates its own digital products, with education represented by one current product rather than the whole identity.
+“쓸모 있는 딴생각.”은 썬웍스가 일상의 발견을 직접 쓰고 싶은 앱과 웹서비스로 만드는 태도다. 따뜻한 종이, 짙은 잉크, 노랑과 주황의 해, 큼직한 한글 활자로 호기심과 만드는 즐거움을 전한다. 인쇄소는 시각적 은유이며 실제 사업 소개는 자체 디지털 제품 회사다.
 
-The system is expressive in its artwork and restrained in navigation, body copy, and controls. Product illustrations retain their own character inside the company palette. Interactive diagrams are authored illustrations, never evidence of a live AI service or invented business results.
+사람의 관찰과 판단이 문장의 주어다. AI는 탐색과 구현을 돕는 작업 도구로 설명한다. 교육은 첫 제품 어흥!한자의 영역이며 회사 전체를 제한하지 않는다. 빈티지 느낌은 인쇄풍 그림·색·활자의 조합으로 내고, 본문과 조작은 명료하게 유지한다.
 
 **Key Characteristics:**
 
-- Cobalt and paper stages, with solar orange and citron accents.
-- Monumental Latin display type paired with readable Korean explanations.
-- Open sections, native controls, and finite geometric state changes.
-- Original sun geometry and attributable company-owned product artwork.
+- 소유자가 제공한 한글 로고와 노랑·주황 그라데이션.
+- 한글 포스터 활자, 따뜻한 종이 바탕, 여유 있는 본문.
+- 짧고 구체적인 한국어와 실제 제품·출시 상태.
+- 눌렀을 때 반응하고 멈추는 인쇄 동작, 저장할 수 있는 질문 카드.
 
-Extracted from the final code-led build (seed `dfadb90b`; no approved comp): [styles](../src/styles/global.css), [homepage](../src/pages/index.astro), [SolarEngine](../src/components/SolarEngine.astro), [engine behavior](../src/scripts/solar-engine.ts), [SunMark](../src/components/SunMark.astro), [Arrow](../src/components/Arrow.astro), and [Base](../src/layouts/Base.astro). Product truth: [PRODUCT.md](PRODUCT.md). Surface composition: [surfaces/home.md](surfaces/home.md). Final reference captures: `.impeccable/review/{desktop,mobile,compact,tablet,user-1428}.png`, with engine and workbench state captures alongside them.
+이 문서는 2026-10-07 구현을 기준으로 기존 코발트·3D 체계를 교체한 브랜드 가이드다. 토큰은 앞의 YAML이 기준이며, 페이지 구성은 [홈 화면 계약](surfaces/home.md), 사업 사실은 [PRODUCT.md](PRODUCT.md)를 따른다. 구현 근거: [전역 스타일](../src/styles/global.css), [홈](../src/pages/index.astro), [공통 레이아웃](../src/layouts/Base.astro). 로컬 QA 캡처는 `.impeccable/review/`에 별도 보관하며 공개 문서 자산은 아니다.
+
+### 브랜드 문장
+
+관찰할 수 있는 장면과 행동을 먼저 쓴다. 기술 용어는 무엇을 더 빠르거나 편하게 만드는지 설명할 때 쓴다. CTA는 누르면 일어날 일을 말하고, 아직 없는 제품·성과를 약속하지 않는다. 아래 예시는 이전 홈과 현재 홈의 실제 문장이다.
+
+| Before                                                                       | After                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| “Ideas. Made real.” / “상상을, 작동하는 현실로.”                             | “쓸모 있는 딴생각.”                                                    |
+| “AI의 가능성에 엔지니어링과 디자인을 더해, 새로운 앱과 웹서비스를 만듭니다.” | “썬웍스는 일상의 작은 발견을 직접 쓰고 싶은 앱과 웹서비스로 만듭니다.” |
+| “AI-native.”                                                                 | “아이디어는 빨리 눈앞에.”                                              |
+| “Engineered.”                                                                | “화면 뒤도, 제대로.”                                                   |
+| “Human, always.”                                                             | “한 번 더 만져보게.”                                                   |
+| “What makes us work”                                                         | “만든 것부터 볼까요?”                                                  |
+
+“그냥 지나치기엔, 꽤 괜찮은 생각이니까.”처럼 말하되 친근함을 과장하지 않는다. “혁신적인 AI 솔루션”, “무한한 가능성” 같은 대체 가능한 수식어보다 직접 써보고 고치는 과정을 설명한다.
 
 ## Colors
 
-The frontmatter records the stable UI palette. Sculpture materials and product illustration tints remain local to their artwork.
+종이와 잉크가 읽기를 맡고, 해의 따뜻한 색이 큰 장면과 작은 반응을 만든다. 앞의 색상 토큰은 [전역 CSS의 실제 변수](../src/styles/global.css)와 같다.
 
 ### Primary
 
-- **Cobalt (`blue`):** opening stage, emphasized display words, open disclosure text, and primary actions.
+- **해의 노랑 (`yellow`):** 버튼 hover, 어두운 면의 강조, 선택 텍스트와 인쇄 카드의 중심.
+- **인쇄 주황 (`orange`):** 인쇄 카드의 해를 구성하는 중간 색. 로고에서 가져온 따뜻한 계열을 잇는다.
 
 ### Secondary
 
-- **Solar orange (`orange`):** closing stage, opening punctuation, selection highlight, and diagram accents.
-- **Citron (`citron`):** discipline strip, product ground, and luminous workbench nodes.
+- **주홍 잉크 (`red`):** 큰 강조 문구, 큰 굵은 disclosure 제목의 hover, 해의 바깥 원. 작은 본문의 강조색으로 쓰지 않는다.
 
 ### Neutral
 
-- **Paper (`paper`):** main ground, text over cobalt/ink, selected engine controls, and illustration tiles.
-- **Ink (`ink`):** main text, dark actions, and workbench ground.
-- **Muted (`muted`):** supporting copy on light grounds.
-- **Blue copy (`blue-copy`):** supporting text and inactive controls on cobalt.
-- **Rule (`rule`):** capability dividers and quiet workbench labels.
+- **따뜻한 종이 (`paper`):** 기본 바탕, 인쇄 카드, 짙은 면의 주 텍스트.
+- **짙은 잉크 (`ink`):** 본문, 주요 버튼, 인쇄소 바탕.
+- **로고의 검정 (`black`):** 로고 배경과 이어지는 헤더·푸터.
+- **보조 잉크 (`muted`):** 종이 위의 작은 보조 설명.
+- **가는 구분선 (`rule`):** 내용의 경계를 알리는 선. 본문 글자색이 아니다.
 
-**The Stage Contrast Rule.** Keep paper text on cobalt and ink stages, and ink text on paper, citron, and orange stages. Engine state changes affect the sculpture, not the page palette.
+### 해질녘 그라데이션과 대비
+
+재사용 그라데이션 `--sunset`은 `linear-gradient(105deg, #ed5427 0%, #f99535 53%, #ffdc56 100%)`다. 띠·제품 섹션·마무리 면에 같은 값을 쓴다. 로고 내부 그라데이션은 원본 이미지에 포함된 별도 자산이며 이 CSS로 다시 그리지 않는다.
+
+| 실제 조합                   | 대비            | 사용 범위                                       |
+| --------------------------- | --------------- | ----------------------------------------------- |
+| 잉크 / 종이                 | 13.76:1         | 본문·제목·버튼. 반전 조합도 동일                |
+| 보조 잉크 / 종이            | 5.45:1          | 작은 보조 설명                                  |
+| 잉크 / 해질녘 그라데이션    | 최저 4.501519:1 | 현재 불투명한 색 조합의 본문·제목               |
+| 주홍 / 종이                 | 3.77:1          | 큰 디스플레이 및 큰 굵은 요약행. 일반 본문 금지 |
+| 인쇄소의 옅은 보조문 / 잉크 | 9.42:1          | 인쇄소 초대 문구의 로컬 색상 (`#d2c5af`)        |
+
+마지막 색은 인쇄소 한 곳의 값이다. 공통 색 토큰으로 확장하지 않는다. 사이드카의 8단계 색상 견본은 색을 살피기 위한 파생 램프이며 배포된 팔레트나 검증된 대비 조합이 아니다.
+
+**The Readable Ink Rule.** 그라데이션 위의 글자는 잉크로 유지한다. 가장 짙은 구간의 대비 여유가 작으므로 색·불투명도 변경 시 전체 구간을 다시 확인한다.
 
 ## Typography
 
-**Display Font:** Bricolage Grotesque Variable, with Noto Sans KR Variable and sans-serif fallbacks. **Body Font:** Noto Sans KR Variable, with sans-serif fallback. Both are self-hosted through Fontsource; OFL licenses are in `public/assets/font-licenses/`.
+**Display Font:** Gasoek One. 한글 포스터 제목과 질문 카드에 사용하며 실제 제공 굵기 (400)를 따른다. 대체 글꼴은 Noto Sans KR Variable, sans-serif다.
 
-The frontmatter captures recurring desktop roles. English displays use tight tracking and compact leading; Korean explanations use generous leading. Capability names use Bricolage at `clamp(28px, 3.1vw, 44px)` and weight (550). Body copy commonly uses (14–16px); small supporting labels use (11–13px). Capability copy stops at (42ch), and the mobile hero introduction at (41ch). Headings balance their wrapping; paragraphs use pretty wrapping.
+**Body Font:** Noto Sans KR Variable. 한국어 본문·내비게이션·버튼·설명 제목을 맡는다. 가변 굵기로 위계를 만들고 일반 본문은 (16px), 행간은 주로 (1.95), 첫 소개는 (1.9)다.
 
-The opening title is an artwork exception: `clamp(94px, 10.6vw, 163px)`, weight (600), leading (0.96), tracking (-0.04em). It becomes (11vw) at the compact breakpoint, `clamp(70px, 14vw, 106px)` with (0.95) leading on mobile, and (18vw) at the smallest breakpoint. The decorative closing wordmark is similarly oversized.
+**Latin Font:** Archivo Variable. 영문 포스터 문구는 굵기 (900), 폭 (85%)로 밀도 있게 배치한다. 작은 발행 정보와 카드 번호에도 사용한다. 영문 “sunworks” 텍스트는 정보 표기이며 승인된 영문 로고가 아니다.
 
-Mobile section headings become `clamp(49px, 10vw, 74px)`, Korean manifesto text `clamp(28px, 5.2vw, 39px)` with (1.5) leading, and capability names (31px). At the smallest breakpoint, section headings become (45px) and manifesto text (26px).
+세 글꼴은 [Base](../src/layouts/Base.astro)에서 Fontsource로 자체 제공한다. [OFL 라이선스](../public/assets/font-licenses/)를 함께 보관한다. 루트의 안티앨리어싱, 제목의 `text-wrap: balance`, 본문의 `text-wrap: pretty`를 유지한다. 바뀌는 카드 번호에는 `tabular-nums`를 적용한다.
 
-**The Opening Title Rule.** Reserve monumental type for expressive opening titles and brand artwork. Keep the readable hierarchy beneath it, and start sections with their actual headline rather than a decorative eyebrow.
+### 위계와 큰 활자의 예외
+
+| 역할                    | 실제 크기·행간                                                         | 적용                                      |
+| ----------------------- | ---------------------------------------------------------------------- | ----------------------------------------- |
+| 첫 포스터               | `clamp(78px, 8.7vw, 132px)` / 1.16                                     | “쓸모 있는”. “딴생각.”은 1.32배 / 1.19    |
+| 한글 설명 제목          | 앞의 `headline` 토큰                                                   | 소개·제작 기준·마무리 제목                |
+| 제품/인쇄소 포스터 제목 | `clamp(42px, 4.65vw, 68px)` / 1.35, `clamp(45px, 4.65vw, 69px)` / 1.38 | Gasoek One의 섹션별 표현                  |
+| 영문 포스터             | `clamp(52px, 6vw, 87px)` / 0.98                                        | 제작 기준 옆 장식 문구                    |
+| 인쇄 카드 질문          | `clamp(32px, 3.45vw, 49px)` / 1.4                                      | 카드 내부의 세 줄 질문                    |
+| 보조 정보               | 주로 12–14px                                                           | 제품 상태·메모·내비게이션. 본문 대체 금지 |
+
+첫 포스터는 일반 UI의 6rem 범위를 넘는 의도적인 작품 영역이다. (1600px) 이상에서는 기본 글자가 (136px), (1100px) 이하에서는 (8.5vw), (760px) 이하에서는 `clamp(61px, 15.8vw, 105px)`가 된다. 모바일 강조 단어는 (1.24배), (360px) 이하 기본 글자는 (15.8vw)다. 좁은 화면에서 활자만 줄이지 않고 그림과 설명의 배치도 함께 바꾼다.
+
+**The Poster Exception Rule.** 기념비적인 크기는 포스터 제목과 브랜드 표현에 한정한다. 본문·버튼·내비게이션까지 확대하거나 Gasoek One으로 장문을 조판하지 않는다.
 
 ## Layout
 
-The desktop wrapper is `min(100% - 96px, 1440px)`: (48px) side gutters until the cap applies. Gutters become (32px) up to (1100px), (20px) up to (760px), and (16px) up to (380px). No global spacing scale is declared.
+기본 컨테이너는 `min(1320px, calc(100% - 112px))`이며 좌우 여백은 각각 (56px)다. 여백과 두 열의 비대칭으로 포스터·본문·제품이 숨 쉴 공간을 만든다. 전역 spacing 척도는 없으므로 기존 섹션의 리듬을 참고하고 새 토큰을 추정하지 않는다.
 
-Desktop composition alternates a layered opening, offset manifesto, open two-column capabilities, and a two-column product feature. The engine occupies the opening's right side; explanation and action sit at lower left. Section padding generally spans (100–150px) on desktop and (65–83px) on mobile.
+| 화면 폭     | 현재 배치와 여백                                                  |
+| ----------- | ----------------------------------------------------------------- |
+| 1100px 초과 | 최대 (1320px), 좌우 (56px). 큰 섹션의 두 열 간격은 주로 (80–90px) |
+| 1100px 이하 | 좌우 (36px). 주요 간격은 (38–48px), 긴 데스크톱 강제 줄바꿈 해제  |
+| 760px 이하  | 좌우 (20px). 주요 영역 한 열. 첫 화면은 제목·그림·설명 순서       |
+| 360px 이하  | 좌우 (16px). 로고·메뉴 간격·카드 글자와 내부 여백 추가 축소       |
+| 1600px 이상 | 컨테이너는 유지하고 첫 포스터의 활자·위쪽 간격만 조정             |
 
-- **Up to (1100px):** header height contracts from (108px) to (90px), columns tighten, manifesto paragraphs stack, and forced desktop copy breaks disappear.
-- **Up to (760px):** header becomes (80px); engine enters normal flow below the title; major columns stack. Capabilities precede their diagram, product copy precedes artwork, and prominent actions fill available width. Both navigation links remain visible; the extra header shortcut is hidden.
-- **Up to (380px):** type, navigation gaps, diagram padding, and artwork tighten together.
-- **From (1650px):** opening minimum height becomes (835px), from desktop (766px). Compact desktop uses (690px); mobile uses content height.
+본문의 최소 지원 폭은 (320px)다. 소개 본문 폭은 데스크톱 최대 (510px), 한 열에서 최대 (580px)다. 모바일 인쇄 카드 영역은 최대 (540px)다. 소개·제작 기준은 데스크톱 약 (100–138px), 모바일 약 (72–78px)의 세로 여백을 사용한다. 제품·인쇄소·마무리는 내용에 맞는 별도 간격을 가진다.
+
+헤더 높이는 기본 (94px), 모바일 (76px)다. 모바일에서도 “우리의 생각”과 “만든 것”은 보이고 세 번째 인쇄소 바로가기만 숨긴다. 인쇄소 자체는 페이지에서 계속 접근할 수 있다. 고정 헤더나 접이식 메뉴는 없다. 앵커 섹션은 (28px)의 스크롤 여유를 둔다.
 
 ## Elevation & Depth
 
-Sections and controls are flat. Color fields, fine rules, overlapping illustration, and the physically lit 3D sculpture provide depth. Only floating Hanja illustration tiles use a CSS shadow: `0 7px 15px rgb(36 38 34 / 8%), 0 25px 48px rgb(36 38 34 / 6%)`.
+대부분의 면은 평평하다. 배경색 전환, 가는 인쇄선, 겹친 그림과 원형 해로 공간을 나눈다. 제품 전체를 카드 상자에 넣거나 3D 조명을 추가하지 않는다.
 
-**The Artwork Depth Rule.** Put depth in the sculpture and product artwork; keep navigation, disclosure rows, and ordinary action surfaces flat.
+인쇄 카드만 실제 종이 한 장처럼 두 겹의 부드러운 그림자를 갖는다: `0 14px 28px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.12)`. 장식용 포스터 문구와 제품 그림의 작은 회전은 정적인 배치이며 반복 애니메이션이 아니다.
+
+**The Paper Depth Rule.** 그림자는 손에 가져갈 인쇄 카드에 둔다. 헤더·일반 버튼·disclosure에 같은 부피감을 복제하지 않는다.
 
 ## Shapes
 
-SunMark uses eight rectangular rays at (45-degree) intervals around a central circle. Arrow icons share an inline SVG source, rounded stroke ends/joins, and (1.6) stroke width. Ordinary action arrows are (22px), diagram arrows (18px), footer arrows (15px).
+버튼은 작은 둥근 모서리, 종이 카드는 각진 모서리, 해는 동심원으로 구분한다. 제품 앱 아이콘의 (12px) 모서리는 해당 자산의 로컬 처리이며 별도 전역 radius 척도가 아니다. 아이콘 경계에는 `1px solid rgba(0, 0, 0, 0.1)` outline과 (-1px) offset을 둔다.
 
-Outlined circles and status dots echo the sun; engine controls use pills. Tags, actions, and panels use the extracted radius roles. The product feature has a local (14px) radius. Straight rules organize disclosures; diagram nodes use modest rounded corners.
+[Arrow](../src/components/Arrow.astro)는 수평·대각선 두 SVG 경로를 사용한다. 선은 `currentColor`, 굵기는 (1.6), 기본 크기는 (24px)다. 메뉴는 (18px), 저장은 (20px), 푸터는 (16px)로 조정한다. 저장 아이콘도 같은 굵기를 쓴다. Disclosure의 더하기·빼기는 (18 × 2px) CSS 선이며 문자 기호로 대체하지 않는다.
 
 ## Components
 
-### Actions and navigation
+### 로고와 식별 자산
 
-Filled links have a (54px) minimum height and the frontmatter padding/radius. Primary actions use cobalt; product actions use ink. Fine-pointer hover swaps these fills; press scales to (0.96). Circular-arrow links use outlined (52px) circles, becoming (45px) on mobile; hover reverses circle fill/text. The opening arrow rotates the shared horizontal SVG downward.
+[BrandLogo](../src/components/BrandLogo.astro)는 제공받은 `sunworks-korean-logo.png` 원본을 그대로 사용한다. 검정 컨테이너를 가로세로비 (2.8)로 만들고 `overflow: hidden`, 이미지 `object-fit: cover`로 주변 검정 여백만 화면에서 잘라낸다. 원본 파일·글자 모양·기울기·내부 그라데이션은 수정하지 않는다.
 
-Navigation links have a (44px) minimum height and underline on hover. Interactive elements receive a (3px) `currentColor` focus outline with (5px) offset. Filled buttons override the outline to ink so focus stays visible on paper and citron. Engine buttons explicitly use paper outlines with (4px) offset, preserving visibility in both selection states. A keyboard-visible skip link reaches main content; external product links announce the new window.
+헤더 로고 폭은 기본 (171px), 모바일 (122px), 가장 작은 화면 (110px)다. 푸터는 `min(850px, 85%)`, 모바일에서는 컨테이너 전체 폭이다. 별도 여백 수치나 최소 인쇄 크기는 아직 정하지 않았다.
 
-### Engine experiment
+영문 로고는 제작 중이다. 소유자가 제공하고 확인한 자산이 생기면 공통 로고 컴포넌트·대체 텍스트·노출 크기와 공유 이미지를 함께 갱신한다. 임시 활자나 생성 이미지로 새 공식 로고를 만들지 않는다. 이 가이드도 자산 교체와 함께 갱신한다.
 
-The visible, accessible caption is “제품 제작 과정을 담은 인터랙티브 실험”. Native Imagine, Build, and Launch buttons form a labelled group; `aria-pressed` exposes selection and a polite live description explains it. Canvas and fallback art are decorative. Controls appear only after successful WebGL initialization.
+[파비콘](../public/favicon.svg)은 잉크 바탕의 노란 해를 쓰는 소형 보조 기호다. 한글 주로고의 대체물이 아니다. [공유 이미지](../public/social-card.png)는 현재 한글 로고·제목·일러스트를 조합한 (1200 × 630px) 이미지다. [Base](../src/layouts/Base.astro)의 OG 이미지·설명과 `summary_large_image`, 테마색도 현재 브랜드와 맞춘다.
 
-The engine contains (120) rounded ribs: an orange torus knot, pale structured lattice, and citron radial ring. Selection interpolates position, rotation, scale, and material color over (850ms), using quartic ease-out. Interruptions begin from the current pose. Opening perspective settles over (1800ms); fine-pointer tilt eases to rest. There is no continuous idle loop.
+### 버튼·링크·내비게이션
 
-Rendering pauses offscreen or while the document is hidden; pixel ratio caps at (1.6) for fine pointers and (1.25) otherwise. Reduced motion makes state selection immediate, removes opening motion and pointer tilt, disables CSS transitions/smooth scrolling, and preserves controls. No JavaScript, failed WebGL, or context loss retains static artwork and its experiment caption; inactive controls stay hidden.
+채운 버튼은 최소 높이 (56px), 아이콘 간격 (26px)이다. 인쇄소의 모바일 “다음 딴생각”은 (52px), 가로 패딩 (18px), 아이콘 간격 (16px)로 줄인다. 저장·일반 텍스트 링크는 최소 (48px), 푸터 링크는 (44px)다.
 
-**The Finite Motion Rule.** Animate a user-requested change, settle, and stop. Preserve immediate state selection under reduced motion and pause rendering when the experience is not visible.
+| 상태        | 현재 반응                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------- |
+| 기본        | 잉크 버튼은 종이 글자, 종이 버튼은 잉크 글자                                                      |
+| Hover       | hover 가능한 포인터에서 버튼 배경이 노랑. 메뉴·저장·푸터 링크도 노랑. 텍스트 링크 밑줄은 2px      |
+| 눌림        | 채운 버튼과 저장 버튼의 `scale: 0.96`                                                             |
+| 키보드 초점 | 3px `currentColor` outline, 5px offset. 채운 버튼은 주변 면에서 보이도록 잉크/종이 outline을 지정 |
+| 저장 중     | 저장 버튼만 비활성, 불투명도 0.65, wait cursor, `aria-busy="true"`                                |
+| 모션 감소   | transition 0초, 눌림 배율 1, 부드러운 스크롤 해제                                                 |
 
-### Capability disclosures and workbench
+버튼은 배경색·글자색·배율만 (180ms), `cubic-bezier(0.2, 0, 0, 1)`로 전환한다. `transition: all`을 쓰지 않는다. 키보드로 보이는 “본문으로 바로가기”는 `#main`으로 이동한다. 외부 제품 링크는 새 창임을 스크린리더에 알린다.
 
-Native `details`/`summary` elements share a named group, with the first initially open. Fine rules, generous row spacing, and CSS-drawn plus/minus controls organize the list. Open and hovered summaries use cobalt. Outlined discipline tags are descriptive, not interactive.
+### 제작 기준 disclosure
 
-An opened disclosure selects the AI, engineering, or design diagram and caption. The ink workbench is an illustrative, `aria-hidden` companion to readable text. Its “What if...” motif is not a real input or AI prompt. Without JavaScript, native disclosures work and the initial diagram remains visible.
+네이티브 `details/summary` 세 항목이 같은 이름의 그룹을 이루며 첫 항목은 처음부터 열린다. 제목은 (22px / 750), 행 높이는 최소 (86px)이며 모바일은 (20px / 79px)다. 큰 굵은 제목의 hover는 주홍으로 바뀐다. 열림 상태는 세로선이 (180ms) 회전해 더하기에서 빼기로 바뀐다. 내용은 키보드와 JavaScript 없는 환경에서도 열린다.
 
-### Product feature and assets
+### 딴생각 인쇄소
 
-The citron product container combines real product copy, an ink action, explicit beta/pre-launch status, and company-owned artwork. The app icon beside its name is decorative; the tiger has descriptive alternative text. Floating Hanja tiles remain decorative.
+[IdeaPress](../src/components/IdeaPress.astro)와 [동작 코드](../src/scripts/idea-press.ts)는 네 개의 작성된 질문을 순환한다. “아직 제품은 아닌, 언젠가의 시작들”이라는 설명을 유지한다. 질문을 생성하는 AI 서비스나 출시 예정 제품 목록이 아니다.
 
-- `public/assets/hanja-icon.webp` and `public/assets/horang.webp`: owner-supplied app assets, resized/converted without generative editing.
-- `public/assets/solar-engine.webp`: original Three.js framebuffer render of the same mathematical sculpture; static fallback.
-- `public/social-card.png`: original browser-rendered typography, geometric logo, and sculpture composition.
+종이 비율은 (1.04), 내부 여백은 앞의 컴포넌트 토큰이다. (1100px) 이하 (24px), 모바일 (23px), 가장 좁은 화면 (20px)로 조정한다. 질문은 `aria-live="polite"`, `aria-atomic="true"`이며 카드 번호는 고정 폭 숫자다.
 
-Every shipping raster has adjacent `.json` provenance. Source paths and font licenses are recorded in [public/assets/README.md](../public/assets/README.md). Logo and directional icons remain authored SVG geometry.
+- **다음 딴생각:** 새 질문을 즉시 반영하고, 기존 동작을 취소한 뒤 위 (12px)·회전 (-0.8도)·불투명도 (0.7)에서 제자리로 한 번 인쇄한다. 길이 (420ms), 곡선 `cubic-bezier(0.16, 1, 0.3, 1)`. 자동 재생·상시 루프는 없다.
+- **모션 감소:** 인쇄 동작을 건너뛰고 내용은 즉시 바뀐다. 설정이 켜지는 도중에도 진행 중 애니메이션을 취소한다.
+- **JavaScript 없음:** 첫 질문과 설명은 보이며 조작 버튼은 숨겨진다. 스크립트 초기화 후에만 버튼이 나타난다.
+- **카드 저장:** 누른 시점의 선택을 고정하고 글꼴을 준비한 뒤 (1080 × 1350px) PNG로 내보낸다. 파일명은 `sunworks-daydream-N.png`다. 저장 도중 다음 질문을 눌러도 저장 대상은 바뀌지 않는다.
+- **상태·실패:** `role="status"`로 “카드에 잉크를 올리는 중…”, “카드를 준비했어요. 다운로드 목록에서 확인해 주세요.”를 안내한다. 실패 시 “카드를 저장하지 못했어요. 잠시 후 다시 눌러주세요.”를 표시하고 버튼과 busy 상태를 복구한다. 브라우저의 실제 다운로드 완료까지 단정하지 않는다.
+
+**The Finite Print Rule.** 사용자가 누른 한 번의 인쇄만 움직이고 멈춘다. 반복 클릭·모션 감소·저장 실패에서도 읽기와 다음 조작을 보존한다.
+
+### 제품·이미지·오류 페이지
+
+어흥!한자는 실제 소유 제품으로 소개하고 “정식 출시 준비 중 · 웹 베타 공개”를 유지한다. 호랑이에는 설명 alt, 이름 옆 앱 아이콘에는 빈 alt를 둬 중복 읽기를 줄인다. 제품 특징은 밑줄을 가진 설명 목록이며 선택 가능한 필터가 아니다.
+
+| 자산                             | 출처와 사용 경계                                                                                          |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `sunworks-korean-logo.png`       | 소유자 제공 한글 로고. 원본 artwork와 내장 attribution 보존                                               |
+| `making-sun.webp`                | 이 사이트를 위해 imagegen으로 생성한 원본 인쇄풍 일러스트. 실제 작가의 수작업·직원 사진으로 소개하지 않음 |
+| `horang.webp`, `hanja-icon.webp` | 소유 앱의 기존 그림·아이콘. 시각적 편집 없이 변환·크기 조정                                               |
+| `social-card.png`                | 현재 자산과 글꼴로 브라우저에서 구성한 공유용 이미지                                                      |
+
+출처·원본 경로·정확한 생성 프롬프트는 [자산 기록](../public/assets/README.md)과 해당 파일의 메타데이터 또는 인접 JSON에 보관한다. 로고를 제외한 삽화 내부 색까지 전역 UI 토큰으로 확장하지 않는다.
+
+[404](../src/pages/404.astro)도 같은 종이·로고·활자·버튼을 쓴다. “길을 조금 벗어났네요.” 뒤에 없는 페이지임을 분명히 설명하고 첫 화면으로 돌아가는 실제 링크를 제공한다.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** reuse the stable root palette and self-hosted font pairing.
-- **Do** preserve visible keyboard focus, native disclosures, and mobile access to both navigation links.
-- **Do** keep the 3D experiment explicitly illustrative, with finite motion, reduced-motion parity, and a static fallback.
-- **Do** reuse SunMark and Arrow SVGs and retain provenance for every raster.
-- **Do** present 어흥!한자 as one company-owned product with its actual beta/pre-launch status.
+- **Do** 제공된 한글 로고를 보존하고 현재 팔레트·자체 제공 글꼴을 재사용한다.
+- **Do** 관찰·행동·실제 제품을 한국어로 설명하고 교육을 첫 제품의 영역으로 둔다.
+- **Do** 큰 포스터와 읽기용 본문의 위계를 분리하고 작은 화면에서도 두 핵심 메뉴를 남긴다.
+- **Do** 키보드 초점·네이티브 disclosure·정적 첫 카드·모션 감소·저장 실패 복구를 유지한다.
+- **Do** 래스터 자산의 출처와 생성 여부를 기록하고 공유 이미지도 현재 브랜드와 함께 갱신한다.
 
 ### Don't:
 
-- **Don't** turn education artwork into the company identity or add invented customers, metrics, testimonials, or live-AI claims.
-- **Don't** add decorative heading eyebrows or substitute Unicode glyphs for shared SVG icons.
-- **Don't** extend opening-title sizes to ordinary interface type or artwork shadows to general cards.
-- **Don't** infer forms, a real AI prompt, dark mode, or further product states from the illustrative workbench.
+- **Don't** 미완성 영문 로고를 임의로 확정하거나 한글 로고를 다시 그린다.
+- **Don't** 코발트·3D 조형물을 현 브랜드의 기본 표현으로 되돌리거나 그림자를 일반 UI에 확장한다.
+- **Don't** 고객·수치·팀 이력·직원 사진·추천사를 꾸미거나 질문 카드를 실시간 AI 결과로 소개한다.
+- **Don't** 주홍을 작은 본문에 쓰거나 대비 확인 없이 그라데이션의 색·글자 불투명도를 바꾼다.
+- **Don't** 장식용 소제목을 늘리거나 SVG 아이콘을 문자 기호로 바꾼다.
+- **Don't** 현재 없는 입력 폼·필터·다크 모드·전역 모션 설정을 이 가이드에서 추정한다.
+
+### 변경 기록 — 디자인 원칙별 비교
+
+기존 구현과 현재 구현의 차이를 비교하며, 현재 값은 각 소스 링크를 따른다. 위의 브랜드 문장 표와 함께 이번 주요 변경을 기록한다. 이미 유지되던 초점 표시·텍스트 줄바꿈·안티앨리어싱은 새 변경으로 세지 않는다.
+
+#### 브랜드 일관성과 시각적 위계
+
+| Before                                | After                                                                                                |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| 코발트·시트론의 기술 무대             | 종이·잉크와 노랑·주황 그라데이션. [색상·면](../src/styles/global.css)                                |
+| 조합한 영문 워드마크                  | 소유자 제공 한글 로고, 검정 여백만 CSS crop. [BrandLogo](../src/components/BrandLogo.astro)          |
+| Bricolage 영문 제목 중심              | Gasoek One 한글 포스터, Archivo 영문 보조, Noto Sans KR 본문. [글꼴 로딩](../src/layouts/Base.astro) |
+| AI·엔지니어링 분야 소개가 앞서는 순서 | 사람의 생각, 실제 첫 제품, 만드는 기준, 질문 인쇄소. [홈](../src/pages/index.astro)                  |
+
+#### 표면·그림자와 그림의 역할
+
+| Before                                | After                                                                                                |
+| ------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| 추상 Three.js 조형물이 첫 화면을 차지 | 손과 연필이 해를 그리는 원본 인쇄풍 일러스트. [이미지 출처](../public/assets/README.md)              |
+| 제품의 떠 있는 한자 타일에 그림자     | 넓은 제품 장면과 실제 호랑이 그림. 두 겹 그림자는 인쇄 종이에 집중. [표면](../src/styles/global.css) |
+| 기술 다이어그램 workbench             | 사용자가 질문을 고르고 PNG로 가져가는 인쇄 카드. [IdeaPress](../src/components/IdeaPress.astro)      |
+
+#### 여백·반응형과 누르기 영역
+
+| Before                          | After                                                                                            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| 최대 1440px, 데스크톱 좌우 48px | 최대 1320px, 좌우 56px. 좁은 화면 36/20/16px. [컨테이너](../src/styles/global.css)               |
+| 모바일 제목 아래 3D 엔진        | 제목·그림·설명을 순서대로 배치. 모바일에도 두 핵심 메뉴 유지. [반응형](../src/styles/global.css) |
+| 채운 버튼 높이 54px, 모서리 6px | 기본 높이 56px, 모서리 4px. 인쇄소 모바일 버튼 52px. [버튼](../src/styles/global.css)            |
+
+#### 중단 가능한 동작·숫자·정적 대체
+
+| Before                           | After                                                                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| WebGL의 세 가지 850ms 상태 변화  | 기존 동작 취소 후 420ms 한 번 인쇄. 번호는 tabular-nums. [동작](../src/scripts/idea-press.ts), [숫자](../src/styles/global.css) |
+| 정적 조형물 fallback과 엔진 조작 | JavaScript 없이 첫 질문을 읽고, 초기화 후에만 질문 변경·저장 제공. [정적 구조](../src/components/IdeaPress.astro)               |
+| 체험 상태 선택만 제공            | 선택 카드 PNG 저장, busy·성공·실패 상태, 실패 후 재시도 가능. [저장](../src/scripts/idea-press.ts)                              |
+
+#### 식별 자산과 복귀 경로
+
+| Before                              | After                                                                                                       |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 이전 색상 파비콘·조형물 공유 이미지 | 잉크·노랑 파비콘, 제공 로고와 새 일러스트의 1200 × 630 공유 이미지. [메타데이터](../src/layouts/Base.astro) |
+| 영문 워드마크·기존 바탕의 404       | 한글 로고·새 팔레트·상황 설명과 화살표 복귀 링크. [404](../src/pages/404.astro)                             |

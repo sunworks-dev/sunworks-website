@@ -1,0 +1,78 @@
+---
+import Arrow from './Arrow.astro';
+---
+
+<section
+  id="play"
+  class="idea-press"
+  aria-labelledby="press-title"
+  data-idea-press
+>
+  <div class="wrap press-layout">
+    <div class="press-copy">
+      <h2 id="press-title">
+        딴생각도
+        <br />한 장 뽑고
+        <br />
+        <span>가세요.</span>
+      </h2>
+      <p>
+        아직 제품은 아닌, 언젠가의 시작들.
+        <br />
+        쓸모를 찾기 전의 생각도 좋아합니다.
+      </p>
+      <p class="press-invitation">
+        마음에 드는 질문이 있다면
+        <br />
+        저장해 두었다가, 당신의 답을 더해보세요.
+      </p>
+    </div>
+    <div class="press-workspace">
+      <div class="press-trim" aria-hidden="true">
+        <span>SUNWORKS / DAYDREAM PRESS</span>
+        <span>생각은 계속됩니다</span>
+      </div>
+      <div class="print-sheet" data-print-sheet>
+        <div class="print-top">
+          <span>오늘의 딴생각</span>
+          <span data-print-count>1 / 4</span>
+        </div>
+        <p
+          class="print-question"
+          data-print-question
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          매일 하는 일이
+          <br />
+          조금 더<br />
+          재밌어진다면?
+        </p>
+        <div class="print-sun" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="print-bottom">
+          <span>작은 질문이, 무언가의 시작.</span>
+          <span>sunworks.kr</span>
+        </div>
+      </div>
+      <div class="press-controls" data-print-controls hidden>
+        <button class="button button-paper" type="button" data-print-next>
+          다음 딴생각 <Arrow />
+        </button>
+        <button class="save-button" type="button" data-print-save>
+          카드 저장{' '}
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+          </svg>
+        </button>
+      </div>
+      <p class="press-status" data-print-status role="status"></p>
+    </div>
+  </div>
+</section>
+<script>
+  import '../scripts/idea-press';
+</script>

@@ -1,368 +1,248 @@
 ---
 import Base from '../layouts/Base.astro';
-import SunMark from '../components/SunMark.astro';
+import BrandLogo from '../components/BrandLogo.astro';
 import Arrow from '../components/Arrow.astro';
-import SolarEngine from '../components/SolarEngine.astro';
+import IdeaPress from '../components/IdeaPress.astro';
 const appUrl = 'https://bryannamd.github.io/hanja-web/';
-const capabilities = [
+const practices = [
   {
-    title: 'AI-native.',
-    subtitle: 'AI와 함께, 더 빠르게.',
-    body: '아이디어를 탐색하고, 코드를 만들고, 직접 검증합니다. AI와 함께 빠르게 시도하고, 제품에 필요한 답을 찾아갑니다.',
-    tags: ['AI-assisted development', 'Rapid prototyping'],
-    key: 'ai',
+    title: '아이디어는 빨리 눈앞에.',
+    body: '머릿속에서만 완벽한 아이디어보다, 직접 눌러볼 수 있는 작은 시작을 좋아합니다. AI로 탐색과 구현의 속도를 높이고, 무엇을 남길지는 직접 써보며 판단합니다.',
+    note: '빠른 실험 · 프로토타이핑 · AI 활용',
   },
   {
-    title: 'Engineered.',
-    subtitle: '보이는 화면 너머까지.',
-    body: '앱과 웹, 데이터와 API. 각각의 기술을 하나의 경험으로 연결합니다. 작은 시작에서 다음 확장까지 생각하며 설계합니다.',
-    tags: ['App & web', 'API architecture'],
-    key: 'engineering',
+    title: '화면 뒤도, 제대로.',
+    body: '버튼을 누른 다음의 일도 설계합니다. 앱과 웹, 데이터와 API가 자연스럽게 이어지도록. 눈에 보이는 즐거움을, 보이지 않는 코드가 든든하게 받칩니다.',
+    note: '앱과 웹 · 데이터 · API 설계',
   },
   {
-    title: 'Human, always.',
-    subtitle: '마지막 기준은, 사람.',
-    body: '기술의 복잡함은 안쪽에. 쓰는 순간의 명료함은 바깥에. 화면 한 장부터 작은 움직임까지, 손에 닿는 경험을 다듬습니다.',
-    tags: ['Product design', 'Creative interaction'],
-    key: 'design',
+    title: '한 번 더 만져보게.',
+    body: '설명 없이도 알겠는 버튼, 손가락이 편한 간격, 기다림이 덜 지루한 순간. 작은 차이를 그냥 넘기지 않습니다. 사람이 쓰는 것이니까요.',
+    note: '인터랙션 · 접근성 · 반응형 디자인',
   },
 ];
 ---
 
 <Base>
-  <div class="header-shell" id="top">
-    <header class="site-header wrap">
-      <a class="wordmark" href="#top" aria-label="sunworks 처음으로">
-        <SunMark />
-        sunworks
+  <header class="masthead" id="top">
+    <div class="wrap masthead-inner">
+      <a class="brand-link" href="#top" aria-label="썬웍스, 처음으로">
+        <BrandLogo />
       </a>
       <nav aria-label="주요 메뉴">
-        <a href="#technology">기술과 관점</a>
-        <a href="#work">만드는 것</a>
+        <a href="#about">우리의 생각</a>
+        <a href="#work">만든 것</a>
+        <a href="#play">
+          딴생각 인쇄소 <Arrow diagonal />
+        </a>
       </nav>
-      <a class="header-link" href="#work">
-        Explore our work <Arrow diagonal />
-      </a>
-    </header>
-  </div>
+    </div>
+  </header>
   <main id="main">
-    <div class="opening">
-      <section class="hero wrap" aria-labelledby="hero-title">
-        <div class="hero-heading">
-          <h1 id="hero-title" lang="en">
-            <span>Ideas.</span>
-            <span>
-              Made real<span class="hero-period">.</span>
-            </span>
-          </h1>
-          <p class="hero-statement">상상을, 작동하는 현실로.</p>
-        </div>
-        <SolarEngine />
-        <div class="hero-bottom">
-          <p class="hero-intro">
-            AI의 가능성에 엔지니어링과 디자인을 더해,
-            <br class="desktop-break" /> 새로운 앱과 웹서비스를 만듭니다.
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">
+          <span>쓸모 있는</span>
+          <span class="hero-punch">딴생각.</span>
+        </h1>
+        <div class="hero-intro">
+          <p class="hero-hook">
+            그냥 지나치기엔,
+            <br />꽤 괜찮은 생각이니까.
           </p>
-          <a class="round-link hero-link" href="#technology">
-            <span>What makes us work</span>
-            <span class="round-arrow">
-              <Arrow />
-            </span>
+          <p>
+            썬웍스는 일상의 작은 발견을
+            <br />
+            직접 쓰고 싶은 앱과 웹서비스로 만듭니다.
+          </p>
+          <a class="button button-ink" href="#work">
+            만든 것부터 볼까요? <Arrow diagonal />
           </a>
         </div>
-      </section>
-    </div>
-
-    <div class="discipline-strip" aria-label="AI, 엔지니어링, 제품 디자인">
-      <div class="wrap discipline-inner">
-        <span>AI-driven thinking</span>
-        <SunMark />
-        <span>Creative engineering</span>
-        <SunMark />
-        <span>Products with purpose</span>
-        <SunMark />
       </div>
-    </div>
-
-    <section class="manifesto wrap" aria-labelledby="manifesto-title">
-      <div class="manifesto-body">
-        <h2 id="manifesto-title">
-          “이런 게 있다면?”을
+      <figure class="hero-art">
+        <img
+          src="/assets/making-sun.webp"
+          width="1254"
+          height="1254"
+          alt="연필을 쥔 손이 노란 해를 그려내는 빈티지 인쇄풍 일러스트"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <figcaption>
+          연필 끝에서 시작해,
           <br />
-          “이제 쓸 수 있어.”로<span class="ink-dot">.</span>
-        </h2>
-        <div class="manifesto-copy">
-          <p>
-            우리는 기술을 탐구하고,
-            <br />
-            가능성을 직접 만드는 제품 회사입니다.
-          </p>
-          <p>
-            새로운 AI 기술, 단단한 소프트웨어, 감각적인 디자인.
-            <br class="desktop-break" /> 서로 다른 영역이 만날 때, 이전에 없던
-            경험이 시작됩니다.
-          </p>
-        </div>
+          손끝에 닿기까지.
+        </figcaption>
+      </figure>
+      <div class="hero-colophon" aria-hidden="true">
+        <span>SMALL IDEAS. REAL THINGS.</span>
+        <span>조금 다르게, 끝까지.</span>
       </div>
     </section>
-
-    <section
-      id="technology"
-      class="technology-section"
-      aria-labelledby="technology-title"
-    >
-      <div class="wrap">
-        <div class="section-heading technology-heading">
-          <h2 id="technology-title" lang="en">
-            Curiosity meets
-            <br />
-            <span>capability.</span>
-          </h2>
-          <p>
-            상상은 대담하게.
-            <br />
-            만드는 과정은 치밀하게.
-          </p>
-        </div>
-        <div class="capability-layout">
-          <div class="capability-list">
-            {capabilities.map((item, i) => (
-              <details
-                class="capability"
-                name="capabilities"
-                open={i === 0}
-                data-capability={item.key}
-              >
-                <summary>
-                  <span lang="en">{item.title}</span>
-                  <span class="detail-toggle" aria-hidden="true"></span>
-                </summary>
-                <div class="capability-content">
-                  <h3>{item.subtitle}</h3>
-                  <p>{item.body}</p>
-                  <ul aria-label="관련 분야">
-                    {item.tags.map((tag) => (
-                      <li lang="en">{tag}</li>
-                    ))}
-                  </ul>
-                </div>
-              </details>
-            ))}
-          </div>
-          <div class="workbench" data-workbench="ai" aria-hidden="true">
-            <div class="workbench-top">
-              <span>Inside the process</span>
-              <span class="workbench-indicator"></span>
-            </div>
-            <div class="process-visual process-ai">
-              <div class="idea-input">
-                <span>What if...</span>
-                <span class="input-cursor"></span>
-              </div>
-              <div class="flow-line"></div>
-              <div class="ai-core">
-                <SunMark />
-                <span>Human × AI</span>
-              </div>
-              <div class="flow-line"></div>
-              <div class="output-pieces">
-                <span>탐색</span>
-                <span>구현</span>
-                <span>검증</span>
-              </div>
-            </div>
-            <div class="process-visual process-engineering">
-              <div class="system-top">
-                <span>App</span>
-                <span>Web</span>
-              </div>
-              <div class="system-connect"></div>
-              <div class="api-node">
-                <span>API</span>
-                <span>One connected experience</span>
-              </div>
-              <div class="system-connect"></div>
-              <div class="system-top">
-                <span>Data</span>
-                <span>AI</span>
-              </div>
-            </div>
-            <div class="process-visual process-design">
-              <div class="design-target">
-                <span></span>
-                <span></span>
-                <span></span>
-                <SunMark />
-              </div>
-              <div class="design-feedback">
-                <span>Feels right.</span>
-                <Arrow diagonal />
-              </div>
-            </div>
-            <div class="workbench-bottom">
-              <span data-process-caption>
-                질문에서 작동하는 프로토타입까지.
-              </span>
-              <span>
-                sunworks <Arrow diagonal />
-              </span>
-            </div>
-          </div>
-        </div>
+    <div class="sun-strip" aria-hidden="true">
+      <div class="sun-strip-inner">
+        <span>GOOD IDEAS DESERVE TO EXIST.</span>
+        <Arrow diagonal />
+        <span>재밌는 건, 만들어 봐야지.</span>
       </div>
-    </section>
-
-    <section id="work" class="work-section wrap" aria-labelledby="work-title">
-      <div class="section-heading work-heading">
-        <h2 id="work-title" lang="en">
-          Less talk.
+    </div>
+    <section id="about" class="about wrap" aria-labelledby="about-title">
+      <h2 id="about-title">
+        불편함엔 참견을.
+        <br />
+        좋은 생각엔 고집을.
+      </h2>
+      <div class="about-copy">
+        <p class="about-lead">
+          “이런 게 있으면 좋겠다.”
           <br />
-          More{' '}
-          <span class="work-making">
-            making
-            <svg
-              viewBox="0 0 420 24"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path d="M3 18Q204-5 417 9" />
-            </svg>
-          </span>
-          .
-        </h2>
+          우리에게는, 꽤 진지한 시작입니다.
+        </p>
         <p>
-          아이디어가 제품이 되는 곳.
-          <br />
-          지금, 우리가 만들고 있는 첫 번째 경험.
+          써보니 어딘가 번거로운 순간. 배우다 문득 재미없어진 순간. 그냥 넘길
+          수도 있지만, 우리는 거기서 자꾸 딴생각을 합니다.
+        </p>
+        <p>
+          작게 만들고, 직접 써보고, 다시 고칩니다. 그렇게 나에게도, 누군가에게도
+          쓸모 있는 것을 하나씩 세상에 내놓습니다.
         </p>
       </div>
-      <article class="product-feature" aria-labelledby="product-title">
-        <div class="product-copy">
-          <h3 id="product-title">
+    </section>
+    <section id="work" class="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="work-heading">
+          <h2 id="work-title">
+            생각만 하진
+            <br />
+            않았습니다.
+          </h2>
+          <p>
+            지금 만들고 있는 것.
+            <br />
+            가장 먼저 건네는 썬웍스의 제품입니다.
+          </p>
+        </div>
+        <article class="product" aria-labelledby="product-title">
+          <div class="product-scene">
+            <div class="product-sun" aria-hidden="true"></div>
+            <span class="product-character" aria-hidden="true">
+              好
+            </span>
             <img
-              src="/assets/hanja-icon.webp"
-              alt=""
-              width="44"
-              height="44"
+              class="horang"
+              src="/assets/horang.webp"
+              width="500"
+              height="500"
+              alt="붓과 두루마리를 든 어흥!한자의 호랑이 캐릭터"
               loading="lazy"
             />
-            어흥!한자
-          </h3>
-          <p class="product-lead">
-            어려운 한자에,
-            <br />
-            즐거운 반전.
-          </p>
-          <p class="product-description">
-            캐릭터와 함께 익히고, 기억에 맞춰 다시 만나고.
-            <br class="desktop-break" /> 배움이 계속되는 경험을 만드는 한자 학습
-            앱.
-          </p>
-          <ul class="product-tags" aria-label="제품 특징">
-            <li>캐릭터 학습</li>
-            <li>간격 반복</li>
-            <li>앱 & 웹</li>
-          </ul>
-          <a
-            class="button button-dark"
-            href={appUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            웹에서 먼저 만나기 <Arrow diagonal />
-            <span class="sr-only">(새 창)</span>
-          </a>
-          <p class="product-status">
-            <span></span>정식 출시 준비 중 · 웹 베타 공개
-          </p>
-        </div>
-        <div class="product-art">
-          <span class="hanja-graphic" aria-hidden="true">
-            好
-          </span>
-          <div class="hanja-chip chip-one" aria-hidden="true">
-            <span>日</span>
-            <span>해 일</span>
+            <p class="product-scene-note">“아하!”가 “어흥!”이 되는 순간.</p>
           </div>
-          <img
-            class="horang"
-            src="/assets/horang.webp"
-            width="500"
-            height="500"
-            alt="붓과 두루마리를 든 어흥!한자의 호랑이 캐릭터"
-            loading="lazy"
-          />
-          <div class="hanja-chip chip-two" aria-hidden="true">
-            <span>學</span>
-            <span>배울 학</span>
+          <div class="product-copy">
+            <h3 id="product-title">
+              <img
+                src="/assets/hanja-icon.webp"
+                alt=""
+                width="48"
+                height="48"
+                loading="lazy"
+              />
+              어흥!한자
+            </h3>
+            <p class="product-tagline">
+              외우는 얼굴 말고,
+              <br />
+              알아가는 표정.
+            </p>
+            <p class="product-description">
+              낯선 한자를 캐릭터와 함께 만나고,
+              <br class="wide-break" /> 잊을 때쯤 한 번 더. ‘공부해야지’보다
+              <br class="wide-break" /> ‘조금 더 해볼까’가 먼저인 배움을
+              만듭니다.
+            </p>
+            <ul class="product-features" aria-label="제품 특징">
+              <li>캐릭터와 익히는 한자</li>
+              <li>기억에 맞춘 반복 학습</li>
+            </ul>
+            <a
+              class="button button-ink"
+              href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              웹에서 먼저 만나기 <Arrow diagonal />
+              <span class="sr-only">(새 창)</span>
+            </a>
+            <p class="product-status">정식 출시 준비 중 · 웹 베타 공개</p>
           </div>
-          <span class="product-art-caption" lang="en">
-            A new way to say “I get it.”
-          </span>
-        </div>
-      </article>
-      <p class="work-footnote">
-        배움은 첫 번째 시작. sunworks의 다음 가능성은 더 넓은 일상으로
-        이어집니다.
-      </p>
+        </article>
+        <p class="work-note">첫 번째는 배움. 다음 딴생각은, 일상 어디에서든.</p>
+      </div>
     </section>
-
-    <section class="closing-section" aria-labelledby="closing-title">
-      <div class="wrap">
-        <div class="closing-top">
-          <h2 id="closing-title">
-            다음은,
-            <br />
-            어떤 가능성일까요?
-          </h2>
-          <a
-            class="round-link"
-            href={appUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>
-              우리의 첫 제품 만나기<span class="sr-only">(새 창)</span>
-            </span>
-            <span class="round-arrow">
-              <Arrow diagonal />
-            </span>
-          </a>
+    <section class="making wrap" aria-labelledby="making-title">
+      <div class="making-heading">
+        <h2 id="making-title">
+          만드는 손은 가볍게.
+          <br />
+          만드는 기준은 단단하게.
+        </h2>
+        <p>재미있는 생각이, 좋은 제품으로 남도록.</p>
+      </div>
+      <div class="making-body">
+        <p class="making-type" lang="en" aria-hidden="true">
+          A LITTLE
+          <br />
+          <span>HUNCH.</span>
+          <br />A LOT OF
+          <br />
+          <span>CRAFT.</span>
+        </p>
+        <div class="practices">
+          {practices.map((practice, i) => (
+            <details class="practice" name="making" open={i === 0}>
+              <summary>
+                <span>{practice.title}</span>
+                <span class="detail-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="practice-content">
+                <p>{practice.body}</p>
+                <p class="practice-note">{practice.note}</p>
+              </div>
+            </details>
+          ))}
         </div>
-        <div class="closing-brand" aria-hidden="true">
-          <span>sunworks</span>
-          <SunMark />
+      </div>
+    </section>
+    <IdeaPress />
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="wrap closing-inner">
+        <h2 id="closing-title">
+          좋아하는 것을,
+          <br />
+          쓸모 있는 것으로.
+        </h2>
+        <div class="closing-copy">
+          <p>다음 딴생각도, 썬웍스답게.</p>
+          <a class="text-link" href="#work">
+            우리의 첫 시작 만나보기 <Arrow diagonal />
+          </a>
         </div>
       </div>
     </section>
   </main>
-  <footer class="site-footer wrap">
-    <p>Independent minds. Real things.</p>
-    <a href="#top">
-      Back to top <Arrow diagonal />
-    </a>
-    <span>© {new Date().getFullYear()} sunworks</span>
+  <footer class="footer">
+    <div class="wrap">
+      <a class="footer-brand" href="#top" aria-label="썬웍스, 맨 위로">
+        <BrandLogo />
+      </a>
+      <div class="footer-bottom">
+        <p>생각은 자유롭게. 만드는 일은 진심으로.</p>
+        <span>© {new Date().getFullYear()} sunworks</span>
+        <a href="#top">
+          맨 위로 <Arrow diagonal />
+        </a>
+      </div>
+    </div>
   </footer>
-  <script>
-    const workbench = document.querySelector<HTMLElement>('[data-workbench]');
-    const caption = document.querySelector<HTMLElement>(
-      '[data-process-caption]',
-    );
-    const captions: Record<string, string> = {
-      ai: '질문에서 작동하는 프로토타입까지.',
-      engineering: '제품에 맞춰 연결하는 구조.',
-      design: '한 번의 터치에도, 분명한 이유.',
-    };
-    document
-      .querySelectorAll<HTMLDetailsElement>('[data-capability]')
-      .forEach((detail) => {
-        detail.addEventListener('toggle', () => {
-          if (detail.open && workbench) {
-            const key = detail.dataset.capability ?? 'ai';
-            workbench.dataset.workbench = key;
-            if (caption) caption.textContent = captions[key];
-          }
-        });
-      });
-  </script>
 </Base>

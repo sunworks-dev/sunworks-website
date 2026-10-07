@@ -1,25 +1,27 @@
 # Homepage
 
-Persuade + Experience. Creative, technology-led company site. The owner clarified that education is not the core business: it is one product category. Show AI, software engineering, and product design without invented credentials. Code-first preference retained.
+Persuade + Experience. Korean-first website for a company making its own apps and web services. The October 7 owner brief replaces the cobalt/3D world with the supplied Korean logo’s yellow–orange gradient, a slight vintage tone, and more human writing. Preserve verified product facts and links. Code-led preference remains.
 
 ## Direction contract
 
-THESIS: Imagination becomes working products. A technology studio opening, with a responsive sculpture instead of interchangeable feature cards.
+THESIS: Useful daydreams become things people use. A maker’s print edition, with human hands and frank Korean writing instead of abstract technology theatre.
 
-OWN-WORLD: Cobalt stages, paper, ink, solar orange, citron; Bricolage Grotesque and Noto Sans KR. Monumental typography, precise controls, open editorial sections.
+OWN-WORLD: Warm stock, carbon ink, vermilion, orange and golden yellow; generous poster lettering, inked rules, tactile print controls. Preserve the supplied Korean logo.
 
-STORY: Feel the craft; understand AI plus engineering plus design; explore the real upcoming product.
+STORY: Meet the people-minded approach, explore the real first product, take away a small spark.
 
-FIRST VIEWPORT: White oversized “Ideas. Made real.” on cobalt, an orange real-time 3D engine, Korean company explanation and product action. Imagine/Build/Launch reshape the engine with finite, interruptible motion; pointer movement changes perspective. Mobile stacks the same experience.
+FIRST VIEWPORT: Oversized Korean “쓸모 있는 딴생각.” fills the left; an original screenprinted hand drawing a sun fills the right. A clear product action sits with the introduction. A warm gradient strip closes the poster. The later “딴생각 인쇄소” changes and exports illustrated idea cards with finite print motion.
 
-FORM: Motion-graphic opening titles, grounded position 5, seed dfadb90b. Translated from education to creative technology following explicit user correction. Code-led; no approved comp.
+FORM: Small printshop proof-making ritual, grounded position 6, seed 6ba4fd1d; logo-pinned palette. Code-led.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
-## Scope and evidence
+## Implementation boundaries
 
-- Meaningful geometry/state changes illustrate the making process; this is an authored interaction, not a live AI demo.
-- Preserve the company-owned product positioning and verified beta link. Education belongs to the 어흥!한자 case only.
-- Native keyboard controls, readable contrast, reduced motion, no-JS and WebGL fallbacks, mobile parity.
-- Full display typography is intentional opening-title artwork, exempt from ordinary 6rem heading sizing. Body text and navigation remain restrained.
-- Optional direction page served. The owner supplied the binding steer: emphasize technology and creativity. Proceeding with the adapted assigned direction is implementation judgment, not recorded as user selection.
+- The reference logo is supplied artwork, not an English-logo approval. No new English logo is asserted.
+- Ideas in the print interaction are explicitly exploratory questions, not announced products. No backend AI claim.
+- Product: 어흥!한자, web beta; formal release preparing. No invented customers, metrics, team history or email.
+- Human language leads; AI appears as a tool inside a concrete account of making.
+- Native links/buttons, strong focus, reduced motion, readable static no-JS content; 320px through wide desktop.
+- Display artwork can exceed the general 6rem floor; body copy and navigation remain readable.
+- User explicitly supplied the brand direction and requested implementation. The reference overrides contradictory catalog materials; no new approval requirement introduced.
