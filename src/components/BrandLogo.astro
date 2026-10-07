@@ -1,16 +1,16 @@
 ---
 interface Props {
+  lang?: 'ko' | 'en';
   alt?: string;
 }
-const { alt = '썬웍스' } = Astro.props;
+const { lang = 'ko', alt = '썬웍스' } = Astro.props;
+// 영문 로고 파일은 한글 로고와 같은 2.8 비율 틀에 맞춰 여백만 조정했다.
+const logo =
+  lang === 'en'
+    ? { src: '/assets/sunworks-english-logo.png', width: 910, height: 325 }
+    : { src: '/assets/sunworks-korean-logo.png', width: 600, height: 600 };
 ---
 
 <span class="brand-logo">
-  <img
-    src="/assets/sunworks-korean-logo.png"
-    width="600"
-    height="600"
-    alt={alt}
-    decoding="async"
-  />
+  <img {...logo} alt={alt} decoding="async" />
 </span>

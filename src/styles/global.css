@@ -26,13 +26,13 @@
 }
 :root,
 [lang='ko'] {
-  --display: 'Do Hyeon', 'Noto Sans KR Variable', sans-serif;
+  --display: 'Gasoek One', 'Noto Sans KR Variable', sans-serif;
   --display-weight: 400;
   --display-stretch: normal;
-  --display-tracking: -0.01em;
+  --display-tracking: 0.03em;
 }
 [lang='en'] {
-  --display: 'Archivo Variable', 'Do Hyeon', sans-serif;
+  --display: 'Archivo Variable', 'Gasoek One', sans-serif;
   --display-weight: 750;
   --display-stretch: 85%;
   --display-tracking: -0.015em;
@@ -257,7 +257,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.12;
+  line-height: 1.16;
 }
 .hero h1 span {
   display: block;
@@ -266,7 +266,7 @@ section[id] {
 .hero .hero-punch {
   color: var(--red);
   font-size: 1.32em;
-  line-height: 1.12;
+  line-height: 1.19;
 }
 .hero-intro {
   padding-top: 37px;
@@ -393,7 +393,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.25;
+  line-height: 1.35;
 }
 .work-heading > p {
   font-size: 16px;
@@ -455,15 +455,17 @@ section[id] {
   align-items: center;
   gap: 15px;
   font-size: 32px;
-  letter-spacing: 0;
+  letter-spacing: var(--display-tracking);
 }
 .product-copy h3,
 .product-copy h3 [lang='ko'] {
   font-family: var(--display);
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
+  letter-spacing: var(--display-tracking);
 }
 .product-copy h3 .product-reading {
+  letter-spacing: 0;
   font-family: var(--latin);
   font-size: 15px;
   font-weight: 600;
@@ -622,7 +624,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.28;
+  line-height: 1.38;
 }
 .press-copy h2 span {
   color: var(--yellow);
@@ -677,7 +679,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.32;
+  line-height: 1.4;
   margin-top: 34px;
 }
 .print-sun {
@@ -773,6 +775,44 @@ section[id] {
   width: min(850px, 85%);
   margin-inline: auto;
 }
+.company-info {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 32px;
+  margin: 34px 0 0;
+  padding-top: 26px;
+  border-top: 1px solid #4d4436;
+}
+.company-info dt {
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: rgba(244, 237, 223, 0.66);
+}
+.company-info dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.company-address {
+  grid-column: span 2;
+}
+.biz-no {
+  margin-right: 14px;
+  font-variant-numeric: tabular-nums;
+  user-select: all;
+}
+/* 누르기 영역은 44px로 키우되, 줄 높이는 다른 값과 맞춘다. */
+.company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin-block: -11px;
+}
+.company-link svg {
+  width: 14px;
+  height: 14px;
+}
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -815,7 +855,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.25;
+  line-height: 1.35;
 }
 .not-found p {
   margin-top: 24px;
@@ -867,6 +907,7 @@ section[id] {
   }
   .masthead nav a:hover,
   .footer-bottom a:hover,
+  .company-link:hover,
   .save-button:hover {
     color: var(--yellow);
   }
@@ -889,6 +930,9 @@ section[id] {
   }
 }
 @media (max-width: 1100px) {
+  .company-info {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .wrap {
     width: calc(100% - 72px);
   }
@@ -957,6 +1001,15 @@ section[id] {
   }
 }
 @media (max-width: 760px) {
+  .company-info {
+    gap: 18px 20px;
+    margin-top: 26px;
+    padding-top: 22px;
+  }
+  .company-wide,
+  .company-address {
+    grid-column: 1 / -1;
+  }
   .wrap {
     width: calc(100% - 40px);
   }

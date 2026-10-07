@@ -6,7 +6,7 @@ if (press) {
   const questionFont =
     lang === 'en'
       ? 'semi-condensed 750 96px "Archivo Variable"'
-      : '96px "Do Hyeon"';
+      : '96px "Gasoek One"';
   const sheet = press.querySelector<HTMLElement>('[data-print-sheet]')!;
   const question = press.querySelector<HTMLElement>('[data-print-question]')!;
   const count = press.querySelector<HTMLElement>('[data-print-count]')!;
@@ -66,10 +66,13 @@ if (press) {
       ctx.font = questionFont;
       // Chrome은 font 문자열의 폭 키워드를 무시해서 따로 지정한다.
       if (lang === 'en') ctx.fontStretch = 'semi-condensed';
+      // 화면 제목과 같은 자간(0.03em × 96px)을 준다.
+      else ctx.letterSpacing = '3px';
       ideas[selected].forEach((line, index) =>
         ctx.fillText(line, 78, 350 + index * 145, 924),
       );
       ctx.fontStretch = 'normal';
+      ctx.letterSpacing = '0px';
       ['#d94324', '#f47a32', '#ffd84b'].forEach((color, i) => {
         ctx.fillStyle = color;
         ctx.beginPath();

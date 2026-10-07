@@ -4,7 +4,7 @@ import BrandLogo from './BrandLogo.astro';
 import Arrow from './Arrow.astro';
 import IdeaPress from './IdeaPress.astro';
 import Lines from './Lines.astro';
-import { appUrl, copy, productUrl, type Lang } from '../i18n';
+import { appUrl, company, copy, productUrl, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -21,7 +21,7 @@ const alternates = [
   <header class="masthead" id="top">
     <div class="wrap masthead-inner">
       <a class="brand-link" href="#top" aria-label={t.homeLabel}>
-        <BrandLogo alt={t.logoAlt} />
+        <BrandLogo lang={lang} alt={t.logoAlt} />
       </a>
       <nav aria-label={t.nav.label}>
         <a href="#about">{t.nav.about}</a>
@@ -234,11 +234,71 @@ const alternates = [
   <footer class="footer">
     <div class="wrap">
       <a class="footer-brand" href="#top" aria-label={t.topLabel}>
-        <BrandLogo alt={t.logoAlt} />
+        <BrandLogo lang={lang} alt={t.logoAlt} />
       </a>
+      <section class="company" aria-labelledby="company-title">
+        <h2 id="company-title" class="sr-only">
+          {t.company.title}
+        </h2>
+        <dl class="company-info">
+          <div>
+            <dt>{t.company.nameLabel}</dt>
+            <dd>
+              {t.company.name} (
+              <span lang={t.company.nameOtherLang}>{t.company.nameOther}</span>)
+            </dd>
+          </div>
+          <div>
+            <dt>{t.company.ceoLabel}</dt>
+            <dd>{t.company.ceo}</dd>
+          </div>
+          <div>
+            <dt>{t.company.foundedLabel}</dt>
+            <dd>
+              <time datetime={company.founded}>{t.company.founded}</time>
+            </dd>
+          </div>
+          <div>
+            <dt>{t.company.phoneLabel}</dt>
+            <dd>
+              <a class="company-link" href={`tel:${company.tel}`}>
+                {t.company.phone}
+              </a>
+            </dd>
+          </div>
+          <div class="company-wide">
+            <dt>{t.company.bizNoLabel}</dt>
+            <dd>
+              <span class="biz-no">{company.bizNo}</span>
+              <a
+                class="company-link"
+                href={company.verifyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                hreflang="ko"
+              >
+                {t.company.verify} <Arrow diagonal />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
+            </dd>
+          </div>
+          <div class="company-address">
+            <dt>{t.company.addressLabel}</dt>
+            <dd>{t.company.address}</dd>
+          </div>
+          <div class="company-wide">
+            <dt>{t.company.emailLabel}</dt>
+            <dd>
+              <a class="company-link" href={`mailto:${company.email}`}>
+                {company.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </section>
       <div class="footer-bottom">
         <p>{t.footer.line}</p>
-        <span>© {new Date().getFullYear()} sunworks</span>
+        <span>© {new Date().getFullYear()} SunWorks</span>
         <a href="#top">
           {t.footer.top} <Arrow diagonal />
         </a>

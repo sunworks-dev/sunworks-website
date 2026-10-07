@@ -3,16 +3,28 @@ export type Lang = 'ko' | 'en';
 export const productUrl = 'https://hanja-app.sunw.kr/';
 export const appUrl = 'https://bryannamd.github.io/hanja-web/';
 
+// 사업자등록증명(2026-07-29 발급) 기준. 연락처는 어흥!한자 운영 안내와 같은 주소다.
+export const company = {
+  bizNo: '463-11-02942',
+  founded: '2026-06-12',
+  email: 'support@sunworks.kr',
+  // 소유자가 2026-10-07 직접 알려 준 회사 전화.
+  tel: '+821051735351',
+  // 국세청 홈택스 '사업자상태 조회(사업자등록번호)' 화면. 로그인 없이 조회된다.
+  verifyUrl:
+    'https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&tmIdx=43&tm2lIdx=4306000000&tm3lIdx=4306080000',
+};
+
 // 줄 배열은 화면에서 줄바꿈 위치를 뜻한다. 문장은 번역하지 않고 언어마다 따로 썼다.
 export const copy = {
   ko: {
     path: '/',
     meta: {
-      title: '썬웍스 sunworks — 쓸모 있는 딴생각.',
+      title: '썬웍스 SunWorks — 쓸모 있는 딴생각.',
       description:
         '그냥 지나치기엔, 꽤 괜찮은 생각이니까. 썬웍스는 일상의 작은 발견을 직접 쓰고 싶은 앱과 웹서비스로 만듭니다. 우리의 생각과 첫 제품 어흥!한자를 만나보세요.',
       ogImage: '/social-card.png',
-      ogImageAlt: '썬웍스 sunworks — 쓸모 있는 딴생각.',
+      ogImageAlt: '썬웍스 SunWorks — 쓸모 있는 딴생각.',
       ogLocale: 'ko_KR',
     },
     skip: '본문으로 바로가기',
@@ -126,22 +138,40 @@ export const copy = {
       line: '오늘도 딴생각 중입니다.',
       top: '맨 위로',
     },
+    company: {
+      title: '회사 정보',
+      nameLabel: '상호',
+      name: '썬웍스',
+      nameOther: 'SunWorks',
+      nameOtherLang: 'en',
+      ceoLabel: '대표',
+      ceo: '남선',
+      foundedLabel: '설립일',
+      founded: '2026년 6월 12일',
+      bizNoLabel: '사업자등록번호',
+      verify: '국세청에서 확인',
+      addressLabel: '주소',
+      address: '경기도 하남시 감일순환로 170, 306동(감이동, 감일 스타힐스)',
+      phoneLabel: '전화',
+      phone: '010-5173-5351',
+      emailLabel: '이메일',
+    },
   },
   en: {
     path: '/en/',
     meta: {
-      title: 'sunworks — Useful daydreams.',
+      title: 'SunWorks — Useful daydreams.',
       description:
-        'Some ideas are too good to walk past. sunworks turns small everyday discoveries into apps and web services people actually want to use. Meet our first product, 어흥!한자 (Eoheung! Hanja).',
+        'Some ideas are too good to walk past. SunWorks turns small everyday discoveries into apps and web services people actually want to use. Meet our first product, 어흥!한자 (Eoheung! Hanja).',
       ogImage: '/social-card-en.png',
-      ogImageAlt: 'sunworks — Useful daydreams.',
+      ogImageAlt: 'SunWorks — Useful daydreams.',
       ogLocale: 'en_US',
     },
     skip: 'Skip to main content',
     newWindow: '(opens in a new tab)',
-    logoAlt: 'sunworks',
-    homeLabel: 'sunworks, home',
-    topLabel: 'sunworks, back to top',
+    logoAlt: 'SunWorks',
+    homeLabel: 'SunWorks, home',
+    topLabel: 'SunWorks, back to top',
     nav: {
       label: 'Main',
       about: 'About',
@@ -156,7 +186,7 @@ export const copy = {
       title: ['Useful', 'daydreams.'],
       hook: ['Some ideas are', 'too good to walk past.'],
       intro: [
-        'sunworks turns small everyday discoveries into apps and web services people actually want to use.',
+        'SunWorks turns small everyday discoveries into apps and web services people actually want to use.',
       ],
       cta: 'See what we’ve made',
       artAlt:
@@ -183,7 +213,7 @@ export const copy = {
       title: ['We didn’t stop', 'at thinking.'],
       intro: [
         'What we’re making right now:',
-        'the first product from sunworks.',
+        'the first product from SunWorks.',
       ],
       sceneNote: 'When “aha!” turns into a roar.',
       tigerAlt: 'The Eoheung! Hanja tiger holding a brush and a scroll',
@@ -251,12 +281,31 @@ export const copy = {
     },
     closing: {
       title: ['Turning what we love', 'into something useful.'],
-      body: 'The next daydream, the sunworks\u00a0way.',
+      body: 'The next daydream, the SunWorks\u00a0way.',
       cta: 'Meet our first product',
     },
     footer: {
       line: 'Still daydreaming.',
       top: 'Back to top',
+    },
+    company: {
+      title: 'Company information',
+      nameLabel: 'Company',
+      name: 'SunWorks',
+      nameOther: '썬웍스',
+      nameOtherLang: 'ko',
+      ceoLabel: 'Representative',
+      ceo: 'Sun Nam',
+      foundedLabel: 'Founded',
+      founded: 'June 12, 2026',
+      bizNoLabel: 'Business registration no.',
+      verify: 'Verify on Korea’s Hometax',
+      addressLabel: 'Address',
+      address:
+        'Building 306, 170 Gamilsunhwan-ro, Hanam-si, Gyeonggi-do, 12908, Republic of Korea',
+      phoneLabel: 'Phone',
+      phone: '+82 10-5173-5351',
+      emailLabel: 'Email',
     },
   },
 } as const;

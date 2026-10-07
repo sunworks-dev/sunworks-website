@@ -27,15 +27,18 @@ Assumption: Korean-speaking people discovering the company and its products, inc
 - First product: 어흥!한자, currently preparing for launch. User explicitly supplied the app directory and beta URL https://bryannamd.github.io/hanja-web/.
 - 어흥!한자 has its own introduction site at https://hanja-app.sunw.kr/ (repo `sunworks-dev/hanja-study-site`). On 2026-10-07 the owner asked the product section to link there; the web beta stays as a secondary link. The app has no official English name; English copy keeps 어흥!한자 and adds the reading “Eoheung! Hanja”.
 - The app source describes a Korean Hanja learning app with characters and spaced review. Existing artwork may be reused for its product introduction.
-- No confirmed company contact email, customers, metrics, testimonials, or pricing for this company website. Do not fabricate them.
+- Company identity (사업자등록증명, issued 2026-07-29, owner-supplied): 상호 썬웍스 (SunWorks), representative 남선 (Sun Nam), business registration no. 463-11-02942, business start 2026-06-12, sole proprietorship (일반과세자), address 경기도 하남시 감일순환로 170, 306동. The site shows the address only down to the building (동); the unit number stays private (owner decision, 2026-10-07). The owner asked to show founding date, representative, contact, address, and a verification link on the site (2026-10-07). Never publish the resident registration number or the certificate file.
+- Contact: support@sunworks.kr (the same address the 어흥!한자 site lists; sunworks.kr mail runs on Google Workspace). Company phone 010-5173-5351 (owner-supplied, 2026-10-07). The phone printed on the certificate belongs to the tax office; never use it.
+- Verification: Hometax 사업자상태 조회 by registration number works without login. No 통신판매업 registration is confirmed, so do not add an FTC lookup link until it exists.
+- No confirmed customers, metrics, testimonials, or pricing for this company website. Do not fabricate them.
 - Mailing, a board, and social sign-in must remain possible through a separately hosted API.
 
 ## Brand Commitments
 
-- Company name: sunworks. AI is part of its working method, not part of the company name.
+- Company name: 썬웍스 (SunWorks in English, matching the English logo). AI is part of its working method, not part of the company name.
 - The owner asks for an innovative, immediately understandable website.
 - Domain: www.sunworks.kr.
-- October 7 brand reference: the owner-supplied Korean 썬웍스 logo, yellow-to-orange gradient, slight vintage print character. English logo remains in development.
+- October 7 brand reference: the owner-supplied Korean 썬웍스 logo, yellow-to-orange gradient, slight vintage print character. The owner supplied the English “SunWorks!” logo on 2026-10-07; the English home uses it, and English copy writes the name as SunWorks.
 - Favor creative, recognizably human writing over generic AI-company language.
 - Apply Impeccable, UI UX Pro Max, and make-interfaces-feel-better principles.
 

@@ -6,7 +6,7 @@ Persuade + Experience. Korean-first website for a company making its own apps an
 
 THESIS: Useful daydreams become things people use. A maker’s print edition, with human hands and frank Korean writing instead of abstract technology theatre.
 
-OWN-WORLD: Warm stock, carbon ink, vermilion, orange and golden yellow; generous poster lettering (Do Hyeon signboard gothic for Korean, condensed Archivo for English), inked rules, tactile print controls. Preserve the supplied Korean logo; it stays the heaviest mark on the page.
+OWN-WORLD: Warm stock, carbon ink, vermilion, orange and golden yellow; generous poster lettering (Gasoek One for Korean with opened 0.03em tracking, condensed Archivo for English), inked rules, tactile print controls. Preserve the supplied Korean logo; it stays the heaviest mark on the page.
 
 STORY: Meet the people-minded approach, explore the real first product, take away a small spark.
 
@@ -18,9 +18,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 
 ## Implementation boundaries
 
-- The reference logo is supplied artwork, not an English-logo approval. No new English logo is asserted.
+- Both logos are owner-supplied artwork: the Korean 썬웍스! logo on `/`, the English SunWorks! logo (2026-10-07) on `/en/`. Never redraw them or invent another mark.
 - Ideas in the print interaction are explicitly exploratory questions, not announced products. No backend AI claim.
-- Product: 어흥!한자, web beta; formal release preparing. Primary product action opens the product site https://hanja-app.sunw.kr/; the web beta is the secondary link. No invented customers, metrics, team history or email.
+- Product: 어흥!한자, web beta; formal release preparing. Primary product action opens the product site https://hanja-app.sunw.kr/; the web beta is the secondary link. No invented customers, metrics, team history or contact details; the footer shows only the company facts from the business registration certificate and support@sunworks.kr.
 - Two languages, one surface: `/` (Korean, canonical) and `/en/` (English) render the same component from `src/i18n.ts`, linked by a header language switch and `hreflang`. English copy is written for English readers, not translated line by line.
 - Human language leads; AI appears as a tool inside a concrete account of making.
 - Native links/buttons, strong focus, reduced motion, readable static no-JS content; 320px through wide desktop.
