@@ -257,7 +257,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.16;
+  line-height: 1.06;
 }
 .hero h1 span {
   display: block;
@@ -266,7 +266,7 @@ section[id] {
 .hero .hero-punch {
   color: var(--red);
   font-size: 1.32em;
-  line-height: 1.19;
+  line-height: 1.08;
 }
 .hero-intro {
   padding-top: 37px;
@@ -393,7 +393,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.35;
+  line-height: 1.2;
 }
 .work-heading > p {
   font-size: 16px;
@@ -624,7 +624,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.38;
+  line-height: 1.22;
 }
 .press-copy h2 span {
   color: var(--yellow);
@@ -679,7 +679,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.4;
+  line-height: 1.26;
   margin-top: 34px;
 }
 .print-sun {
@@ -855,7 +855,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.35;
+  line-height: 1.2;
 }
 .not-found p {
   margin-top: 24px;
@@ -867,18 +867,18 @@ section[id] {
 }
 [lang='en'] .hero h1 {
   font-size: clamp(64px, 7.2vw, 112px);
-  line-height: 0.98;
+  line-height: 0.9;
 }
 [lang='en'] .hero .hero-punch {
   font-size: 1.08em;
-  line-height: 1;
+  line-height: 0.92;
 }
 [lang='en'] .work-heading h2,
 [lang='en'] .press-copy h2 {
-  line-height: 1.05;
+  line-height: 0.95;
 }
 [lang='en'] .print-question {
-  line-height: 1.12;
+  line-height: 1;
 }
 [lang='en'] .hero-intro > p + p,
 [lang='en'] .about-copy p,

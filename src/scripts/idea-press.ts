@@ -64,12 +64,14 @@ if (press) {
       ctx.fillText(`${selected + 1} / ${ideas.length}`, 1000, 106);
       ctx.textAlign = 'left';
       ctx.font = questionFont;
+      // 화면 카드 질문과 같은 행간 비율(한국어 1.26, 영어 1.0)이다.
+      const lineStep = 96 * (lang === 'en' ? 1 : 1.26);
       // Chrome은 font 문자열의 폭 키워드를 무시해서 따로 지정한다.
       if (lang === 'en') ctx.fontStretch = 'semi-condensed';
       // 화면 제목과 같은 자간(0.03em × 96px)을 준다.
       else ctx.letterSpacing = '3px';
       ideas[selected].forEach((line, index) =>
-        ctx.fillText(line, 78, 350 + index * 145, 924),
+        ctx.fillText(line, 78, 350 + index * lineStep, 924),
       );
       ctx.fontStretch = 'normal';
       ctx.letterSpacing = '0px';
