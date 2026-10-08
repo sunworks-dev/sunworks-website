@@ -45,17 +45,17 @@ const alternates = [
   <main id="main">
     <MotionHero lang={lang} />
     <div class="sun-strip" aria-hidden="true">
-      <div class="sun-strip-inner">
+      <div class="sun-strip-inner" data-parallax="28" data-parallax-axis="x">
         <span>{t.strip[0]}</span>
         <Arrow diagonal />
         <span>{t.strip[1]}</span>
       </div>
     </div>
     <section id="about" class="about wrap" aria-labelledby="about-title">
-      <h2 id="about-title">
+      <h2 id="about-title" data-reveal="ink">
         <Lines lines={t.about.title} />
       </h2>
-      <div class="about-copy">
+      <div class="about-copy" data-reveal="rise">
         <p class="about-lead">
           <Lines lines={t.about.lead} />
         </p>
@@ -66,7 +66,7 @@ const alternates = [
     </section>
     <section id="work" class="work" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="work-heading">
+        <div class="work-heading" data-reveal="ink">
           <h2 id="work-title">
             <Lines lines={t.work.title} />
           </h2>
@@ -75,13 +75,22 @@ const alternates = [
           </p>
         </div>
         <article class="product" aria-labelledby="product-title">
-          <div class="product-scene">
-            <div class="product-sun" aria-hidden="true"></div>
-            <span class="product-character" aria-hidden="true">
+          <div class="product-scene" data-reveal="rise">
+            <div
+              class="product-sun"
+              aria-hidden="true"
+              data-parallax="40"
+            ></div>
+            <span
+              class="product-character"
+              aria-hidden="true"
+              data-parallax="-24"
+            >
               好
             </span>
             <img
               class="horang"
+              data-parallax="-18"
               src="/assets/horang.webp"
               width="500"
               height="500"
@@ -90,7 +99,7 @@ const alternates = [
             />
             <p class="product-scene-note">{t.work.sceneNote}</p>
           </div>
-          <div class="product-copy">
+          <div class="product-copy" data-reveal="rise">
             <h3 id="product-title">
               <img
                 src="/assets/hanja-icon.webp"
@@ -145,14 +154,20 @@ const alternates = [
       </div>
     </section>
     <section class="making wrap" aria-labelledby="making-title">
-      <div class="making-heading">
+      <div class="making-heading" data-reveal="ink">
         <h2 id="making-title">
           <Lines lines={t.making.title} />
         </h2>
         <p>{t.making.intro}</p>
       </div>
       <div class="making-body">
-        <p class="making-type" lang="en" aria-hidden="true">
+        <p
+          class="making-type"
+          lang="en"
+          aria-hidden="true"
+          data-reveal="ink"
+          data-parallax="-24"
+        >
           LET THE
           <br />
           <span>SUN IN.</span>
@@ -163,7 +178,13 @@ const alternates = [
         </p>
         <div class="practices">
           {t.making.practices.map((practice, i) => (
-            <details class="practice" name="making" open={i === 0}>
+            <details
+              class="practice"
+              name="making"
+              open={i === 0}
+              data-reveal="rise"
+              data-reveal-delay={i * 70}
+            >
               <summary>
                 <span>{practice.title}</span>
                 <span class="detail-toggle" aria-hidden="true"></span>
@@ -180,10 +201,10 @@ const alternates = [
     <IdeaPress copy={t.press} lang={lang} />
     <section class="closing" aria-labelledby="closing-title">
       <div class="wrap closing-inner">
-        <h2 id="closing-title">
+        <h2 id="closing-title" data-reveal="ink">
           <Lines lines={t.closing.title} />
         </h2>
-        <div class="closing-copy">
+        <div class="closing-copy" data-reveal="rise">
           <p>{t.closing.body}</p>
           <a
             class="text-link"
@@ -273,3 +294,6 @@ const alternates = [
     </div>
   </footer>
 </Base>
+<script>
+  import '../scripts/scroll-motion';
+</script>

@@ -35,3 +35,10 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 - `MotionHero.astro` renders the responsive poster, semantic heading, description, controls and existing introduction. `hero-film.ts` assigns one video URL after page load/visibility, selecting current language, viewport and supported codec. Measured H.264 MP4 files are smaller for this master and load first, with VP9 WebM fallback where supported.
 - Reduced motion, data-saving and 2G connections start with the poster and explicit play. JavaScript failure leaves the poster and product link usable. The cached film loops, pauses offscreen/when the tab is hidden, and respects manual pause. A media failure restores the poster.
 - The deterministic source is `scripts/motion/renderer.js`; delivery files and measured sizes are in `public/assets/motion/manifest.json`. Production workflow and validation: [motion production](../motion-production.md).
+
+## Card and scroll interaction — 2026-10-08
+
+- Existing Korean and English copy stays fixed. The four daydream cards support horizontal touch swipes, mouse dragging, focused left/right arrow keys, direct selection dots, and the existing next button. Native vertical scrolling and pinch zoom remain available. Short or canceled gestures return to the current card.
+- Paper moves out and the selected card settles in; rapid input interrupts the previous transition. Only the current question is announced. The existing PNG export still captures the selection at the moment of saving.
+- Section headings arrive like a print reveal, body groups rise slightly, and the print workspace settles like a sheet. Each arrival runs once. Decorative product layers move at different bounded speeds with native scrolling; mobile movement is halved. The hero film keeps its existing playback behavior.
+- Reduced motion cancels spatial animation and resets parallax while retaining card navigation. Without JavaScript, all sections and the first card remain readable; card controls and dots stay hidden. No new dependency or continuous animation loop is introduced.

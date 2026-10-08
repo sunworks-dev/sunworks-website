@@ -24,7 +24,7 @@ const { copy, lang } = Astro.props;
   data-card-bottom={copy.cardBottom}
 >
   <div class="wrap press-layout">
-    <div class="press-copy">
+    <div class="press-copy" data-reveal="ink">
       <h2 id="press-title">
         <Lines lines={copy.title.slice(0, -1)} /> <br />
         <span>{copy.title.at(-1)}</span>
@@ -36,33 +36,52 @@ const { copy, lang } = Astro.props;
         <Lines lines={copy.invitation} />
       </p>
     </div>
-    <div class="press-workspace">
+    <div class="press-workspace" data-reveal="paper">
       <div class="press-trim" aria-hidden="true">
         <span>{copy.trim[0]}</span>
         <span>{copy.trim[1]}</span>
       </div>
-      <div class="print-sheet" data-print-sheet>
-        <div class="print-top">
-          <span>{copy.cardTop}</span>
-          <span data-print-count>1 / {copy.ideas.length}</span>
-        </div>
-        <p
-          class="print-question"
-          data-print-question
-          aria-live="polite"
-          aria-atomic="true"
+      <div class="print-deck" data-print-deck>
+        <div
+          class="print-sheet"
+          data-print-sheet
+          role="group"
+          aria-labelledby="print-card-title"
         >
-          <Lines lines={copy.ideas[0]} />
-        </p>
-        <div class="print-sun" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="print-top">
+            <span id="print-card-title">{copy.cardTop}</span>
+            <span data-print-count>1 / {copy.ideas.length}</span>
+          </div>
+          <p
+            class="print-question"
+            data-print-question
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <Lines lines={copy.ideas[0]} />
+          </p>
+          <div class="print-sun" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="print-bottom">
+            <span>{copy.cardBottom}</span>
+            <span>sunworks.kr</span>
+          </div>
         </div>
-        <div class="print-bottom">
-          <span>{copy.cardBottom}</span>
-          <span>sunworks.kr</span>
-        </div>
+      </div>
+      <div class="print-pagination" data-print-pagination hidden>
+        {copy.ideas.map((idea, index) => (
+          <button
+            type="button"
+            data-print-index={index}
+            aria-label={idea.join(' ')}
+            aria-pressed={index === 0}
+          >
+            <span aria-hidden="true"></span>
+          </button>
+        ))}
       </div>
       <div class="press-controls" data-print-controls hidden>
         <button class="button button-paper" type="button" data-print-next>
