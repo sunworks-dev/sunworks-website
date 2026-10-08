@@ -145,6 +145,24 @@ components:
 | “Some ideas are too good to walk past.”             | “Good shower thoughts shouldn’t go down the drain.”             |
 | “Nosy about annoyances. Stubborn about good ideas.” | “Little annoyances make us itch to build.”                      |
 
+#### 이름과 카피 연결 (2026-10-08)
+
+소유자가 회사 이름과 카피를 더 강하게 묶어 달라고 요청했다. 독립 전략가 1명과 한국어·영어 비평 패널로 검토해 아래 원칙을 정했다.
+
+- 한국어 독자는 ‘썬’을 해(sun)로 읽지만 ‘웍스’를 ‘돌아가다’로 읽지 않는다. 그래서 한국어는 해·빛·떠오르다로 묶고, Works는 영문 문구와 장식 포스터가 맡는다.
+- 해 표현은 화면에 해 그림이 있는 곳에만 둔다. 대상은 히어로 그림 설명, 해 그라데이션 띠, 해 도장이 찍힌 인쇄 카드다. 영문 포스터는 SUN과 WORK를 주홍으로 드러낸다.
+- 회사 이름의 유래 이야기는 쓰지 않는다(소유자 결정).
+- 760px 이하에서 띠의 둘째 줄은 숨긴다. 단 한국어 페이지는 한국어 방문자 대부분이 모바일이라 “딴생각도 빛을 봐야지.”를 영문 줄 아래에 남긴다. 영문 줄이 남는 폭을 먼저 써서 화살표는 첫 줄 오른쪽에 머문다.
+- 피할 표현: “쥐구멍에도 볕 들 날” 같은 속담 비틀기(딴생각을 초라하게 만든다), “제대로 돌아가는 앱”·“apps that work”(다른 제품을 깎아내리는 대비로 읽힌다), “A LOT OF WORK”(고생으로 읽힌다).
+
+| 위치             | Before                                                                  | After                                                                                  |
+| ---------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| 히어로 그림 설명 | “연필로 적은 생각이 화면 속 버튼이 되기까지.” / “From a pencil doodle…” | “연필로 그린 해가 하늘로 떠오르기까지.” / “From a pencil sun to a button you can tap.” |
+| 해 띠            | “GOOD IDEAS DESERVE TO EXIST.” / “재밌는 건 만들어 봐야지.”             | “DAYDREAMS DESERVE DAYLIGHT.” / “딴생각도 빛을 봐야지.”                                |
+| 영문 장식 포스터 | “A LITTLE HUNCH. A LOT OF CRAFT.”                                       | “LET THE SUN IN. PUT THE WORK IN.”                                                     |
+| 인쇄 카드 위쪽   | “오늘의 딴생각”                                                         | “오늘 떠오른 딴생각”                                                                   |
+| 영어 히어로 소개 | “…turns them into apps and websites worth keeping.”                     | “…makes them work as apps and websites worth keeping.”                                 |
+
 ## Colors
 
 종이와 잉크가 읽기를 맡고, 해의 따뜻한 색이 큰 장면과 작은 반응을 만든다. 앞의 색상 토큰은 [전역 CSS의 실제 변수](../src/styles/global.css)와 같다.

@@ -48,10 +48,10 @@ export const copy = {
       intro: ['썬웍스는 그런 생각을 붙잡아', '앱과 웹서비스로 만들어요.'],
       cta: '만든 것부터 볼까요?',
       artAlt: '연필을 쥔 손이 노란 해를 그려내는 빈티지 인쇄풍 일러스트',
-      caption: ['연필로 적은 생각이', '화면 속 버튼이 되기까지.'],
+      caption: ['연필로 그린 해가', '하늘로 떠오르기까지.'],
       colophon: ['SMALL IDEAS. REAL THINGS.', '하남에서, 2026년부터'],
     },
-    strip: ['GOOD IDEAS DESERVE TO EXIST.', '재밌는 건 만들어 봐야지.'],
+    strip: ['DAYDREAMS DESERVE DAYLIGHT.', '딴생각도 빛을 봐야지.'],
     about: {
       title: ['불편한 걸 보면', '손이 근질근질.'],
       lead: ['“이런 거 있으면 좋겠는데.”', '그 한마디에 노트북을 열어요.'],
@@ -118,7 +118,7 @@ export const copy = {
         '답은 천천히 생각해도 돼요.',
       ],
       trim: ['SUNWORKS / DAYDREAM PRESS', '생각은 계속됩니다'],
-      cardTop: '오늘의 딴생각',
+      cardTop: '오늘 떠오른 딴생각',
       cardBottom: '썬웍스 딴생각 인쇄소',
       ideas: [
         ['두고 온 우산이', '혼자 집에', '돌아온다면?'],
@@ -165,7 +165,7 @@ export const copy = {
     meta: {
       title: 'SunWorks — Useful daydreams.',
       description:
-        'Good shower thoughts shouldn’t go down the drain. SunWorks turns them into apps and websites, starting with 어흥!한자, a study app for Hanja (Chinese characters).',
+        'Good shower thoughts shouldn’t go down the drain. SunWorks makes them work as apps and websites, starting with 어흥!한자, a study app for Hanja (Chinese characters).',
       ogImage: '/social-card-en.png',
       ogImageAlt: 'SunWorks — Useful daydreams.',
       ogLocale: 'en_US',
@@ -189,15 +189,15 @@ export const copy = {
       title: ['Useful', 'daydreams.'],
       hook: ['Good shower thoughts', 'shouldn’t go down the drain.'],
       intro: [
-        'SunWorks catches them and turns them into apps and websites worth keeping.',
+        'SunWorks catches them and makes them work as apps and websites worth keeping.',
       ],
       cta: 'See what we’ve made',
       artAlt:
         'Vintage screenprint-style illustration of a hand drawing a yellow sun with a pencil',
-      caption: ['From a pencil doodle', 'to a button you can tap.'],
+      caption: ['From a pencil sun', 'to a button you can tap.'],
       colophon: ['SMALL IDEAS. REAL THINGS.', 'Hanam, Korea · Est. 2026'],
     },
-    strip: ['GOOD IDEAS DESERVE TO EXIST.', 'If it’s fun, build it.'],
+    strip: ['DAYDREAMS DESERVE DAYLIGHT.', 'If it’s fun, build it.'],
     about: {
       title: ['Little annoyances', 'make us itch to build.'],
       lead: ['“Wouldn’t it be nice if…”', 'Then the laptop comes out.'],
