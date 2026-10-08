@@ -3,7 +3,7 @@ export type Lang = 'ko' | 'en';
 export const productUrl = 'https://hanja.sunw.kr/';
 export const appUrl = 'https://hanja-app.sunw.kr/';
 
-// 사업자등록증명(2026-07-29 발급) 기준. 연락처는 어흥!한자 운영 안내와 같은 주소다.
+// 사업자등록증(2026-10-08 정정 발급) 기준. 연락처는 어흥!한자 운영 안내와 같은 주소다.
 export const company = {
   bizNo: '463-11-02942',
   founded: '2026-06-12',
@@ -49,7 +49,7 @@ export const copy = {
       cta: '만든 것부터 볼까요?',
       artAlt: '연필을 쥔 손이 노란 해를 그려내는 빈티지 인쇄풍 일러스트',
       caption: ['연필로 그린 해가', '하늘로 떠오르기까지.'],
-      colophon: ['SMALL IDEAS. REAL THINGS.', '하남에서, 2026년부터'],
+      colophon: ['SMALL IDEAS. REAL THINGS.', '서울에서, 2026년부터'],
       motion: {
         play: '영상 재생',
         pause: '일시 정지',
@@ -162,7 +162,7 @@ export const copy = {
       bizNoLabel: '사업자등록번호',
       verify: '국세청에서 확인',
       addressLabel: '주소',
-      address: '경기도 하남시 감일순환로 170, 306동(감이동, 감일 스타힐스)',
+      address: '서울특별시 송파구 위례광장로 199(장지동, 성희프라자)',
       phoneLabel: '전화',
       phone: '010-5173-5351',
       emailLabel: '이메일',
@@ -203,7 +203,7 @@ export const copy = {
       artAlt:
         'Vintage screenprint-style illustration of a hand drawing a yellow sun with a pencil',
       caption: ['From a pencil sun', 'to a button you can tap.'],
-      colophon: ['SMALL IDEAS. REAL THINGS.', 'Hanam, Korea · Est. 2026'],
+      colophon: ['SMALL IDEAS. REAL THINGS.', 'Seoul, Korea · Est. 2026'],
       motion: {
         play: 'Play film',
         pause: 'Pause',
@@ -316,7 +316,7 @@ export const copy = {
       verify: 'Verify on Korea’s Hometax',
       addressLabel: 'Address',
       address:
-        'Building 306, 170 Gamilsunhwan-ro, Hanam-si, Gyeonggi-do, 12908, Republic of Korea',
+        '199 Wiryegwangjang-ro (Jangji-dong, Seonghui Plaza), Songpa-gu, Seoul, Republic of Korea',
       phoneLabel: 'Phone',
       phone: '+82 10-5173-5351',
       emailLabel: 'Email',
