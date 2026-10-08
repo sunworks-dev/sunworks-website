@@ -1,4 +1,4 @@
 {
-  "prompt": "Source: current sunworks-owned 어흥!한자 app icon (tiger biting a 漢 block, updated 2026-10-06) from apps/hanja-study-app/tool/character_assets/packs/default/out/app_icon_1024.png at app commit 02f22c4c, the same source as hanja-app.sunw.kr and the live web beta icons. Resized to 256x256 with Lanczos and converted to WebP at quality 90; no generative edit. Replaced the earlier reading-tiger icon on 2026-10-08 at the owner's request.",
+  "prompt": "Source: current sunworks-owned 어흥!한자 app icon (tiger biting a 漢 block, updated 2026-10-06) from apps/hanja-study-app/tool/character_assets/packs/default/out/app_icon_1024.png at app commit 02f22c4c, the same source as the introduction site (hanja.sunw.kr) and the web beta (hanja-app.sunw.kr) icons. Resized to 256x256 with Lanczos and converted to WebP at quality 90; no generative edit. Replaced the earlier reading-tiger icon on 2026-10-08 at the owner's request.",
   "createdAt": "2026-10-08T10:57:00.000Z"
 }

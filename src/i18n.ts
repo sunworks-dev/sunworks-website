@@ -1,7 +1,7 @@
 export type Lang = 'ko' | 'en';
 
-export const productUrl = 'https://hanja-app.sunw.kr/';
-export const appUrl = 'https://bryannamd.github.io/hanja-web/';
+export const productUrl = 'https://hanja.sunw.kr/';
+export const appUrl = 'https://hanja-app.sunw.kr/';
 
 // 사업자등록증명(2026-07-29 발급) 기준. 연락처는 어흥!한자 운영 안내와 같은 주소다.
 export const company = {
