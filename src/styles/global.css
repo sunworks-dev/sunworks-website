@@ -30,12 +30,22 @@
   --display-weight: 400;
   --display-stretch: normal;
   --display-tracking: 0.03em;
+  /* 제목은 촘촘하게, 본문은 넉넉하게. 잉크 높이(Gasoek 0.90em)보다 0.16em 여유를 둔다. */
+  --display-leading: 1.06;
+  --heading-leading: 1.3;
+  --lead-leading: 1.55;
+  --body-leading: 1.8;
 }
 [lang='en'] {
   --display: 'Archivo Variable', 'Gasoek One', sans-serif;
   --display-weight: 750;
   --display-stretch: 85%;
   --display-tracking: -0.015em;
+  /* Archivo의 y 아래 끝과 f 위 끝 합이 0.93em이라 0.95 아래로 내리지 않는다. */
+  --display-leading: 0.95;
+  --heading-leading: 1.2;
+  --lead-leading: 1.4;
+  --body-leading: 1.65;
 }
 *,
 *::before,
@@ -257,7 +267,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.06;
+  line-height: var(--display-leading);
 }
 .hero h1 span {
   display: block;
@@ -266,7 +276,6 @@ section[id] {
 .hero .hero-punch {
   color: var(--red);
   font-size: 1.32em;
-  line-height: 1.08;
 }
 .hero-intro {
   padding-top: 37px;
@@ -275,13 +284,13 @@ section[id] {
 .hero-hook {
   font-size: clamp(20px, 1.7vw, 24px);
   font-weight: 700;
-  line-height: 1.55;
+  line-height: var(--lead-leading);
   letter-spacing: -0.015em;
 }
 .hero-intro > p + p {
   margin-top: 17px;
   font-size: 16px;
-  line-height: 1.9;
+  line-height: var(--body-leading);
 }
 .hero-intro .button {
   margin-top: 29px;
@@ -358,7 +367,7 @@ section[id] {
 .making h2,
 .closing h2 {
   font-size: clamp(32px, 3.05vw, 45px);
-  line-height: 1.5;
+  line-height: var(--heading-leading);
   letter-spacing: -0.02em;
 }
 .about-copy {
@@ -366,14 +375,14 @@ section[id] {
 }
 .about-copy p {
   font-size: 16px;
-  line-height: 1.95;
+  line-height: var(--body-leading);
 }
 .about-copy p + p {
   margin-top: 23px;
 }
 .about-copy .about-lead {
   font-size: 23px;
-  line-height: 1.65;
+  line-height: var(--lead-leading);
   font-weight: 700;
   letter-spacing: -0.015em;
 }
@@ -393,11 +402,11 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.2;
+  line-height: var(--display-leading);
 }
 .work-heading > p {
   font-size: 16px;
-  line-height: 1.85;
+  line-height: var(--body-leading);
   padding-bottom: 10px;
 }
 .product {
@@ -455,6 +464,7 @@ section[id] {
   align-items: center;
   gap: 15px;
   font-size: 32px;
+  line-height: var(--display-leading);
   letter-spacing: var(--display-tracking);
 }
 .product-copy h3,
@@ -480,13 +490,13 @@ section[id] {
   margin-top: 30px;
   font-size: clamp(27px, 2.9vw, 41px);
   font-weight: 750;
-  line-height: 1.45;
+  line-height: var(--heading-leading);
   letter-spacing: -0.02em;
 }
 .product-description {
   margin-top: 24px;
   font-size: 16px;
-  line-height: 1.95;
+  line-height: var(--body-leading);
 }
 .product-features {
   display: flex;
@@ -529,7 +539,7 @@ section[id] {
 }
 .making-heading > p {
   font-size: 16px;
-  line-height: 1.8;
+  line-height: var(--body-leading);
   padding-bottom: 9px;
 }
 .making-body {
@@ -541,7 +551,7 @@ section[id] {
 .making-type {
   font-family: var(--latin);
   font-size: clamp(52px, 6vw, 87px);
-  line-height: 0.98;
+  line-height: var(--display-leading);
   letter-spacing: -0.02em;
   font-weight: 900;
   font-stretch: 85%;
@@ -565,6 +575,7 @@ section[id] {
   list-style: none;
   font-size: 22px;
   font-weight: 750;
+  line-height: var(--lead-leading);
   letter-spacing: -0.015em;
 }
 .practice summary::-webkit-details-marker {
@@ -599,7 +610,7 @@ section[id] {
 }
 .practice-content > p {
   font-size: 16px;
-  line-height: 1.95;
+  line-height: var(--body-leading);
 }
 .practice-content .practice-note {
   margin-top: 20px;
@@ -624,7 +635,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.22;
+  line-height: var(--display-leading);
 }
 .press-copy h2 span {
   color: var(--yellow);
@@ -632,7 +643,7 @@ section[id] {
 .press-copy > p {
   margin-top: 32px;
   font-size: 16px;
-  line-height: 1.95;
+  line-height: var(--body-leading);
 }
 .press-copy .press-invitation {
   margin-top: 17px;
@@ -679,7 +690,7 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.26;
+  line-height: var(--display-leading);
   margin-top: 34px;
 }
 .print-sun {
@@ -855,39 +866,21 @@ section[id] {
   font-weight: var(--display-weight);
   font-stretch: var(--display-stretch);
   letter-spacing: var(--display-tracking);
-  line-height: 1.2;
+  line-height: var(--display-leading);
 }
 .not-found p {
   margin-top: 24px;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: var(--body-leading);
 }
 .not-found .button {
   margin-top: 32px;
 }
 [lang='en'] .hero h1 {
   font-size: clamp(64px, 7.2vw, 112px);
-  line-height: 0.9;
 }
 [lang='en'] .hero .hero-punch {
   font-size: 1.08em;
-  line-height: 0.92;
-}
-[lang='en'] .work-heading h2,
-[lang='en'] .press-copy h2 {
-  line-height: 0.95;
-}
-[lang='en'] .print-question {
-  line-height: 1;
-}
-[lang='en'] .hero-intro > p + p,
-[lang='en'] .about-copy p,
-[lang='en'] .product-description,
-[lang='en'] .practice-content > p,
-[lang='en'] .press-copy > p,
-[lang='en'] .work-heading > p,
-[lang='en'] .making-heading > p {
-  line-height: 1.65;
 }
 [lang='en'] .hero-intro > p + p {
   max-width: 30em;
@@ -1104,17 +1097,12 @@ section[id] {
   .making h2,
   .closing h2 {
     font-size: clamp(29px, 5.2vw, 37px);
-    line-height: 1.5;
   }
   .about-copy {
     max-width: 580px;
   }
   .about-copy .about-lead {
     font-size: 20px;
-  }
-  .about-copy p {
-    font-size: 16px;
-    line-height: 1.95;
   }
   .about-copy p + p {
     margin-top: 20px;
@@ -1176,7 +1164,7 @@ section[id] {
   }
   .work-note {
     font-size: 12px;
-    line-height: 1.8;
+    line-height: var(--body-leading);
     margin-top: 32px;
     padding-top: 18px;
   }
