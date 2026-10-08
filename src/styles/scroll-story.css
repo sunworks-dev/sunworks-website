@@ -1,0 +1,315 @@
+/* A scroll-operated print edition; the unenhanced page is a complete poster. */
+.daylight-story {
+  background: var(--paper);
+}
+.daylight-stage {
+  position: relative;
+  overflow: clip;
+  isolation: isolate;
+  display: grid;
+  align-items: center;
+  min-height: 660px;
+  padding-block: 100px;
+}
+.daylight-art {
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  z-index: -1;
+  pointer-events: none;
+}
+.daylight-disc {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: min(82vw, 640px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.daylight-disc-red {
+  background: var(--red);
+}
+.daylight-disc-orange {
+  background: var(--orange);
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.daylight-disc-yellow {
+  background: var(--yellow);
+  transform: translate(-50%, -50%) scale(0.6);
+}
+.daylight-content {
+  position: relative;
+}
+.daylight-content h2 {
+  position: relative;
+  font-family: var(--display);
+  font-size: clamp(52px, 6.8vw, 100px);
+  font-weight: var(--display-weight);
+  font-stretch: var(--display-stretch);
+  letter-spacing: var(--display-tracking);
+  line-height: 1.12;
+  color: var(--ink);
+}
+.daylight-line {
+  display: block;
+}
+.daylight-line + .daylight-line {
+  text-align: right;
+}
+.daylight-lead {
+  position: relative;
+  width: fit-content;
+  margin: 64px auto 0;
+  padding: 14px 22px;
+  background: var(--paper);
+  font-size: 20px;
+  line-height: var(--lead-leading);
+  font-weight: 700;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+.daylight-track {
+  display: none;
+}
+.daylight-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding-block: 76px 110px;
+  font-size: 18px;
+  line-height: var(--body-leading);
+}
+.work {
+  position: relative;
+  overflow: clip;
+}
+.work-heading,
+.making-heading,
+.press-copy,
+.idea-press {
+  overflow: clip;
+}
+.product-scene {
+  align-self: start;
+}
+.making-type {
+  overflow: clip;
+  padding-block: 4px;
+}
+.making-type .type-line {
+  display: block;
+  color: var(--ink);
+  transform-origin: left center;
+}
+.making-type .type-color {
+  color: var(--red);
+}
+.press-workspace {
+  position: relative;
+}
+.closing {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--yellow);
+}
+.closing-sun {
+  position: absolute;
+  inset: 0;
+  background: var(--sunset);
+  z-index: -1;
+}
+.closing-inner {
+  position: relative;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-scroll-story] .daylight-runway {
+    height: 180svh;
+  }
+  [data-scroll-story] .daylight-stage {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 540px;
+    padding-block: 64px;
+  }
+  [data-scroll-story] .daylight-track {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 80px;
+    height: 2px;
+    background: rgb(36 33 29 / 20%);
+    transform: translateX(-50%);
+  }
+  .daylight-track span {
+    display: block;
+    height: 100%;
+    background: var(--ink);
+    transform: scaleX(var(--scene-progress, 0));
+    transform-origin: left;
+  }
+  [data-scroll-story] .product-scene {
+    position: sticky;
+    top: 12svh;
+  }
+  [data-scroll-story] .product-copy {
+    padding-block: 64px 90px;
+  }
+  [data-scroll-story] .press-workspace::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    height: 1px;
+    background: var(--paper);
+    opacity: var(--press-rule, 0);
+    transform: scaleX(var(--press-rule, 0));
+    transform-origin: left;
+  }
+  [data-scroll-story] .closing {
+    min-height: 52svh;
+    display: grid;
+    align-items: center;
+  }
+}
+@media (max-width: 760px) {
+  .daylight-stage {
+    min-height: 560px;
+    padding-block: 90px;
+  }
+  .daylight-content h2 {
+    font-size: clamp(31px, 8.4vw, 60px);
+    line-height: 1.22;
+  }
+  .daylight-line + .daylight-line {
+    margin-top: 14px;
+  }
+  [lang='en'] .daylight-content h2 {
+    font-size: clamp(42px, 12vw, 76px);
+    line-height: 1;
+  }
+  .daylight-lead {
+    margin-top: 58px;
+    padding: 14px 12px;
+    font-size: 16px;
+  }
+  .daylight-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 48px 72px;
+    font-size: 16px;
+  }
+  .product-copy {
+    position: relative;
+    z-index: 2;
+    background: var(--paper);
+    padding: 36px 24px;
+    margin-inline: -8px;
+  }
+  .product-copy::before {
+    content: '';
+    position: absolute;
+    inset: 7px;
+    border: 1px solid var(--rule);
+    pointer-events: none;
+  }
+  .product-copy h3 {
+    font-size: 27px;
+    gap: 12px;
+  }
+  .product-tagline {
+    font-size: 30px;
+  }
+  .product-description .wide-break {
+    display: none;
+  }
+  .product-actions {
+    gap: 12px;
+  }
+  .product-actions .button {
+    white-space: normal;
+    text-align: left;
+  }
+  .making-body {
+    gap: 48px;
+  }
+  .making-type {
+    font-size: clamp(58px, 16vw, 100px);
+  }
+  .making-type .type-line:nth-child(even) {
+    text-align: right;
+    transform-origin: right center;
+  }
+  .closing-inner {
+    padding-block: 16px;
+  }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
+  [data-scroll-story] .daylight-runway {
+    height: 164svh;
+  }
+  [data-scroll-story] .daylight-stage {
+    height: 88svh;
+    min-height: 460px;
+  }
+  [data-scroll-story] .product {
+    display: block;
+  }
+  [data-scroll-story] .product-scene {
+    top: 8svh;
+    padding-top: 20px;
+  }
+  [data-scroll-story] .product-copy {
+    margin-top: 18svh;
+    padding-block: 36px;
+  }
+  [data-scroll-story] .closing {
+    min-height: 58svh;
+  }
+}
+@media (max-height: 520px) {
+  [data-scroll-story] .daylight-runway {
+    height: auto;
+  }
+  [data-scroll-story] .daylight-stage {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding-block: 72px;
+  }
+  [data-scroll-story] .product-scene {
+    position: relative;
+    top: auto;
+  }
+  [data-scroll-story] .product-copy {
+    margin-top: 32px;
+  }
+  .daylight-track {
+    visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .daylight-lead {
+    transform: none;
+  }
+}
+@media print {
+  [data-scroll-story] .daylight-runway {
+    height: auto;
+  }
+  [data-scroll-story] .daylight-stage,
+  [data-scroll-story] .product-scene {
+    position: relative;
+    height: auto;
+    top: auto;
+  }
+  .daylight-art,
+  .daylight-track,
+  .closing-sun {
+    display: none;
+  }
+}

@@ -61,7 +61,7 @@ figure {
   margin: 0;
 }
 body {
-  min-width: 320px;
+  min-width: min(320px, 100%);
 }
 ::selection {
   background: var(--yellow);

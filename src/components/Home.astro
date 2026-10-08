@@ -4,6 +4,8 @@ import BrandLogo from './BrandLogo.astro';
 import Arrow from './Arrow.astro';
 import IdeaPress from './IdeaPress.astro';
 import MotionHero from './MotionHero.astro';
+import DaylightStory from './DaylightStory.astro';
+import '../styles/scroll-story.css';
 import Lines from './Lines.astro';
 import { appUrl, company, copy, productUrl, type Lang } from '../i18n';
 
@@ -44,29 +46,17 @@ const alternates = [
   </header>
   <main id="main">
     <MotionHero lang={lang} />
-    <div class="sun-strip" aria-hidden="true">
-      <div class="sun-strip-inner" data-parallax="28" data-parallax-axis="x">
+    <div class="sun-strip" aria-hidden="true" data-scroll-scene="ribbon">
+      <div class="sun-strip-inner">
         <span>{t.strip[0]}</span>
         <Arrow diagonal />
         <span>{t.strip[1]}</span>
       </div>
     </div>
-    <section id="about" class="about wrap" aria-labelledby="about-title">
-      <h2 id="about-title" data-reveal="ink">
-        <Lines lines={t.about.title} />
-      </h2>
-      <div class="about-copy" data-reveal="rise">
-        <p class="about-lead">
-          <Lines lines={t.about.lead} />
-        </p>
-        {t.about.body.map((paragraph) => (
-          <p>{paragraph}</p>
-        ))}
-      </div>
-    </section>
+    <DaylightStory lang={lang} />
     <section id="work" class="work" aria-labelledby="work-title">
       <div class="wrap">
-        <div class="work-heading" data-reveal="ink">
+        <div class="work-heading" data-scroll-scene="heading">
           <h2 id="work-title">
             <Lines lines={t.work.title} />
           </h2>
@@ -74,23 +64,18 @@ const alternates = [
             <Lines lines={t.work.intro} />
           </p>
         </div>
-        <article class="product" aria-labelledby="product-title">
-          <div class="product-scene" data-reveal="rise">
-            <div
-              class="product-sun"
-              aria-hidden="true"
-              data-parallax="40"
-            ></div>
-            <span
-              class="product-character"
-              aria-hidden="true"
-              data-parallax="-24"
-            >
+        <article
+          class="product"
+          aria-labelledby="product-title"
+          data-scroll-scene="product"
+        >
+          <div class="product-scene">
+            <div class="product-sun" aria-hidden="true"></div>
+            <span class="product-character" aria-hidden="true">
               好
             </span>
             <img
               class="horang"
-              data-parallax="-18"
               src="/assets/horang.webp"
               width="500"
               height="500"
@@ -99,7 +84,7 @@ const alternates = [
             />
             <p class="product-scene-note">{t.work.sceneNote}</p>
           </div>
-          <div class="product-copy" data-reveal="rise">
+          <div class="product-copy">
             <h3 id="product-title">
               <img
                 src="/assets/hanja-icon.webp"
@@ -154,7 +139,7 @@ const alternates = [
       </div>
     </section>
     <section class="making wrap" aria-labelledby="making-title">
-      <div class="making-heading" data-reveal="ink">
+      <div class="making-heading" data-scroll-scene="heading">
         <h2 id="making-title">
           <Lines lines={t.making.title} />
         </h2>
@@ -165,26 +150,16 @@ const alternates = [
           class="making-type"
           lang="en"
           aria-hidden="true"
-          data-reveal="ink"
-          data-parallax="-24"
+          data-scroll-scene="type"
         >
-          LET THE
-          <br />
-          <span>SUN IN.</span>
-          <br />
-          PUT THE
-          <br />
-          <span>WORK IN.</span>
+          <span class="type-line">LET THE</span>{' '}
+          <span class="type-line type-color">SUN IN.</span>{' '}
+          <span class="type-line">PUT THE</span>{' '}
+          <span class="type-line type-color">WORK IN.</span>
         </p>
         <div class="practices">
           {t.making.practices.map((practice, i) => (
-            <details
-              class="practice"
-              name="making"
-              open={i === 0}
-              data-reveal="rise"
-              data-reveal-delay={i * 70}
-            >
+            <details class="practice" name="making" open={i === 0}>
               <summary>
                 <span>{practice.title}</span>
                 <span class="detail-toggle" aria-hidden="true"></span>
@@ -199,12 +174,17 @@ const alternates = [
       </div>
     </section>
     <IdeaPress copy={t.press} lang={lang} />
-    <section class="closing" aria-labelledby="closing-title">
+    <section
+      class="closing"
+      aria-labelledby="closing-title"
+      data-scroll-scene="closing"
+    >
+      <div class="closing-sun" aria-hidden="true"></div>
       <div class="wrap closing-inner">
-        <h2 id="closing-title" data-reveal="ink">
+        <h2 id="closing-title">
           <Lines lines={t.closing.title} />
         </h2>
-        <div class="closing-copy" data-reveal="rise">
+        <div class="closing-copy">
           <p>{t.closing.body}</p>
           <a
             class="text-link"

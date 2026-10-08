@@ -1,135 +1,196 @@
-// Content is visible before JS. Motion only accompanies the first arrival;
-// the decorative layers follow native scrolling without controlling it.
 export {};
 
-const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
-const smallScreen = matchMedia('(max-width: 760px)');
-const entrances = new Map<HTMLElement, Animation>();
-const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      const element = entry.target as HTMLElement;
-      revealObserver.unobserve(element);
-      if (motionPreference.matches || typeof element.animate !== 'function')
-        continue;
-      const frames: Keyframe[] =
-        element.dataset.reveal === 'ink'
-          ? [
-              { clipPath: 'inset(0 0 100% 0)', transform: 'translateY(8px)' },
-              { clipPath: 'inset(0 0 0% 0)', transform: 'translateY(0)' },
-            ]
-          : element.dataset.reveal === 'paper'
-            ? [
-                { transform: 'translateY(32px) rotate(1.5deg)', opacity: 0.6 },
-                { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
-              ]
-            : [
-                { transform: 'translateY(22px)', opacity: 0.55 },
-                { transform: 'translateY(0)', opacity: 1 },
-              ];
-      const animation = element.animate(frames, {
-        duration: element.dataset.reveal === 'ink' ? 650 : 520,
-        delay: Math.min(Number(element.dataset.revealDelay) || 0, 140),
-        easing: ease,
-        // A delayed item stays readable until its animation actually starts.
-        fill: 'none',
-      });
-      entrances.set(element, animation);
-      animation.onfinish = () => entrances.delete(element);
-      animation.oncancel = () => entrances.delete(element);
-    }
-  },
-  { rootMargin: '0px 0px -7% 0px', threshold: 0 },
-);
-
-document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((element) => {
-  const bounds = element.getBoundingClientRect();
-  // A refresh or direct anchor arrival starts with readable content.
-  if (bounds.top >= innerHeight || bounds.bottom <= 0)
-    revealObserver.observe(element);
-});
-
-const layers = Array.from(
-  document.querySelectorAll<HTMLElement>('[data-parallax]'),
+// Scroll is the timeline: no playback, wheel interception, or catch-up loop.
+const preference = matchMedia('(prefers-reduced-motion: reduce)');
+const narrow = matchMedia('(max-width: 760px)');
+const short = matchMedia('(max-height: 520px)');
+const clamp = (value: number) => Math.max(0, Math.min(1, value));
+const phase = (value: number, start: number, end: number) =>
+  clamp((value - start) / (end - start));
+const smooth = (value: number) => value * value * (3 - 2 * value);
+const scenes = Array.from(
+  document.querySelectorAll<HTMLElement>('[data-scroll-scene]'),
 ).map((element) => ({
   element,
-  anchor:
-    element.closest<HTMLElement>('.product-scene, .sun-strip, .making-body') ??
-    element,
-  amount: Number(element.dataset.parallax) || 0,
-  horizontal: element.dataset.parallaxAxis === 'x',
+  kind: element.dataset.scrollScene,
+  parts: {
+    discs: Array.from(element.querySelectorAll<HTMLElement>('.daylight-disc')),
+    lines: Array.from(
+      element.querySelectorAll<HTMLElement>('.daylight-line, .type-line'),
+    ),
+    stage: element.querySelector<HTMLElement>('.daylight-stage'),
+    lead: element.querySelector<HTMLElement>('.daylight-lead'),
+    sun: element.querySelector<HTMLElement>('.product-sun, .closing-sun'),
+    tiger: element.querySelector<HTMLElement>('.horang'),
+    character: element.querySelector<HTMLElement>('.product-character'),
+    sheet: element.querySelector<HTMLElement>('.print-deck'),
+    ribbon: element.querySelector<HTMLElement>('.sun-strip-inner'),
+    title: element.querySelector<HTMLElement>('h2'),
+  },
 }));
-const activeAnchors = new Set<Element>();
+type Scene = (typeof scenes)[number];
+const active = new Set<Scene>();
+const touched = new Map<HTMLElement, Set<string>>();
 let frame = 0;
-
-const updateLayers = () => {
+function style(element: HTMLElement | null, property: string, value: string) {
+  if (!element) return;
+  element.style.setProperty(property, value);
+  if (!touched.has(element)) touched.set(element, new Set());
+  touched.get(element)!.add(property);
+}
+function render() {
   frame = 0;
-  if (motionPreference.matches || document.hidden) return;
-  // Read all layout measurements before writing any transforms.
-  const positions = new Map<Element, number>();
-  for (const anchor of activeAnchors) {
-    const bounds = anchor.getBoundingClientRect();
-    positions.set(
-      anchor,
-      Math.max(
-        -1,
-        Math.min(
-          1,
-          (innerHeight / 2 - bounds.top - bounds.height / 2) / innerHeight,
-        ),
-      ),
-    );
+  if (preference.matches || document.hidden) return;
+  // Finish layout reads before any style write, including sticky stage height.
+  const measurements = [...active].map((scene) => ({
+    scene,
+    bounds: scene.element.getBoundingClientRect(),
+    stageHeight: scene.parts.stage?.offsetHeight ?? 0,
+  }));
+  const viewport = document.documentElement.clientHeight;
+  for (const { scene, bounds, stageHeight } of measurements) {
+    const { element, parts, kind } = scene;
+    const enter = clamp((viewport - bounds.top) / (viewport * 0.85));
+    if (kind === 'daylight') {
+      const progress = short.matches
+        ? enter
+        : clamp(-bounds.top / Math.max(1, bounds.height - stageHeight));
+      const bloom = smooth(phase(progress, 0.05, 0.9));
+      const size = narrow.matches ? 4.8 : 3.5;
+      parts.discs.forEach((disc, index) => {
+        const expansion = smooth(
+          phase(progress, index * 0.08, 0.82 + index * 0.07),
+        );
+        style(
+          disc,
+          'transform',
+          `translate(-50%, calc(-50% + ${(1 - bloom) * 160}px)) scale(${0.16 - index * 0.045 + expansion * (size - index * 0.5)})`,
+        );
+      });
+      parts.lines.forEach((line, index) => {
+        const registration = smooth(phase(progress, 0, 0.5));
+        style(
+          line,
+          'transform',
+          `translateX(${(1 - registration) * (index ? -1 : 1) * (narrow.matches ? 14 : 80)}px)`,
+        );
+      });
+      style(
+        parts.lead,
+        'transform',
+        `translateY(${(1 - bloom) * 24}px) rotate(${-3 + bloom * 3}deg)`,
+      );
+      style(element, '--scene-progress', progress.toFixed(4));
+    } else if (kind === 'product') {
+      const arrive = smooth(phase(enter, 0.08, 0.9));
+      style(
+        parts.sun,
+        'transform',
+        `translateY(${(1 - arrive) * 80}px) scale(${0.35 + arrive * 0.65})`,
+      );
+      style(
+        parts.tiger,
+        'transform',
+        `translateY(${(1 - arrive) * 150}px) rotate(${(1 - arrive) * -12}deg) scale(${0.68 + arrive * 0.32})`,
+      );
+      style(
+        parts.character,
+        'transform',
+        `translate(${(1 - arrive) * -35}px, ${(1 - arrive) * -50}px) rotate(${-25 + arrive * 15}deg)`,
+      );
+    } else if (kind === 'type') {
+      parts.lines.forEach((line, index) => {
+        const progress = smooth(phase(enter, index * 0.11, 0.6 + index * 0.11));
+        style(
+          line,
+          'transform',
+          `translateX(${(1 - progress) * (index % 2 ? 1 : -1) * 38}%) skewX(${(1 - progress) * (index % 2 ? -5 : 5)}deg)`,
+        );
+      });
+    } else if (kind === 'press') {
+      const progress = smooth(phase(enter, 0.02, 0.42));
+      // Swipe owns the sheet; scroll only moves its outer deck.
+      const engaged =
+        element.contains(document.activeElement) ||
+        element.matches(':active') ||
+        !!element.querySelector('[data-dragging]');
+      style(
+        parts.sheet,
+        'transform',
+        engaged
+          ? 'none'
+          : `translateY(${(1 - progress) * 90}px) rotate(${(1 - progress) * -7}deg)`,
+      );
+      style(element, '--press-rule', String(1 - progress));
+    } else if (kind === 'closing') {
+      const progress = smooth(phase(enter, 0, 0.88));
+      style(
+        parts.sun,
+        'clip-path',
+        `circle(${8 + progress * 115}% at 50% 100%)`,
+      );
+    } else if (kind === 'ribbon') {
+      const travel =
+        clamp((viewport - bounds.top) / (viewport + bounds.height)) - 0.5;
+      style(
+        parts.ribbon,
+        'transform',
+        `translateX(${travel * (narrow.matches ? -32 : -120)}px)`,
+      );
+    } else if (kind === 'heading') {
+      const progress = smooth(phase(enter, 0, 0.62));
+      style(
+        parts.title,
+        'transform',
+        `translateX(${(1 - progress) * (narrow.matches ? 22 : 48)}px)`,
+      );
+    }
   }
-  for (const layer of layers) {
-    const progress = positions.get(layer.anchor);
-    if (progress === undefined) continue;
-    const distance = progress * layer.amount * (smallScreen.matches ? 0.5 : 1);
-    layer.element.style.translate = layer.horizontal
-      ? `${distance.toFixed(2)}px 0`
-      : `0 ${distance.toFixed(2)}px`;
-  }
-};
-const schedule = () => {
-  if (
-    !frame &&
-    !motionPreference.matches &&
-    !document.hidden &&
-    activeAnchors.size
-  )
-    frame = requestAnimationFrame(updateLayers);
-};
-const layerObserver = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    if (entry.isIntersecting) activeAnchors.add(entry.target);
-    else activeAnchors.delete(entry.target);
-  }
-  schedule();
-});
-new Set(layers.map((layer) => layer.anchor)).forEach((anchor) =>
-  layerObserver.observe(anchor),
+}
+function schedule() {
+  if (!frame && !preference.matches && !document.hidden)
+    frame = requestAnimationFrame(render);
+}
+const observer = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      const scene = scenes.find(({ element }) => element === entry.target)!;
+      if (entry.isIntersecting) active.add(scene);
+      else active.delete(scene);
+    }
+    schedule();
+  },
+  { rootMargin: '100px 0px' },
 );
+function syncPreference() {
+  cancelAnimationFrame(frame);
+  frame = 0;
+  if (preference.matches) {
+    delete document.documentElement.dataset.scrollStory;
+    touched.forEach((properties, element) =>
+      properties.forEach((property) => element.style.removeProperty(property)),
+    );
+    touched.clear();
+  } else {
+    document.documentElement.dataset.scrollStory = '';
+    schedule();
+  }
+}
+scenes.forEach(({ element }) => observer.observe(element));
 window.addEventListener('scroll', schedule, { passive: true });
 window.addEventListener('resize', schedule, { passive: true });
+window.addEventListener('pageshow', schedule);
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     cancelAnimationFrame(frame);
     frame = 0;
   } else schedule();
 });
-motionPreference.addEventListener('change', () => {
-  if (motionPreference.matches) {
-    entrances.forEach((animation) => animation.cancel());
-    cancelAnimationFrame(frame);
-    frame = 0;
-    layers.forEach(({ element }) => element.style.removeProperty('translate'));
-  } else schedule();
-});
-// Keyboard navigation should never land behind an entrance mask.
-document.addEventListener('focusin', (event) => {
-  if (!(event.target instanceof Element)) return;
-  for (const [element, animation] of entrances)
-    if (element.contains(event.target)) animation.cancel();
-});
+document.addEventListener('focusin', schedule);
+document.addEventListener('pointerdown', schedule, { passive: true });
+preference.addEventListener('change', syncPreference);
+narrow.addEventListener('change', schedule);
+short.addEventListener('change', schedule);
+new ResizeObserver(schedule).observe(document.body);
+document.fonts.ready.then(schedule);
+syncPreference();

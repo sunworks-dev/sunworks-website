@@ -24,7 +24,7 @@ const { copy, lang } = Astro.props;
   data-card-bottom={copy.cardBottom}
 >
   <div class="wrap press-layout">
-    <div class="press-copy" data-reveal="ink">
+    <div class="press-copy" data-scroll-scene="heading">
       <h2 id="press-title">
         <Lines lines={copy.title.slice(0, -1)} /> <br />
         <span>{copy.title.at(-1)}</span>
@@ -36,7 +36,7 @@ const { copy, lang } = Astro.props;
         <Lines lines={copy.invitation} />
       </p>
     </div>
-    <div class="press-workspace" data-reveal="paper">
+    <div class="press-workspace" data-scroll-scene="press">
       <div class="press-trim" aria-hidden="true">
         <span>{copy.trim[0]}</span>
         <span>{copy.trim[1]}</span>

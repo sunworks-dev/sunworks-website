@@ -1,0 +1,43 @@
+---
+import Lines from './Lines.astro';
+import { copy, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const t = copy[Astro.props.lang].about;
+---
+
+<section id="about" class="daylight-story" aria-labelledby="about-title">
+  <div class="daylight-runway" data-scroll-scene="daylight">
+    <div class="daylight-stage">
+      <div class="daylight-art" aria-hidden="true">
+        <div class="daylight-disc daylight-disc-red"></div>
+        <div class="daylight-disc daylight-disc-orange"></div>
+        <div class="daylight-disc daylight-disc-yellow"></div>
+      </div>
+      <div class="daylight-content wrap">
+        <h2 id="about-title">
+          {t.title.map((line, index) => (
+            <>
+              <span class="daylight-line" data-story-line={index}>
+                {line}
+              </span>{' '}
+            </>
+          ))}
+        </h2>
+        <p class="daylight-lead">
+          <Lines lines={t.lead} />
+        </p>
+      </div>
+      <div class="daylight-track" aria-hidden="true">
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div class="daylight-body wrap">
+    {t.body.map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </div>
+</section>
