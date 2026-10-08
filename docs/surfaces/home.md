@@ -10,7 +10,7 @@ OWN-WORLD: Warm stock, carbon ink, vermilion, orange and golden yellow; generous
 
 STORY: Meet the people-minded approach, explore the real first product, take away a small spark.
 
-FIRST VIEWPORT: Oversized Korean “쓸모 있는 딴생각.” fills the left; an original screenprinted hand drawing a sun fills the right. A clear product action sits with the introduction. A warm gradient strip closes the poster. The later “딴생각 인쇄소” changes and exports illustrated idea cards with finite print motion.
+FIRST VIEWPORT: A full-width, silent, 16-second looping brand film incorporates the large title and a solid sun disc. A paper fold lifts the sun, an iris leads into ink, a paper ribbon turns over and unthreads as SUN/WORK typography changes, oversized type registers and passes through a circular mask, and die-cut pages fold back to the opening. No rays, spokes, sunbursts or end-logo card. The responsive poster carries the title before playback and whenever motion/data preferences prevent autoplay. The introduction and product action remain readable immediately below the film. A warm gradient strip closes the hero. The later “딴생각 인쇄소” changes and exports illustrated idea cards with finite print motion.
 
 FORM: Small printshop proof-making ritual, grounded position 6, seed 6ba4fd1d; logo-pinned palette. Code-led.
 
@@ -26,3 +26,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 - Native links/buttons, strong focus, reduced motion, readable static no-JS content; 320px through wide desktop.
 - Display artwork can exceed the general 6rem floor; body copy and navigation remain readable.
 - User explicitly supplied the brand direction and requested implementation. The reference overrides contradictory catalog materials; no new approval requirement introduced.
+
+## Brand film — revised 2026-10-08
+
+- The owner requested a more sophisticated revision, removed the end-logo requirement, prohibited radiating sunburst patterns, and allowed a longer film. The revised master is 16 seconds at 30 fps, silent, with a seamless return to the opening.
+- Desktop master/delivery: 1920 × 960 (2:1). Mobile: separately composed 1080 × 1440 (3:4), not a center crop. Exactly 480 frames per film, no audio streams. The final 0.5 seconds match the first frame.
+- Korean keeps “쓸모 있는 딴생각.” and “딴생각도 빛을 봐야지.”; English keeps “Useful daydreams.” and “DAYDREAMS DESERVE DAYLIGHT.” The existing “LET THE SUN IN. PUT THE WORK IN.” connects Sun and Works without inventing a company origin story. Original logos remain in the site's header; the film invents no new mark.
+- `MotionHero.astro` renders the responsive poster, semantic heading, description, controls and existing introduction. `hero-film.ts` assigns one video URL after page load/visibility, selecting current language, viewport and supported codec. Measured H.264 MP4 files are smaller for this master and load first, with VP9 WebM fallback where supported.
+- Reduced motion, data-saving and 2G connections start with the poster and explicit play. JavaScript failure leaves the poster and product link usable. The cached film loops, pauses offscreen/when the tab is hidden, and respects manual pause. A media failure restores the poster.
+- The deterministic source is `scripts/motion/renderer.js`; delivery files and measured sizes are in `public/assets/motion/manifest.json`. Production workflow and validation: [motion production](../motion-production.md).

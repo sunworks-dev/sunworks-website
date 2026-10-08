@@ -1,0 +1,16 @@
+{
+  "ko": {
+    "title": ["쓸모 있는", "딴생각."],
+    "caption": ["연필로 그린 해가", "하늘로 떠오르기까지."],
+    "daylight": "딴생각도 빛을 봐야지.",
+    "save": "카드 저장",
+    "cardTop": "오늘 떠오른 딴생각"
+  },
+  "en": {
+    "title": ["Useful", "daydreams."],
+    "caption": ["From a pencil sun", "to a button you can tap."],
+    "daylight": "DAYDREAMS DESERVE DAYLIGHT.",
+    "save": "Save card",
+    "cardTop": "Today’s daydream"
+  }
+}

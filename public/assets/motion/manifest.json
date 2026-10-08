@@ -1,0 +1,92 @@
+{
+  "title": "Daydreams deserve daylight",
+  "fps": 30,
+  "duration": 16,
+  "audio": false,
+  "assets": [
+    {
+      "file": "daylight-ko-desktop.mp4",
+      "bytes": 767822,
+      "width": 1920,
+      "height": 960,
+      "codec": "h264"
+    },
+    {
+      "file": "daylight-ko-desktop.webm",
+      "bytes": 907543,
+      "width": 1920,
+      "height": 960,
+      "codec": "vp9"
+    },
+    {
+      "file": "daylight-ko-desktop.webp",
+      "bytes": 20088,
+      "width": 1920,
+      "height": 960,
+      "codec": "webp"
+    },
+    {
+      "file": "daylight-ko-mobile.mp4",
+      "bytes": 657730,
+      "width": 1080,
+      "height": 1440,
+      "codec": "h264"
+    },
+    {
+      "file": "daylight-ko-mobile.webm",
+      "bytes": 734464,
+      "width": 1080,
+      "height": 1440,
+      "codec": "vp9"
+    },
+    {
+      "file": "daylight-ko-mobile.webp",
+      "bytes": 19564,
+      "width": 1080,
+      "height": 1440,
+      "codec": "webp"
+    },
+    {
+      "file": "daylight-en-desktop.mp4",
+      "bytes": 883236,
+      "width": 1920,
+      "height": 960,
+      "codec": "h264"
+    },
+    {
+      "file": "daylight-en-desktop.webm",
+      "bytes": 1064326,
+      "width": 1920,
+      "height": 960,
+      "codec": "vp9"
+    },
+    {
+      "file": "daylight-en-desktop.webp",
+      "bytes": 24926,
+      "width": 1920,
+      "height": 960,
+      "codec": "webp"
+    },
+    {
+      "file": "daylight-en-mobile.mp4",
+      "bytes": 667477,
+      "width": 1080,
+      "height": 1440,
+      "codec": "h264"
+    },
+    {
+      "file": "daylight-en-mobile.webm",
+      "bytes": 712318,
+      "width": 1080,
+      "height": 1440,
+      "codec": "vp9"
+    },
+    {
+      "file": "daylight-en-mobile.webp",
+      "bytes": 22780,
+      "width": 1080,
+      "height": 1440,
+      "codec": "webp"
+    }
+  ]
+}

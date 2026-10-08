@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SunWorks — motion studio</title>
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fontsource/gasoek-one/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fontsource-variable/archivo/wdth.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@fontsource-variable/noto-sans-kr/index.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #171512;
+        color: #f4eddf;
+        font: 14px sans-serif;
+      }
+      canvas {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 88vh;
+        object-fit: contain;
+      }
+      footer {
+        padding: 16px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        padding: 8px 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="film"></canvas>
+    <footer>
+      <button id="play">Play / pause</button
+      ><input
+        id="time"
+        type="range"
+        min="0"
+        max="15.9666667"
+        step="0.0333333"
+        value="0"
+      /><output id="readout">0.00</output>
+    </footer>
+    <script type="module" src="./renderer.js"></script>
+  </body>
+</html>

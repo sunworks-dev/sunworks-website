@@ -50,6 +50,14 @@ export const copy = {
       artAlt: '연필을 쥔 손이 노란 해를 그려내는 빈티지 인쇄풍 일러스트',
       caption: ['연필로 그린 해가', '하늘로 떠오르기까지.'],
       colophon: ['SMALL IDEAS. REAL THINGS.', '하남에서, 2026년부터'],
+      motion: {
+        play: '영상 재생',
+        pause: '일시 정지',
+        replay: '다시 재생',
+        description:
+          '종이의 틈에서 떠오른 해가 큰 활자를 지나 다시 처음으로 이어지는 16초 무음 영상.',
+        failed: '영상을 불러오지 못했어요. 다시 재생해 주세요.',
+      },
     },
     strip: ['DAYDREAMS DESERVE DAYLIGHT.', '딴생각도 빛을 봐야지.'],
     about: {
@@ -196,6 +204,14 @@ export const copy = {
         'Vintage screenprint-style illustration of a hand drawing a yellow sun with a pencil',
       caption: ['From a pencil sun', 'to a button you can tap.'],
       colophon: ['SMALL IDEAS. REAL THINGS.', 'Hanam, Korea · Est. 2026'],
+      motion: {
+        play: 'Play film',
+        pause: 'Pause',
+        replay: 'Replay',
+        description:
+          'A silent, 16-second loop: a sun slips through folded paper and oversized type, then returns to the beginning.',
+        failed: 'The film couldn’t load. Please try playing it again.',
+      },
     },
     strip: ['DAYDREAMS DESERVE DAYLIGHT.', 'If it’s fun, build it.'],
     about: {

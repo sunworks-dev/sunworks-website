@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import BrandLogo from './BrandLogo.astro';
 import Arrow from './Arrow.astro';
 import IdeaPress from './IdeaPress.astro';
+import MotionHero from './MotionHero.astro';
 import Lines from './Lines.astro';
 import { appUrl, company, copy, productUrl, type Lang } from '../i18n';
 
@@ -42,42 +43,7 @@ const alternates = [
     </div>
   </header>
   <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <h1 id="hero-title">
-          <span>{t.hero.title[0]}</span>
-          <span class="hero-punch">{t.hero.title[1]}</span>
-        </h1>
-        <div class="hero-intro">
-          <p class="hero-hook">
-            <Lines lines={t.hero.hook} />
-          </p>
-          <p>
-            <Lines lines={t.hero.intro} />
-          </p>
-          <a class="button button-ink" href="#work">
-            {t.hero.cta} <Arrow diagonal />
-          </a>
-        </div>
-      </div>
-      <figure class="hero-art">
-        <img
-          src="/assets/making-sun.webp"
-          width="1254"
-          height="1254"
-          alt={t.hero.artAlt}
-          fetchpriority="high"
-          decoding="async"
-        />
-        <figcaption>
-          <Lines lines={t.hero.caption} />
-        </figcaption>
-      </figure>
-      <div class="hero-colophon" aria-hidden="true">
-        <span>{t.hero.colophon[0]}</span>
-        <span>{t.hero.colophon[1]}</span>
-      </div>
-    </section>
+    <MotionHero lang={lang} />
     <div class="sun-strip" aria-hidden="true">
       <div class="sun-strip-inner">
         <span>{t.strip[0]}</span>
