@@ -3,7 +3,8 @@ export type Lang = 'ko' | 'en';
 export const productUrl = 'https://hanja.sunw.kr/';
 export const appUrl = 'https://hanja-app.sunw.kr/';
 
-// 사업자등록증(2026-10-08 정정 발급) 기준. 연락처는 어흥!한자 운영 안내와 같은 주소다.
+// 한글 사업자등록증·영문 사업자등록증명(2026-10-08 발급) 기준.
+// 주소의 호수는 비공개. 연락처는 어흥!한자 운영 안내와 같은 주소다.
 export const company = {
   bizNo: '463-11-02942',
   founded: '2026-06-12',
@@ -153,7 +154,7 @@ export const copy = {
       title: '회사 정보',
       nameLabel: '상호',
       name: '썬웍스',
-      nameOther: 'SunWorks',
+      nameOther: 'Sunworks',
       nameOtherLang: 'en',
       ceoLabel: '대표',
       ceo: '남선',
@@ -305,18 +306,17 @@ export const copy = {
     company: {
       title: 'Company information',
       nameLabel: 'Company',
-      name: 'SunWorks',
+      name: 'Sunworks',
       nameOther: '썬웍스',
       nameOtherLang: 'ko',
       ceoLabel: 'Representative',
-      ceo: 'Sun Nam',
+      ceo: 'SUN NAM',
       foundedLabel: 'Founded',
       founded: 'June 12, 2026',
       bizNoLabel: 'Business registration no.',
       verify: 'Verify on Korea’s Hometax',
       addressLabel: 'Address',
-      address:
-        '199 Wiryegwangjang-ro (Jangji-dong, Seonghui Plaza), Songpa-gu, Seoul, Republic of Korea',
+      address: '199 Wiryegwangjang-ro, Songpa-gu, Seoul, Republic of Korea',
       phoneLabel: 'Phone',
       phone: '+82 10-5173-5351',
       emailLabel: 'Email',
