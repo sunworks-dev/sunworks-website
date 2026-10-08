@@ -13,5 +13,6 @@ docs/review/
 !.vscode/settings.json
 .agents/
 .codex/
+_workspace/
 .aws/
 coverage/
