@@ -14,6 +14,7 @@ interface Props {
 }
 const { lang } = Astro.props;
 const t = copy[lang];
+const contactFormLabel = lang === 'ko' ? '문의 양식' : 'Contact form';
 const alternates = [
   ...(['ko', 'en'] as const).map((l) => ({ hreflang: l, href: copy[l].path })),
   { hreflang: 'x-default', href: copy.ko.path },
@@ -266,7 +267,7 @@ const alternates = [
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {lang === 'ko' ? '문의 양식' : 'Contact form'} <Arrow diagonal />
+                {contactFormLabel} <Arrow diagonal />
                 <span class="sr-only">{t.newWindow}</span>
               </a>
             </dd>
