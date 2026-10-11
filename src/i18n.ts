@@ -2,6 +2,8 @@ export type Lang = 'ko' | 'en';
 
 export const productUrl = 'https://hanja.sunw.kr/';
 export const appUrl = 'https://hanja-app.sunw.kr/';
+export const contactFormUrl =
+  'https://sunworks-formmail.quiet-poetry-c5be.workers.dev/form';
 
 // 한글 사업자등록증·영문 사업자등록증명(2026-10-08 발급) 기준.
 // 주소의 호수는 비공개. 연락처는 어흥!한자 운영 안내와 같은 주소다.
@@ -167,6 +169,9 @@ export const copy = {
       phoneLabel: '전화',
       phone: '010-5173-5351',
       emailLabel: '이메일',
+      contactLabel: '문의',
+      contactCta: '의견·문의 보내기',
+      contactNotice: '입력 정보 처리 안내는 문의폼에서 확인해 주세요.',
     },
   },
   en: {
@@ -320,6 +325,9 @@ export const copy = {
       phoneLabel: 'Phone',
       phone: '+82 10-5173-5351',
       emailLabel: 'Email',
+      contactLabel: 'Contact',
+      contactCta: 'Send feedback (Korean form)',
+      contactNotice: 'Review how your information is handled on the form.',
     },
   },
 } as const;

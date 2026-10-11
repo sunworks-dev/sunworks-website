@@ -7,14 +7,20 @@ import MotionHero from './MotionHero.astro';
 import DaylightStory from './DaylightStory.astro';
 import '../styles/scroll-story.css';
 import Lines from './Lines.astro';
-import { appUrl, company, copy, productUrl, type Lang } from '../i18n';
+import {
+  appUrl,
+  company,
+  contactFormUrl,
+  copy,
+  productUrl,
+  type Lang,
+} from '../i18n';
 
 interface Props {
   lang: Lang;
 }
 const { lang } = Astro.props;
 const t = copy[lang];
-const contactFormLabel = lang === 'ko' ? '문의 양식' : 'Contact form';
 const alternates = [
   ...(['ko', 'en'] as const).map((l) => ({ hreflang: l, href: copy[l].path })),
   { hreflang: 'x-default', href: copy.ko.path },
@@ -261,15 +267,22 @@ const alternates = [
               <a class="company-link" href={`mailto:${company.email}`}>
                 {company.email}
               </a>
+            </dd>
+          </div>
+          <div class="company-wide">
+            <dt>{t.company.contactLabel}</dt>
+            <dd>
               <a
                 class="company-link"
-                href="https://sunworks-formmail.quiet-poetry-c5be.workers.dev/form"
+                href={contactFormUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                hreflang="ko"
               >
-                {contactFormLabel} <Arrow diagonal />
+                {t.company.contactCta} <Arrow diagonal />
                 <span class="sr-only">{t.newWindow}</span>
               </a>
+              <p class="contact-notice">{t.company.contactNotice}</p>
             </dd>
           </div>
         </dl>
