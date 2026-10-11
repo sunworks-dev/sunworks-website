@@ -260,6 +260,15 @@ const alternates = [
               <a class="company-link" href={`mailto:${company.email}`}>
                 {company.email}
               </a>
+              <a
+                class="company-link"
+                href="https://sunworks-formmail.quiet-poetry-c5be.workers.dev/form"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {lang === 'ko' ? '문의 양식' : 'Contact form'} <Arrow diagonal />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
             </dd>
           </div>
         </dl>
