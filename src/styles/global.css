@@ -512,6 +512,28 @@ section[id] {
   border-bottom: 1px solid var(--ink);
   padding-bottom: 7px;
 }
+/* 스토어 공식 배지. 보이는 높이를 같게 맞춘다: Google PNG는 위아래 투명 여백이 있어 250/192배. */
+.store-badges {
+  --badge-h: 48px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-bottom: 22px;
+}
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.store-badge-apple {
+  height: var(--badge-h);
+  width: auto;
+}
+.store-badge-play {
+  height: calc(var(--badge-h) * 250 / 192);
+  width: auto;
+}
 .product-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1323,6 +1345,10 @@ section[id] {
   .product-features {
     margin-block: 22px 27px;
     font-size: 12px;
+  }
+  .store-badges {
+    --badge-h: 40px;
+    margin-bottom: 18px;
   }
   .product-status {
     font-size: 12px;

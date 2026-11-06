@@ -2,6 +2,9 @@ export type Lang = 'ko' | 'en';
 
 export const productUrl = 'https://hanja.sunw.kr/';
 export const appUrl = 'https://hanja-app.sunw.kr/';
+export const appStoreUrl = 'https://apps.apple.com/kr/app/id6823980453';
+export const playStoreUrl =
+  'https://play.google.com/store/apps/details?id=kr.sunworks.hanja';
 export const contactFormUrl =
   'https://sunworks-formmail.quiet-poetry-c5be.workers.dev/form';
 
@@ -120,7 +123,10 @@ export const copy = {
       ],
       homeCta: '어흥!한자 둘러보기',
       betaCta: '웹 베타 바로 써 보기',
-      status: '정식 출시 준비 중 · 웹 베타 공개',
+      storesLabel: '앱 내려받기',
+      appStoreAlt: 'App Store에서 다운로드',
+      playStoreAlt: 'Google Play에서 다운로드',
+      status: '2026년 11월 6일 정식 출시 · 웹 베타 공개',
       note: '다음 앱은 아직 메모장에 있어요. 이번엔 공부 얘기가 아닐 수도 있고요.',
     },
     making: {
@@ -380,7 +386,10 @@ export const copy = {
       ],
       homeCta: 'Visit the app’s website',
       betaCta: 'Try the web beta (in Korean)',
-      status: 'Full launch in the works · Web beta now open',
+      storesLabel: 'Download the app',
+      appStoreAlt: 'Download on the App Store',
+      playStoreAlt: 'Get it on Google Play',
+      status: 'Launched November 6, 2026 · Web beta now open',
       note: 'Our first app is for studying. The next one might have nothing to do with school.',
     },
     making: {

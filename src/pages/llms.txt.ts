@@ -1,5 +1,12 @@
 import type { APIRoute } from 'astro';
-import { appUrl, company, copy, productUrl } from '../i18n';
+import {
+  appStoreUrl,
+  appUrl,
+  company,
+  copy,
+  playStoreUrl,
+  productUrl,
+} from '../i18n';
 
 // AI 검색이 읽는 사이트 안내서(/llms.txt). 사실은 화면과 같은 i18n 값에서 가져와 어긋나지 않게 한다.
 export const GET: APIRoute = ({ site }) => {
@@ -21,6 +28,8 @@ SunWorks builds and launches its own apps and websites. It does not do client wo
 ## 제품 / Products
 
 - [${ko.work.name}](${productUrl}): ${ko.work.status}. ${ko.work.features.join(', ')}.
+- [${ko.work.name} App Store](${appStoreUrl}): iOS 앱 다운로드 / Download for iOS.
+- [${ko.work.name} Google Play](${playStoreUrl}): Android 앱 다운로드 / Download for Android.
 - [${ko.work.name} 웹 베타](${appUrl}): 웹 브라우저에서 바로 쓰는 베타. 화면은 한국어만 지원합니다.
 
 ## 회사 정보 / Company

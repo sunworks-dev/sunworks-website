@@ -8,10 +8,12 @@ import DaylightStory from './DaylightStory.astro';
 import '../styles/scroll-story.css';
 import Lines from './Lines.astro';
 import {
+  appStoreUrl,
   appUrl,
   company,
   contactFormUrl,
   copy,
+  playStoreUrl,
   productUrl,
   type Lang,
 } from '../i18n';
@@ -119,6 +121,44 @@ const alternates = [
                 <li>{feature}</li>
               ))}
             </ul>
+            <div
+              class="store-badges"
+              role="group"
+              aria-label={t.work.storesLabel}
+            >
+              <a
+                class="store-badge"
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="store-badge-apple"
+                  src="/assets/stores/appstore-ko-black.svg"
+                  width="130"
+                  height="40"
+                  alt={t.work.appStoreAlt}
+                  loading="lazy"
+                />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
+              <a
+                class="store-badge"
+                href={playStoreUrl}
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  class="store-badge-play"
+                  src="/assets/stores/googleplay-ko.png"
+                  width="646"
+                  height="250"
+                  alt={t.work.playStoreAlt}
+                  loading="lazy"
+                />
+                <span class="sr-only">{t.newWindow}</span>
+              </a>
+            </div>
             <div class="product-actions">
               <a
                 class="button button-ink"
